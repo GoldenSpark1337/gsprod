@@ -1,0 +1,61 @@
+:host {
+    display: block;
+}
+
+:host .top-nav-menu-balance-container {
+    padding: 6px 12px;
+    height: 36px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 16%);
+    border-style: solid;
+    border-width: 1px;
+    border-image-source: linear-gradient(
+        180deg,rgba(85,85,85,.16),rgba(43,43,43,.16));
+    border-image-slice: 1;
+    background-image: linear-gradient(
+        180deg,#262626,#262626),linear-gradient(
+        180deg,rgba(85,85,85,.16),rgba(43,43,43,.16));
+    background-origin: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+:host .top-nav-menu-balance-container span.label {
+    font-size: 12px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: .1px;
+    color: #9f9f9f; 
+} 
+
+.top-nav-menu-balance-container .value-info {
+    display: flex;
+    align-items: center;
+}
+
+.top-nav-menu-balance-container .value-info span.value {
+    font-size: 12px;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: .1px;
+    text-align: right;
+    color: #fff;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.top-nav-menu-balance-container .value-info mat-icon {
+    font-size: 12px;
+    color: #fff;
+    height: 13px;
+    width: auto;
+}
+
+a {
+    text-decoration: none;
+}

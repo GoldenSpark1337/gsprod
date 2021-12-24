@@ -1,0 +1,84 @@
+.search {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    width: calc(100% - 64px);
+    height: 36px;
+    margin-left: 49px;
+    border-radius: 18px;
+    background-color: #2a2a2a;
+    opacity: 1;
+}
+
+.search form {
+    display: flex;
+    align-items: center;
+}
+
+.search .btn-search {
+    height: 36px;
+    padding-left: 6px;
+}
+
+.search .btn-search .icon-search {
+    font-size: 18px;
+    color: #b8b8b8;
+}
+
+::ng-deep .search .btn-search .mat-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search form input {
+    width: 100%;
+    padding-right: 10px;
+    font-size: 13px;
+    color: #fff;
+    border: none;
+    background: transparent;
+}
+
+.search-types-menu {
+    display: none;
+    background-color: transparent;
+}
+
+.search-types-menu .search-types-menu-btn {
+    position: relative;
+    font-size: 13px;
+    text-align: center;
+    color: #b8b8b8;
+    border: none;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: none;
+    cursor: pointer;
+}
+
+@media (min-width: 1024px){
+    .search-types-menu {
+        flex-grow: 0;
+        flex-shrink: 0;
+        display: flex;
+    }   
+}
+
+@media (min-width: 1024px) {
+    .search {
+        width: unset;
+    }
+}
+
+@media (min-width: 769px) {
+    .search {
+        width: calc(100% - 32px);
+        position: static;
+        margin-left: 20px;
+    }
+}
+
+:host {
+    width: 100%;
+}

@@ -1,0 +1,56 @@
+.padding-container {
+    position: relative;
+    width: 100%;
+    padding: 0 15px 15px;
+    overflow: hidden;
+}
+
+@media (min-width: 480px) {
+    .padding-container {
+        padding: 0 24px 20px;
+    }
+}
+    
+@media (min-width: 1348px) {
+    .padding-container {
+        padding: 0 0 30px;
+    }
+}
+
+.max-width-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.header .title {
+    margin-right: 20px;
+    color: #fff;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.header .actions button {
+    padding: 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.header .actions button i {
+    margin-right: 4px;
+    font-size: 20px;
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+:host {
+    display: block;
+}

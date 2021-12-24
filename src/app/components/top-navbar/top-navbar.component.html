@@ -1,0 +1,115 @@
+<header class="top-nav">
+    <div class="top">
+        <div class="left">
+            <button class="btn-menu">
+                <mat-icon class="icon-hamburger">menu</mat-icon>
+            </button>
+            <a href="/" class="logo">
+                <img src="assets/img/logo.jpg" alt="GSpark">
+            </a>
+            <gs-search-track-top-bar class="search-container"></gs-search-track-top-bar>
+        </div>
+        <div class="right">
+            <div class="authenticated-actions">
+                <button class="btn-upload"><mat-icon class="icon-plus-medium">add</mat-icon><span>Upload</span></button>
+                <div class="divider-vertical"></div>
+                <div class="profile-wrapper">
+                    <div class="wrapper-button-profile">
+                        <div [matMenuTriggerFor]="userMenu" class="btn-you">
+                            <div  class="menu-reference"></div>
+                            <div class="icon">
+                                <div class="user-image" style="background-image: url(assets/img/user_undefined.jpg);">
+                                </div>
+                            </div>
+                            <mat-icon class="icon-arrow-down-solid">arrow_drop_down</mat-icon>
+                        </div>
+                    </div>
+                </div>
+                <mat-menu #userMenu="matMenu" xPosition="before" class="user-menu">
+                    <a href="/" class="profile">
+                        <div class="user-image" style="background-image: url(assets/img/user_undefined.jpg);"></div>
+                        <div class="info">
+                            <span class="username">Admin</span>
+                            <span class="plan">FREE</span>
+                        </div>
+                    </a>
+                    <gs-wallet-available-balance style="margin-top: 8px"></gs-wallet-available-balance>
+
+                    <!--<gs-gift-card-available-balance></gs-gift-card-available-balance>-->
+
+                    <div class="divider"></div>
+                    <div class="you-menus">
+                        <a href="/"><mat-icon class="icon-playlist">queue_music</mat-icon><span>My Playlists</span></a>
+                        <a href="/"><mat-icon class="icon-like-no-fill">favorite_border</mat-icon><span>Favorites</span></a>
+                        <a href="/"><mat-icon class="icon-history">history</mat-icon><span>History</span></a>
+                        <a href="/"><mat-icon class="icon-lyrics">article</mat-icon><span>Lyrics</span></a>
+                        <a href="/"><mat-icon class="icon-purchased">shop_two</mat-icon><span>Purchased</span></a>
+                        <a href="/"><mat-icon class="vb-icon-collaborations-l-regular-solid">groups</mat-icon><span>Collaborations</span></a>
+                        <div class="divider"></div>
+                        <a href="/"><mat-icon class="icon-your-orders">list_alt</mat-icon><span>Your Orders</span></a>
+                        <a href="/"><mat-icon class="vb-icon-gift-card-xl-regular">card_giftcard</mat-icon><span>Gift Card Orders</span></a>
+                        <a href="/"><mat-icon class="icon-negotiations">gavel</mat-icon><span>Negotiations</span></a>
+                        <a href="/"><mat-icon class="icon-chat-no-fill">forum</mat-icon><span>Messages</span></a>
+                        <button><mat-icon class="icon-connections">people</mat-icon><span>Connections</span></button>
+                        <a href="/"><mat-icon class="icon-account-settings">tune</mat-icon><span>Account Settings</span></a>
+                        <a href="/"><mat-icon class="icon-help">contact_support</mat-icon><span>Help</span></a>
+                    </div>
+                    <div class="divider"></div>
+                    <button class="btn-logout">
+                        <mat-icon class="icon-logout">logout</mat-icon>
+                        <span>Log out</span>
+                    </button>
+                </mat-menu>
+                <div [matMenuTriggerFor]="notifyMenu" class="notifications-wrapper">
+                    <div class="menu-reference"></div>
+                    <div class="btn-notifications">
+                        <div class="icon">
+                            <mat-icon class="icon-bell material-icons-outlined">notifications</mat-icon>
+                            <mat-icon class="icon-arrow-down-solid">arrow_drop_down</mat-icon>
+                        </div>
+                    </div>
+                </div>
+                <mat-menu #notifyMenu="matMenu" xPosition="before" class="notifications-menu">
+                    <ul>
+                        <li>
+                            <a href="/" class="notifications-messages">
+                                <div class="messages-icon">
+                                    <div>
+                                        <mat-icon class="icon-chat">message</mat-icon>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <span class="info-top">Inbox</span>
+                                    <span class="info-bottom">{{unreadMessages}} unread messages</span>
+                                </div>
+                            </a>
+                            <div class="divider"></div>
+                        </li>
+                    </ul>
+                    <gs-notifications-list></gs-notifications-list>
+                </mat-menu>
+                <div class="cart-wrapper" (click)="matBudgeCounter == 0 ? openSnackBar() : false">
+                    <div class="btn-cart">
+                        <div class="icon">
+                            <mat-icon class="icon-cart material-icons-outlined">
+                                shopping_cart
+                            </mat-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <nav class="menu-options">
+            <a href="/" class="link-no-menu">Home</a>
+            <a href="" class="link-no-menu">Feed</a>
+            <a href="" class="link-no-menu">Tracks</a>
+            <a href="" class="link-no-menu">Distribution</a>
+            <a href="" class="link-no-menu">Publishing</a>
+            <a href="" class="link-no-menu">Beat ID</a>
+            <a href="" class="link-no-menu">Gift Cards</a>
+            <a target="_blank" href="/dashboard" class="link-no-menu">My Media</a>
+        </nav>
+    </div>
+</header>

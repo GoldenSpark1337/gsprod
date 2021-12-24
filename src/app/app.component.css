@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    letter-spacing: .2px;
+    -webkit-font-smoothing: antialised;
+}
+
+a {
+    text-decoration: none;
+}
+
+.app-container {
+    background-color: #14002E;
+}
+
+.app-content {
+    overflow: hidden;
+}
+
+.app-content.normal {
+    margin-top: 104px;
+    min-height: calc(var(--vh, 1vh) * 100 - 104px);
+    position: relative;
+}
+
+.app-content {
+    background-color: #14002E;
+}
+
+@media (min-width: 769px) {
+    .app-content.normal {
+        margin-top: 70px;
+        min-height: calc(var(--vh, 1vh) * 100 - 70px);
+    }
+}
+
+@media (min-width: 1280px) {
+    .app-content.normal {
+        margin-top: 104px;
+        min-height: calc(var(--vh, 1vh) * 100 - 104px);
+    }
+}
+
+::ng-deep html::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+::ng-deep ::-webkit-scrollbar {
+    width: 8px;
+}
+::ng-deep ::-webkit-scrollbar {
+    width: 8px;
+}
+
+::ng-deep html::-webkit-scrollbar-thumb, html::-webkit-scrollbar-thumb:hover {
+    --bg-opacity: 1;
+    background-color: #6900ff;
+    background-color: rgba(105,0,255,var(--bg-opacity));
+    border-radius: 0.5rem;
+}
+::ng-deep ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb:hover {
+    background: #6927ff;
+    border-radius: 5px;
+}
+::ng-deep ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb:hover {
+    background: #6927ff;
+    border-radius: 5px;
+}
+::ng-deep html::-webkit-scrollbar-track {
+    --bg-opacity: 1;
+    background-color: #000;
+    background-color: rgba(0,0,0,var(--bg-opacity));
+    background: #000;
+}
+::ng-deep ::-webkit-scrollbar-track {
+    background: #000;
+}
+::ng-deep ::-webkit-scrollbar-track {
+    background: #000;
+}

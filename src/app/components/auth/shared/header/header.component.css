@@ -1,0 +1,18 @@
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    padding: 0;
+    margin: auto;
+}
+.header .logo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.header .logo-container .icon-logo {
+    font-size: 35px;
+}

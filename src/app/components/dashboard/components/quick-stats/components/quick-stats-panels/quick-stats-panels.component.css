@@ -1,0 +1,61 @@
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-between;
+    overflow: hidden;
+    font-size: 16px;
+    border-radius: 3px;
+    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 20%);
+}
+
+.container .quick-stat {
+    display: flex;
+    flex: 1 0 95%;
+    align-items: center;
+    padding: 28px 30px;
+    margin-top: 1px;
+    margin-right: 1px;
+    white-space: nowrap;
+    background-color: #08000D;
+}
+
+@media (min-width: 769px) {
+    .container .quick-stat {
+        flex: 1 0 45%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container .quick-stat {
+        flex: 1 0 21%;
+        width: 25%;
+    }
+}
+
+.container .quick-stat i {
+    margin-right: 5px;
+    margin-bottom: 1px;
+    font-size: 18px;
+    color: #6900FF;
+}
+
+.container .quick-stat i.icon-dollar {
+    margin-right: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.container .quick-stat .value {
+    margin-right: 4px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -.6px;
+}
+
+.container .quick-stat .caption {
+    color: #9f9f9f;
+}
+
+.container .quick-stat i.icon-play {
+    font-size: 22px;
+}

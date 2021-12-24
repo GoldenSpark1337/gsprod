@@ -1,0 +1,23 @@
+<div class="padding-container">
+    <div class="max-width-container">
+        <div class="header">
+            <div class="left">
+                <span>QUICK STATS</span>
+                <div>
+                    <mat-form-field class="form-select">
+                        <mat-select class="thin" panelClass="thin" disableOptionCentering="" aria-multiselectable="false" [(value)]="period">
+                            <mat-option *ngFor="let period of periodsList" [value]="period">
+                                {{ period }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-icon class="icon-arrow">expand_more</mat-icon>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="right">
+                <a mat-button disableRipple href=""> <i class="material-icons-outlined">analytics</i>  Show all stats</a>
+            </div>
+        </div>
+        <gs-quick-stats-panels></gs-quick-stats-panels>
+    </div>
+</div>
