@@ -19,4 +19,6 @@ import { NotificationsListComponent } from './components/notifications-list/noti
     exports: [TopNavbarComponent]
 })
 
-export class TopNavbarModule {}
+export class TopNavbarModule {
+    
+}

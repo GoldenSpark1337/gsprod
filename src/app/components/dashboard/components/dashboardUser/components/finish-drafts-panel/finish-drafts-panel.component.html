@@ -1,0 +1,25 @@
+<gs-dashboard-panel>
+    <span class="title">Finish Your Drafts</span>
+    <div class="content">
+        <div class="wrapper">
+            <p *ngIf="!draftsList.length else draftTemp">You have no drafts pending.</p>
+            <ng-template #draftTemp>
+                <p>You have some drafts pending that require changes to become active.</p>
+                <div class="draft-list">
+                    <div class="row" *ngFor="let draft of draftsList">
+                        <div class="left">
+                            <img [src]="draft.img" alt="img">
+                            <div class="center-content">
+                                <span class="title" [innerText]="draft.title"></span>
+                                <div class="last-change" [innerText]="draft.lastChange"></div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <button mat-icon-button><i class="material-icons edit">edit</i></button>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>       
+        </div>
+    </div>
+</gs-dashboard-panel>

@@ -1,0 +1,79 @@
+.wrapper p {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #707070;
+}
+
+.wrapper .draft-list .row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.wrapper .draft-list .row .left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: calc(100% - 33px);
+}
+
+.wrapper .draft-list .row .left img {
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.wrapper .draft-listk .row .left .center-content {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5px;
+    overflow: hidden;
+}
+
+.wrapper .draft-list .row .left .center-content .title {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.wrapper .draft-list .row .left .center-content .last-change {
+    color: #707070;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.wrapper .draft-list .row .right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.wrapper .draft-list .row .right button {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    line-height: calc(28px - 2px);
+    border-radius: 50%;
+    border: 1px solid hsla(0,0%,100%,.3);
+    background-color: unset;
+    cursor: pointer;
+}
+
+.wrapper .draft-list .row .right button i {
+    font-size: 14px;
+    color: #fff;
+}
+
+.wrapper .draft-list .row .right button .icon-edit {
+    font-size: 10px;
+}

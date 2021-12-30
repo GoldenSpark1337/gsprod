@@ -9,9 +9,15 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+a {
+    text-decoration: none;
+}
+
 :root {
     --white: #fff;
-    --black: #000;
+    --gs-black: #08000D;
     --gs-indigo: #6900FF;
+    --gs-purple: #14002E;
+    --gs-pink: #F236AF;
 }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -18,4 +18,5 @@ export class TopNavbarComponent implements OnInit {
     this._snackBarCard.open("You have no items in your Cart", "OK");
   }
 
+  
 }

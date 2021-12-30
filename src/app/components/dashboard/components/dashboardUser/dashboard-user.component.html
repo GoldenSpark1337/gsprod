@@ -10,6 +10,15 @@
                 </button>
             </div>
         </div>
-        <div dragula="DASHBOARD_PANELS" class="content"></div>
+        <div dragula="DASHBOARD_PANELS" class="content">
+            <gs-announcement-panel class="col-2 visible block-drag"></gs-announcement-panel>
+            <gs-quick-links-panel></gs-quick-links-panel>
+            <gs-finish-drafts-panel></gs-finish-drafts-panel>
+            <gs-latest-sales-panel></gs-latest-sales-panel>
+            <gs-learn-panel></gs-learn-panel>
+            <gs-quick-links-panel [addNewContent]="defaultTabButtons"></gs-quick-links-panel>
+            <ng-template #defaultTabButtons>
+            </ng-template>
+        </div>
     </div>
 </div>

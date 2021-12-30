@@ -1,0 +1,9 @@
+<gs-dashboard-panel>
+    <span class="title">Latest Sales</span>
+    <div class="content">
+        <div class="wrapper">
+            <p *ngIf="!salesList else salesTemp">You have no sales yet.</p>
+            <ng-template #salesTemp></ng-template>
+        </div>
+    </div>
+</gs-dashboard-panel>

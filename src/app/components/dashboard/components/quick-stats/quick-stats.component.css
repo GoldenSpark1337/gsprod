@@ -79,7 +79,7 @@
     height: 44px;
     padding: 0 16px;
     margin: 5px 0;
-    background-color: var(--gs-indigo);
+    background-color: var(--gs-purple);
 }
 
 ::ng-deep .header .left div .form-select .mat-form-field-infix {

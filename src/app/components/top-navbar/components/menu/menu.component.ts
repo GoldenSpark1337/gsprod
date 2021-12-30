@@ -23,7 +23,6 @@ export class MenuComponent {
         this._searchString = option;
     }
 
-    
 
     @ViewChild('searchTrigger')
     trigger!: MatMenuTrigger;

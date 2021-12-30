@@ -1,0 +1,72 @@
+<ng-container [ngTemplateOutlet]="addNewContent ? addNewContentTemp : gettingStartedContentTemp"></ng-container>
+
+<ng-template #gettingStartedContentTemp>
+    <gs-dashboard-panel>
+        <span class="title">Getting Started</span>
+        <div class="content">
+            <div class="wrapper">
+                <div class="inner">
+                    <a href="" target="_blank">
+                        <i class="material-icons icon-promote">north_east</i>
+                        <span>Promote Yourself</span>
+                    </a>
+                </div>
+                <div class="inner">
+                    <a href="" target="_blank">
+                        <i class="material-icons icon-pro-page">stars</i>
+                        <span>Set Up Pro Page</span>
+                    </a>
+                </div>
+                <div class="inner">
+                    <a href="" target="_blank">
+                        <i class="material-icons icon-play">play_arrow</i>
+                        <span>Set Up Blaze Player</span>
+                    </a>
+                </div>
+                <div class="inner">
+                    <a href="" target="_blank">
+                        <i class="material-icons icon-soundcloud">
+                            <img src="assets/img/service-logos/soundcloud.svg" alt="soundcloud" class="">
+                        </i>
+                        <span>SoundCloud Monetization</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </gs-dashboard-panel>
+</ng-template>
+
+<ng-template #addNewContentTemp>
+    <gs-dashboard-panel>
+        <span class="title">Add New Content</span>
+        <div class="content">
+            <div class="wrapper">
+                <div class="inner">
+                    <a href="" target="_blank">
+                        <i class="material-icons icon-dashboard-track">music_note</i>
+                        <span>Create Track</span>
+                    </a>
+                </div>
+                <div class="inner">
+                    <a href="" target="_blank">
+                        <i class="material-icons icon-albums">album</i>
+                        <span>Create Album</span>
+                    </a>
+                </div>
+                <div class="inner">
+                    <a href="" target="_blank">
+                        <i class="material-icons icon-services">play_arrow</i>
+                        <span>Create Service</span>
+                    </a>
+                </div>
+                <div class="inner">
+                    <a href="" target="_blank">
+                        <i class="material-icons icon-sound-kits">folder</i>
+                        <span>Create Sound Kit</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </gs-dashboard-panel>
+</ng-template>
+

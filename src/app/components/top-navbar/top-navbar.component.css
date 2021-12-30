@@ -13,6 +13,13 @@ a {
     width: 100%;
 }
 
+@media (min-width: 769px) {
+    .top-nav {
+        height: 70px;
+        max-height: 70px;
+    }
+}
+
 @media (min-width: 1280px) {
     .top-nav {
         align-items: stretch;
@@ -21,12 +28,7 @@ a {
     }
 }
 
-@media (min-width: 769px) {
-    .top-nav {
-        height: 70px;
-        max-height: 70px;
-    }
-}
+
 
 .top {
     flex-direction: row;
@@ -553,7 +555,7 @@ ul {
 
 
 :host {
-    background-color: #08000d;
+    background-color: var(--gs-black);
     border-bottom: 1px solid hsla(0,0%,100%,.15);
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 24%);
     display: flex;

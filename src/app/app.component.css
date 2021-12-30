@@ -7,10 +7,6 @@
     -webkit-font-smoothing: antialised;
 }
 
-a {
-    text-decoration: none;
-}
-
 .app-container {
     background-color: #14002E;
 }
@@ -40,6 +36,18 @@ a {
     .app-content.normal {
         margin-top: 104px;
         min-height: calc(var(--vh, 1vh) * 100 - 104px);
+    }
+}
+
+@media (min-width: 769px) {
+    .small-top-nav gs-top-navbar  {
+        height: 70px;
+    }
+}
+
+@media (min-width: 1280px) {
+    ::ng-deep .small-top-nav .bottom {
+        display: none!important;
     }
 }
 
