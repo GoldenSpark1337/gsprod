@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from "src/app/core/material.module";
 import { MatIconModule } from "@angular/material/icon";
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { DragulaModule } from 'ng2-dragula';
 
 import { DashboardUserComponent } from './dashboard-user.component';
 import { DashboardPanelComponent } from '../dashboard-panel/dashboard-panel.component';
@@ -26,7 +27,13 @@ import { QuickLinksPanelComponent } from './components/quick-links-panel/quick-l
         QuickLinksPanelComponent,
         AddNewContentComponent 
     ],
-    imports: [CommonModule, MaterialModule, MatIconModule, YouTubePlayerModule],
+    imports: [
+        CommonModule, 
+        MaterialModule, 
+        MatIconModule, 
+        YouTubePlayerModule,
+        DragulaModule
+    ],
     exports: [DashboardUserComponent],
     providers: [],
 })

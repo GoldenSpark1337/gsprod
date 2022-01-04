@@ -9,6 +9,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { TopNavbarModule } from "./components/top-navbar/top-navbar.module";
 import { AuthModule } from "./components/auth/auth.module";
 import { DashboardModule } from "./components/dashboard/dashboard.module";
+import { DragulaModule } from "ng2-dragula";
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +22,8 @@ import { DashboardModule } from "./components/dashboard/dashboard.module";
     TopNavbarModule,
     AuthModule,
     DashboardModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DragulaModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],

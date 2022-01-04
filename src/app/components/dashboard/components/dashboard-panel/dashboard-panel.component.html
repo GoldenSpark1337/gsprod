@@ -1,3 +1,18 @@
+<ng-container *ngIf="isDraggable">
+    <div class="drag-overlay">
+        <div class="header">
+            <ng-content select=".title"></ng-content>
+        </div>
+        <div class="top">
+            <i class="material-icons-outlined">visibility_off</i>
+            <span class="action">Hide</span>
+        </div>
+        <div class="bottom">
+            <i class="material-icons">open_with</i>
+            <span class="info">Drag & Drop</span>
+        </div>
+    </div> 
+</ng-container>
 <div class="panel">
     <div class="header">
         <ng-content select=".title"></ng-content>

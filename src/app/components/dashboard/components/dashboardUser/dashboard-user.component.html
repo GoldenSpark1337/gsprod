@@ -3,10 +3,15 @@
         <div class="header">
             <span class="title">DASHBOARD</span>
             <div class="actions">
-                <button mat-button disableRipple>
-                    <i class="material-icons">
-                        tune
-                    </i> Customize 
+                <button mat-button disableRipple (click)="customizable()">
+                    <ng-container *ngIf="!staticIsDraggable else draggableButtonOnTemp">
+                        <i class="material-icons icon-dashboard-customize">
+                            tune
+                        </i> Customize
+                    </ng-container>
+                    <ng-template #draggableButtonOnTemp>
+                        <i class="material-icons icon-check-thin">done</i> Finish Customizing
+                    </ng-template>
                 </button>
             </div>
         </div>
@@ -17,8 +22,7 @@
             <gs-latest-sales-panel></gs-latest-sales-panel>
             <gs-learn-panel></gs-learn-panel>
             <gs-quick-links-panel [addNewContent]="defaultTabButtons"></gs-quick-links-panel>
-            <ng-template #defaultTabButtons>
-            </ng-template>
+            <ng-template #defaultTabButtons></ng-template>
         </div>
     </div>
 </div>
