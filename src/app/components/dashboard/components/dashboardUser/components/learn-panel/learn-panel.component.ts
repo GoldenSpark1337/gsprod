@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./learn-panel.component.css']
 })
 export class LearnPanelComponent implements OnInit {
-  apiLoaded = false;
+  apiLoaded: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -17,6 +17,8 @@ export class LearnPanelComponent implements OnInit {
       tag.src = 'https://www.youtube.com/iframe_api';
       document.body.appendChild(tag);
       this.apiLoaded = true;
+      origin: location.hostname
     }
   }
+
 }

@@ -19,7 +19,6 @@ export class DashboardPanelComponent implements OnInit {
 
   ngOnInit(): void {
     this.sharedDraggable.getDraggable().subscribe(d => {
-      console.log('SHARED', d);
       this.isDraggable = d;
     })
   }

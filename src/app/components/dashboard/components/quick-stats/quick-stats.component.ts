@@ -17,5 +17,7 @@ export class QuickStatsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+  check() {
+    console.log(this.period)
+  }
 }

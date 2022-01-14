@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuickStatsPanelsComponent implements OnInit {
 
-  totalNetSale: number = 0.00;
+  totalNetSale: number = 0;
   followers: number = 0;
   negotitations: number = 0;
   activeCampaigns: number = 0;

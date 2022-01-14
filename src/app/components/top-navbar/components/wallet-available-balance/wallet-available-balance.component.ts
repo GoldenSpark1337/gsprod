@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wallet-available-balance.component.css']
 })
 export class WalletAvailableBalanceComponent implements OnInit {
-  value: number = 0.00;
+  value: number = 0;
 
   constructor() { }
 

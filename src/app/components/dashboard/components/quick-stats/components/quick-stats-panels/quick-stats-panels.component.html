@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="quick-stat"><i class="material-icons-outlined icon-dollar">attach_money</i><span class="value">$ {{totalNetSale}}</span><span class="caption">Total Net Sales</span></div>
+    <div class="quick-stat"><i class="material-icons-outlined icon-dollar">attach_money</i><span class="value">{{totalNetSale | currency: "USD":"symbol":"1.2-2"}}</span><span class="caption">Total Net Sales</span></div>
     <div class="quick-stat"><i class="material-icons icon-follow">group_add</i><span class="value">{{followers}}</span><span class="caption">New Followers</span></div>
     <div class="quick-stat"><i class="material-icons-outlined icon-selling-preferences">gavel</i><span class="value">{{negotitations}}</span><span class="caption">Negotiations</span></div>
     <div class="quick-stat"><i class="material-icons icon-dashboard-promos">trending_up</i><span class="value">{{activeCampaigns}}</span><span class="caption">Active Campaigns</span></div>

@@ -73,7 +73,7 @@
     border-radius: 5px;
 }
 ::ng-deep ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb:hover {
-    background: #6927ff;
+    background: hsl(258, 100%, 58%);
     border-radius: 5px;
 }
 ::ng-deep html::-webkit-scrollbar-track {

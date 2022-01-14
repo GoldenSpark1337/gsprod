@@ -4,7 +4,7 @@
             <span class="title">DASHBOARD</span>
             <div class="actions">
                 <button mat-button disableRipple (click)="customizable()">
-                    <ng-container *ngIf="!staticIsDraggable else draggableButtonOnTemp">
+                    <ng-container *ngIf="!isDraggable else draggableButtonOnTemp">
                         <i class="material-icons icon-dashboard-customize">
                             tune
                         </i> Customize

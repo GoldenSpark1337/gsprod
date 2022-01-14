@@ -14,6 +14,7 @@ import { FinishDraftsPanelComponent } from './components/finish-drafts-panel/fin
 import { LatestSalesPanelComponent } from './components/latest-sales-panel/latest-sales-panel.component';
 import { LearnPanelComponent } from './components/learn-panel/learn-panel.component';
 import { QuickLinksPanelComponent } from './components/quick-links-panel/quick-links-panel.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -30,7 +31,8 @@ import { QuickLinksPanelComponent } from './components/quick-links-panel/quick-l
     imports: [
         CommonModule, 
         MaterialModule, 
-        MatIconModule, 
+        MatIconModule,
+        FormsModule,
         YouTubePlayerModule,
         DragulaModule
     ],

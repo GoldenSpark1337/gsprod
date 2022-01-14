@@ -553,6 +553,23 @@ ul {
     border-bottom: 2px solid #6900FF;
 }
 
+::ng-deep .mat-snack-bar-container.mat-snack-bar-center {
+    align-items: center;
+    max-width: 500px;
+    color: #9f9f9f;
+    background-color: #000;
+    border: 1px solid hsla(0,0%,100%,.15);
+    border-radius: 5px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%);
+}
+
+::ng-deep .mat-simple-snackbar-action button {
+    color: #fff;
+}
+
+::ng-deep .mat-simple-snackbar span {
+    font-size: 16px;
+}
 
 :host {
     background-color: var(--gs-black);

@@ -5,7 +5,7 @@
                 <span>QUICK STATS</span>
                 <div>
                     <mat-form-field class="form-select">
-                        <mat-select class="thin" panelClass="thin" disableOptionCentering="" aria-multiselectable="false" [(value)]="period">
+                        <mat-select class="thin" panelClass="thin" disableOptionCentering aria-multiselectable="false" [(value)]="period">
                             <mat-option *ngFor="let period of periodsList" [value]="period">
                                 {{ period }}
                             </mat-option>
