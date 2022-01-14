@@ -38,6 +38,9 @@
                     <!--<gs-gift-card-available-balance></gs-gift-card-available-balance>-->
 
                     <div class="divider"></div>
+
+                    <!-- Menus -->
+
                     <div class="you-menus">
                         <a href="/"><mat-icon class="icon-playlist">queue_music</mat-icon><span>My Playlists</span></a>
                         <a href="/"><mat-icon class="icon-like-no-fill">favorite_border</mat-icon><span>Favorites</span></a>
@@ -55,6 +58,9 @@
                         <a href="/"><mat-icon class="icon-help">contact_support</mat-icon><span>Help</span></a>
                     </div>
                     <div class="divider"></div>
+
+                    <!-- Logout -->
+
                     <button class="btn-logout">
                         <mat-icon class="icon-logout">logout</mat-icon>
                         <span>Log out</span>
@@ -88,6 +94,9 @@
                     </ul>
                     <gs-notifications-list></gs-notifications-list>
                 </mat-menu>
+
+                <!-- Cart -->
+
                 <div class="cart-wrapper" (click)="matBudgeCounter == 0 ? openSnackBar() : false">
                     <div class="btn-cart">
                         <div class="icon">
@@ -100,6 +109,9 @@
             </div>
         </div>
     </div>
+
+    <!-- Bottom -->
+
     <div class="bottom">
         <nav class="menu-options">
             <a href="/" class="link-no-menu">Home</a>
@@ -109,7 +121,9 @@
             <a href="" class="link-no-menu">Publishing</a>
             <a href="" class="link-no-menu">Beat ID</a>
             <a href="" class="link-no-menu">Gift Cards</a>
-            <a target="_blank" href="/dashboard" class="link-no-menu">My Media</a>
+            <a target="_blank" href="/dashboard" class="link-no-menu" (mouseover)="showHoverable=true" (mouseout)="showHoverable=false">My Media</a>
         </nav>
+        <gs-top-nav-menu *ngIf="showHoverable"></gs-top-nav-menu>
     </div>
+
 </header>

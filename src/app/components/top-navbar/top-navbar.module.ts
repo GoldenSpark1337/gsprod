@@ -12,9 +12,10 @@ import { SearchTrackTopBarComponent } from "./components/search-track-top-bar/se
 import { MenuComponent } from "./components/menu/menu.component";
 import { WalletAvailableBalanceComponent } from './components/wallet-available-balance/wallet-available-balance.component';
 import { NotificationsListComponent } from './components/notifications-list/notifications-list.component';
+import { TopNavMenuComponent } from './components/top-nav-menu/top-nav-menu.component';
 
 @NgModule({
-    declarations: [TopNavbarComponent, SearchTrackTopBarComponent, MenuComponent, WalletAvailableBalanceComponent, NotificationsListComponent],
+    declarations: [TopNavbarComponent, SearchTrackTopBarComponent, MenuComponent, WalletAvailableBalanceComponent, NotificationsListComponent, TopNavMenuComponent],
     imports: [CommonModule, FormsModule, BrowserAnimationsModule, MaterialModule, MatIconModule, FlexLayoutModule],
     exports: [TopNavbarComponent]
 })

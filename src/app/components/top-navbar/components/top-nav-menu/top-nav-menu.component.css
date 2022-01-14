@@ -1,0 +1,16 @@
+:host {
+    position: fixed;
+    top: 104px;
+    left: 2%;
+    width: calc(100% - 4%);
+    max-width: 1300px;
+    box-shadow: 0 16px 32px 0 rgb(0 0 0 / 72%);
+    background-color: #0c0c0c;
+    z-index: 10;
+}
+
+@media (min-width: 1348px) {
+    :host {
+        left: unset;
+    }
+}

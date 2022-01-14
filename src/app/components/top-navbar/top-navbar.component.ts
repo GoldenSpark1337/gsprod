@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit, ViewEncapsulation } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'gs-top-navbar',
@@ -10,12 +10,15 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class TopNavbarComponent implements OnInit {
   unreadMessages: number = 0;
   matBudgeCounter: number = 0;
+  showHoverable: boolean = false;
   constructor(private _snackBarCard: MatSnackBar) { }
 
   ngOnInit(): void {
   }
   openSnackBar(): void {
-    this._snackBarCard.open("You have no items in your Cart", "OK");
+    let config = new MatSnackBarConfig();
+    config.duration = 5000;
+    this._snackBarCard.open("You have no items in your Cart", "OK", config);
   }
 
   

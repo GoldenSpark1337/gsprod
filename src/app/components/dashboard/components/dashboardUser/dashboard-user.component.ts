@@ -23,7 +23,7 @@ export class DashboardUserComponent implements OnInit, OnDestroy {
       removeOnSpill: false,
       moves: (el, source, handle) => {
         if (el?.classList.contains("block-drag")) { return false; }
-        return false;
+        return true;
       },
       accepts: (el, target, source, sibling) => {
         if (sibling === null) {
