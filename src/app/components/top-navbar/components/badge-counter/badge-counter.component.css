@@ -1,0 +1,25 @@
+:host {
+    display: block;
+}
+
+:host .badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    letter-spacing: -.09px;
+    background-color: #fe2b0d;
+    border-radius: 50%;
+}
+
+.badge {
+    min-width: 22px;
+    height: 22px;
+    position: absolute;
+    right: -7px;
+    top: -9px;
+    z-index: 5;
+}

@@ -29,8 +29,8 @@
                     <a href="/" class="profile">
                         <div class="user-image" style="background-image: url(assets/img/user_undefined.jpg);"></div>
                         <div class="info">
-                            <span class="username">Admin</span>
-                            <span class="plan">FREE</span>
+                            <span class="username">{{username}}</span>
+                            <span class="plan">{{userPlan}}</span>
                         </div>
                     </a>
                     <gs-wallet-available-balance style="margin-top: 8px"></gs-wallet-available-balance>
@@ -97,15 +97,44 @@
 
                 <!-- Cart -->
 
-                <div class="cart-wrapper" (click)="matBudgeCounter == 0 ? openSnackBar() : false">
+                <div class="cart-wrapper" (click)="matBudgeCounter == 0 ? openSnackBar() : cartTrigger.openMenu()">
+                    <div class="menu-reference" [matMenuTriggerFor]="cartMenu" #cartTrigger="matMenuTrigger"></div>
                     <div class="btn-cart">
                         <div class="icon">
                             <mat-icon class="icon-cart material-icons-outlined">
                                 shopping_cart
                             </mat-icon>
+                            <gs-badge-counter *ngIf="matBudgeCounter" [counter]="matBudgeCounter"></gs-badge-counter>
                         </div>
+                        <mat-icon class="icon-arrow-down-solid" *ngIf="matBudgeCounter">arrow_drop_down</mat-icon>
                     </div>
                 </div>
+                <mat-menu #cartMenu="matMenu" class="cart-menu">
+                    <div class="your-cart">
+                        <span style="color: #fff;">Your cart ({{matBudgeCounter}})</span>
+                    </div>
+                    <div class="cart-items">
+                        <ul>
+                            <li *ngFor="let track of userCartTracks" class="item">
+                                <div class="artwork">
+                                    <img [src]="track.artwork" alt="Cart item artwork">
+                                </div>
+                                <div class="details">
+                                    <div class="title-price">
+                                        <a href="" class="title" [innerText]="track.title"></a>
+                                        <span class="price" [innerText]="track.price | currency:'USD':'symbol':'1.2-2'"></span>
+                                    </div>
+                                    <div class="type">
+                                        <span class="product-type" [innerText]="track.type"></span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="checkout" mat-menu-item disableRipple>
+                        <button mat-button disableRipple [routerLink]="['/checkout']" routerLinkActive="router-link-active" >Checkout</button>
+                    </div>
+                </mat-menu>
             </div>
         </div>
     </div>

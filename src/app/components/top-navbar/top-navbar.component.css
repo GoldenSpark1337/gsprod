@@ -223,6 +223,12 @@ a {
     right: 0;
 }
 
+.top .right .cart-wrapper .menu-reference {
+    bottom: -16px;
+    position: absolute;
+    right: 0;
+}
+
 .top .right .btn-cart, .top .right .btn-notifications, .top .right.btn-you {
     width: 100%;
 }
@@ -304,8 +310,8 @@ a {
         width: auto;
         color: #fff;
         display: block;
-        font-size: 18px;
-        margin-left: 4px;
+        font-size: 20px;
+        margin-left: -2px;
     }
 }
 
@@ -315,7 +321,6 @@ a {
 .top .right .btn-notifications-mobile .icon mat-icon, 
 .top .right .btn-notifications .icon mat-icon, .top .right .btn-you .icon mat-icon{
     color: #fff;
-    font-size: 24px;
 }
 
 .top .right .btn-cart-mobile .icon .user-image, .top .right .btn-cart .icon .user-image, 
@@ -569,6 +574,105 @@ ul {
 
 ::ng-deep .mat-simple-snackbar span {
     font-size: 16px;
+}
+
+::ng-deep .cart-menu.mat-menu-panel .mat-menu-content {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(var(--vh, 1vh) * 100 - 104px);
+    padding-bottom: 16px;
+}
+
+::ng-deep .cart-menu.mat-menu-panel .your-cart {
+    font-size: 21px;
+    font-weight: 600;
+    padding: 16px;
+}
+
+::ng-deep .cart-menu.mat-menu-panel .cart-items {
+    max-height: 500px;
+    overflow: auto;
+    padding: 0 16px;
+}
+
+::ng-deep .cart-menu.mat-menu-panel .cart-items ul li {
+    align-items: center;
+    display: flex;
+    margin-bottom: 16px;
+    max-height: 52px;
+}
+
+::ng-deep .cart-menu.mat-menu-panel .cart-items ul li .artwork {
+    border: 1px solid hsla(0,0%,100%,.08);
+    max-height: 52px;
+    min-width: 52px;
+}
+
+::ng-deep .cart-menu.mat-menu-panel .cart-items ul li .artwork img {
+    border-radius: 3px;
+    height: 52px;
+    width: 52px;
+}
+
+::ng-deep .cart-menu.mat-menu-panel .cart-items ul li .details {
+    flex: 1;
+    margin-left: 12px;
+    overflow: hidden;
+}
+
+::ng-deep .cart-menu.mat-menu-panel .cart-items ul li .details .title-price {
+    display: flex;
+    justify-content: space-between;
+}
+
+::ng-deep .cart-menu.mat-menu-panel .cart-items ul li .details .title-price .title {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .1px;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+::ng-deep .cart-menu.mat-menu-panel .cart-items ul li .details .price {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .1px;
+}
+
+::ng-deep .cart-menu.mat-menu-panel .cart-items ul li .details .type {
+    align-items: center;
+    color: #9f9f9f;
+    display: flex;
+    font-size: 13px;
+    justify-content: space-between;
+    letter-spacing: .1px;
+}
+
+::ng-deep .cart-menu.mat-menu-panel .checkout {
+    display: flex;
+    flex-shrink: 0;
+    padding-top: 4px;
+}
+
+::ng-deep .cart-menu.mat-menu-panel .checkout button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    height: 44px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--gs-indigo);
 }
 
 :host {

@@ -10,6 +10,7 @@ import { TopNavbarModule } from "./components/top-navbar/top-navbar.module";
 import { AuthModule } from "./components/auth/auth.module";
 import { DashboardModule } from "./components/dashboard/dashboard.module";
 import { DragulaModule } from "ng2-dragula";
+import { CartReviewModule } from "./components/cart-review/cart-review.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +23,7 @@ import { DragulaModule } from "ng2-dragula";
     TopNavbarModule,
     AuthModule,
     DashboardModule,
+    CartReviewModule,
     AppRoutingModule,
     DragulaModule.forRoot()
   ],

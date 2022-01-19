@@ -13,10 +13,12 @@ import { MenuComponent } from "./components/menu/menu.component";
 import { WalletAvailableBalanceComponent } from './components/wallet-available-balance/wallet-available-balance.component';
 import { NotificationsListComponent } from './components/notifications-list/notifications-list.component';
 import { TopNavMenuComponent } from './components/top-nav-menu/top-nav-menu.component';
+import { BadgeCounterComponent } from './components/badge-counter/badge-counter.component';
+import { RouterModule } from "@angular/router";
 
 @NgModule({
-    declarations: [TopNavbarComponent, SearchTrackTopBarComponent, MenuComponent, WalletAvailableBalanceComponent, NotificationsListComponent, TopNavMenuComponent],
-    imports: [CommonModule, FormsModule, BrowserAnimationsModule, MaterialModule, MatIconModule, FlexLayoutModule],
+    declarations: [TopNavbarComponent, SearchTrackTopBarComponent, MenuComponent, WalletAvailableBalanceComponent, NotificationsListComponent, TopNavMenuComponent, BadgeCounterComponent],
+    imports: [CommonModule, FormsModule, BrowserAnimationsModule, MaterialModule, MatIconModule, FlexLayoutModule, RouterModule],
     exports: [TopNavbarComponent]
 })
 
