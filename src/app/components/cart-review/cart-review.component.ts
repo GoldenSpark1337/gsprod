@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'gs-cart-review',
+  selector: '',
   templateUrl: './cart-review.component.html',
   styleUrls: ['./cart-review.component.css']
 })

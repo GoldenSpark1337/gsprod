@@ -1,0 +1,38 @@
+<gs-component-container [templateRef]="cart"></gs-component-container>
+<ng-template #cart>
+    <div class="padding-container">
+        <div class="max-width-container">
+            <div class="cart">
+                <div class="items-container">
+                    <ng-container *ngIf="items.length else noItemsTemp">
+                        
+                    </ng-container>
+                    <ng-template #noItemsTemp>
+                        <div class="no-items">You don't have items in cart</div>
+                    </ng-template>
+                </div>
+                <div class="summary">
+                    <mat-card>
+                        <mat-card-content>
+                            <h1 class="title">Cart Summary</h1>
+                            <div class="finalize">
+                                <div class="row gross">
+                                    <span class="name">Total Gross</span>
+                                    <span class="value" [innerText]="gross | currency:'USD':'symbol':'1.2-2'"></span>
+                                </div>
+                                <div class="row discount">
+                                    <span class="name">Discount</span>
+                                    <span class="value" [innerText]="discount | currency:'USD':'symbol':'1.2-2'"></span>
+                                </div>
+                                <div class="row total">
+                                    <span class="name">Total</span>
+                                    <span class="value" [innerText]="total | currency:'USD':'symbol':'1.2-2'"></span>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

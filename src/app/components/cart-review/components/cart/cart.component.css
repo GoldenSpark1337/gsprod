@@ -1,0 +1,108 @@
+.cart {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 1280px) {
+    .cart {
+        flex-direction: row;
+    }
+}
+
+.items-container {
+    width: 100%;
+    margin-right: 40px;
+    overflow: hidden;
+}
+
+.items-container .no-items {
+    margin-top: 30px;
+    font-size: 24px;
+    color: #fff;
+    font-weight: 500;
+}
+
+@media (min-width: 1280px) {
+    .items-container .no-items {
+        margin-top: 0;
+        font-size: 26px;
+        text-align: left;
+    }
+}
+
+.summary {
+    min-width: 100%;
+    padding-top: 35px;
+}
+
+@media (min-width: 1024px) {
+    .summary {
+        min-width: 40vw;
+    }
+}
+
+
+@media (min-width: 1280px) {
+    .summary {
+        min-width: 380px;
+        padding: 0;
+    }
+}
+
+
+::ng-deep .mat-card {
+    /* font-family: Poppins,Roboto,Helvetica Neue,sans-serif!important; */
+    color: #fff;
+    background-color: #1b1b1b;
+    border-radius: 3px!important;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,.12)!important;
+}
+
+.summary mat-card {
+    padding: 0;
+}
+
+.summary mat-card mat-card-content .title {
+    padding-top: 16px;
+    padding-left: 20px;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.summary mat-card mat-card-content .finalize {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.summary mat-card mat-card-content .finalize .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-bottom: 12px;
+}
+
+.summary mat-card mat-card-content .finalize .row.gross {
+    padding: 18px 0 0;
+    margin: 8px 20px 12px;
+    border-top: 1px solid hsla(0,0%,100%,.15);
+}
+
+.summary mat-card mat-card-content .finalize .row .name, .summary mat-card mat-card-content .finalize .row.total span {
+    font-weight: 600;
+}
+
+.summary mat-card mat-card-content .finalize .row .value {
+    font-weight: 700;
+}
+
+.summary mat-card mat-card-content .finalize .row.total {
+    display: flex;
+    align-items: center;
+    height: 55px;
+    font-size: 20px;
+    color: #00eb88;
+}

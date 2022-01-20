@@ -1,16 +1,10 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    outline: none;
-    letter-spacing: .2px;
-    -webkit-font-smoothing: antialised;
+.app-container {
+    overflow: hidden;
 }
 
-.app-container {
+.app-content {
     background-color: #14002E;
 }
-
 .app-content {
     overflow: hidden;
 }
