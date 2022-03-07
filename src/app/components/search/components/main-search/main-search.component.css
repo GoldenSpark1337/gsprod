@@ -1,0 +1,11 @@
+@media (min-width: 0) {
+    .vb-padding-r-none {
+        padding-right: 0!important;
+    }
+}
+
+@media (min-width: 0) {
+    .vb-padding-l-none {
+        padding-left: 0!important;
+    }
+}

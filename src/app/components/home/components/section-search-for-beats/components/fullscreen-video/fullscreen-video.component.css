@@ -1,0 +1,65 @@
+.background-video {
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: calc(var(--vh-only-width-changed, 1vh) * 100 - 104px);
+    overflow: hidden;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 769px) {
+    .background-video {
+        height: calc(var(--vh-only-width-changed, 1vh) * 100 - 70px);
+    }
+}
+
+@media (min-width: 1280px) {
+    .background-video {
+        height: calc(var(--vh-only-width-changed, 1vh) * 100 - 104px);
+    }
+}
+
+.background-video .video {
+    display: none;
+}
+
+@media (min-width: 480px) {
+    .background-video .video {
+        position: absolute;
+        right: 0;
+        display: inline-block;
+        min-width: 100vw;
+        height: calc(var(--vh-only-width-changed, 1vh) * 100 - 70px);
+        min-height: calc((9 / 16) * 100vw);
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 1280px) {
+    .background-video .video {
+        height: calc(var(--vh, 1vh) * 100 - 88px + 104px);
+    }
+}
+
+.background-video .linear-gradient {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(180deg,transparent,#000 85%);
+}
+
+
+img {
+    width: 100%;
+    display: block;
+    width: inherit;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}

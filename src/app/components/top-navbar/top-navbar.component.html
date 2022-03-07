@@ -18,8 +18,7 @@
                         <div [matMenuTriggerFor]="userMenu" class="btn-you">
                             <div  class="menu-reference"></div>
                             <div class="icon">
-                                <div class="user-image" style="background-image: url(assets/img/user_undefined.jpg);">
-                                </div>
+                                <div class="user-image" style="background-image: url(assets/img/logo.jpg);"></div>
                             </div>
                             <mat-icon class="icon-arrow-down-solid">arrow_drop_down</mat-icon>
                         </div>
@@ -143,16 +142,16 @@
 
     <div class="bottom">
         <nav class="menu-options">
-            <a href="/" class="link-no-menu">Home</a>
+            <a href="/home" class="link-no-menu">Home</a>
             <a href="" class="link-no-menu">Feed</a>
-            <a href="" class="link-no-menu">Tracks</a>
+            <a href="" class="link-no-menu" (mouseover)="showHoverable()" (mouseout)="hideHoverable()">Tracks</a>
             <a href="" class="link-no-menu">Distribution</a>
             <a href="" class="link-no-menu">Publishing</a>
             <a href="" class="link-no-menu">Beat ID</a>
             <a href="" class="link-no-menu">Gift Cards</a>
-            <a target="_blank" href="/dashboard" class="link-no-menu" (mouseover)="showHoverable=true" (mouseout)="showHoverable=false">My Media</a>
+            <a href="/dashboard" class="link-no-menu" (mouseover)="showHoverable()" (mouseout)="hideHoverable()">My Media</a>
         </nav>
-        <gs-top-nav-menu *ngIf="showHoverable"></gs-top-nav-menu>
+        <gs-top-nav-menu *ngIf="isHoverable" (onChanged)="timeout($event)"></gs-top-nav-menu>
     </div>
 
 </header>

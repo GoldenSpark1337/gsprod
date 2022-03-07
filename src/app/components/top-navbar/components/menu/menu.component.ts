@@ -8,7 +8,7 @@ import { MatMenuItem, MatMenuTrigger } from "@angular/material/menu";
 })
 
 export class MenuComponent {
-    options: string[] = ["All", "Tracks", "Musicians", "Sound kits", "Services"];
+    options: string[] = ["All", "Tracks", "Musicians", "Playlists", "Sound kits", "Services"];
 
     private _searchString: string = "Tracks";
 

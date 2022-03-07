@@ -32,3 +32,9 @@
     max-width: 1300px;
     margin: auto;
 }
+
+::ng-deep p {
+    font-size: 12px;
+    font-weight: 500;
+    color: #707070;
+}

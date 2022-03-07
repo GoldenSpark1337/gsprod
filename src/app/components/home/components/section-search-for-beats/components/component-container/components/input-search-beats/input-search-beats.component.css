@@ -1,0 +1,135 @@
+.search-beats {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 52px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+@media (min-width: 769px)
+{
+    .search-beats {
+        position: static;
+    }
+}
+
+@media (min-width: 1024px) {
+        .search-beats {
+            height: 72px;
+        }
+}
+
+.search-beats form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.search-beats .btn-search {
+    width: unset;
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
+@media (min-width: 1024px) {
+    .search-beats .btn-search {
+        padding-right: 17px;
+        padding-left: 24px;
+    }
+}
+
+.search-beats form input {
+    width: 100%;
+    padding-top: 14px;
+    padding-right: 10px;
+    padding-bottom: 14px;
+    font-family: Poppins,Roboto,Helvetica Neue,sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    font-stretch: normal;
+    line-height: 1.4;
+    color: #000;
+    letter-spacing: .1px;
+    background: transparent;
+    border: none;
+}
+
+@media (min-width: 1024px) {
+    .search-beats form input {
+        font-size: 19px;
+        font-weight: 500;
+        line-height: 1.65;
+        letter-spacing: .2px;
+    }
+}
+
+.search-beats form input[placeholder] {
+    text-overflow: ellipsis;
+}
+
+.search-beats .divider-vertical {
+    display: inline-block;
+    width: 1px;
+    height: 17px;
+    letter-spacing: unset;
+    background-color: #d8d8d8;
+}
+
+@media (min-width: 1024px) {
+    .search-beats .divider-vertical {
+        height: 24px;
+    }
+}
+
+.search-beats-types-menu {
+    background-color: transparent;
+}
+
+@media (min-width: 1024px) {
+    .search-beats-types-menu {
+        display: flex;
+        flex-shrink: 0;
+        flex-grow: 0;
+    }
+}
+
+.divider-vertical, .search-beats-types-menu {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .divider-vertical, .search-beats-types-menu {
+        display: flex;
+    }
+}
+
+.search-beats .btn-search .icon-search {
+    font-size: 29px;
+    color: #000;
+}
+
+:host {
+    position: relative;
+}
+
+@media (min-width: 480px) {
+    :host {
+        display: block;
+    }
+}
+
+@media (min-width: 769px) {
+    :host{
+        width: 664px;
+    }
+}
+
+@media (min-width: 1024px) {
+    :host{
+        margin-top: 32px;
+    }
+}

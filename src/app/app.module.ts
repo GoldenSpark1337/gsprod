@@ -8,9 +8,10 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from "./app-routing.module";
 import { TopNavbarModule } from "./components/top-navbar/top-navbar.module";
 import { AuthModule } from "./components/auth/auth.module";
-import { DashboardModule } from "./components/dashboard/dashboard.module";
 import { DragulaModule } from "ng2-dragula";
 import { CartReviewModule } from "./components/cart-review/cart-review.module";
+import { HomeModule } from "./components/home/home.module";
+import { ComponentModule } from "./components/search/component.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,11 +21,12 @@ import { CartReviewModule } from "./components/cart-review/cart-review.module";
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    TopNavbarModule,
-    AuthModule,
-    DashboardModule,
-    CartReviewModule,
     AppRoutingModule,
+    AuthModule,
+    TopNavbarModule,
+    HomeModule,
+    ComponentModule,
+    CartReviewModule,
     DragulaModule.forRoot()
   ],
   providers: [],

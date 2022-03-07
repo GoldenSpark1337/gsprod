@@ -69,10 +69,16 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "gspark:build:production"
+              "browserTarget": "gspark:build:production",
+              "sslKey": "ssl/server.key",
+              "sslCert": "ssl/server.crt",
+              "ssl": true
             },
             "development": {
-              "browserTarget": "gspark:build:development"
+              "browserTarget": "gspark:build:development",
+              "sslKey": "ssl/server.key",
+              "sslCert": "ssl/server.crt",
+              "ssl": true
             }
           },
           "defaultConfiguration": "development"

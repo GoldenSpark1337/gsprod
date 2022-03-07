@@ -106,3 +106,19 @@
     font-size: 20px;
     color: #00eb88;
 }
+
+.summary mat-card mat-card-content .actions {
+    padding: 0 26px 20px;
+}
+
+.summary mat-card mat-card-content .actions .user-checkout {
+    padding: 0;
+    color: #707070;
+}
+
+.summary mat-card mat-card-content .actions a, .summary mat-card mat-card-content .actions a:link, .summary mat-card mat-card-content .actions a:visited {
+    font-weight: 500;
+    color: #707070;
+    text-decoration: underline;
+    cursor: pointer;
+}

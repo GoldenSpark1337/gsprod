@@ -1,0 +1,19 @@
+<section class="categories-container">
+    <span class="category" [ngClass]="{'selected': !isToggle}" (click)="toggle($event)">All Categories</span>
+    
+    <span class="category" [ngClass]="{'selected': isToggle}" (click)="toggle($event)">
+        <i class="icon-arrow"></i>
+        Tracks
+    </span>
+    <span class="category" [ngClass]="{'selected': isToggle}" (click)="toggle($event)">
+        <i class="icon-arrow"></i>Musicians 
+    </span>
+    <span class="category" [ngClass]="{'selected': isToggle}" (click)="toggle($event)">
+        <i class="icon-arrow"></i>Playlists </span>
+    <span class="category" [ngClass]="{'selected': isToggle}" (click)="toggle($event)">
+        <i class="icon-arrow"></i>Sound Kits 
+    </span>
+    <span class="category" [ngClass]="{'selected': isToggle}" (click)="toggle($event)">
+        <i class="icon-arrow"></i>Services 
+    </span>
+</section>

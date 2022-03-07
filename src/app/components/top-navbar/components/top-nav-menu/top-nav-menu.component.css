@@ -14,3 +14,54 @@
         left: unset;
     }
 }
+
+nav {
+    display: flex;
+    padding: 20px 24px;
+}
+
+nav section {
+    margin-right: 20px;
+}
+
+nav section .title {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: #707070;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 400px;
+    list-style: none;
+}
+
+nav li {
+    margin-left: -8px;
+}
+
+nav li a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: 200px;
+    padding: 8px 16px 8px 8px;
+    font-size: 15px;
+}
+
+nav li a i {
+    margin-right: 16px;
+    font-size: 20px;
+    color: #707070;
+}
+
+nav li a span {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

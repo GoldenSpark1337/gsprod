@@ -1,0 +1,8 @@
+:host {
+    display: block;
+}
+
+::ng-deep .page-container {
+    -webkit-animation: fadein 1.5s;
+    animation: fadein 1.5s;
+}

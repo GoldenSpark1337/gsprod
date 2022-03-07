@@ -1,0 +1,36 @@
+:host {
+    display: block;
+}
+
+.categories-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.categories-container .category {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: .1px;
+    color: #b8b8b8;
+    margin: 8px 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.categories-container .selected {
+    font-weight: 500;
+    color: #fff;
+}
+
+.categories-container .category i {
+    visibility: hidden;
+    margin-right: 10px;
+    font-size: 12px;
+    transform: rotate(90deg);
+}
+
+.categories-container .selected i {
+    visibility: visible;
+    color: #fff;
+}

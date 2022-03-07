@@ -1,5 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, HostListener, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+import { IUser } from 'src/app/shared/models/user';
+import { ShopService } from 'src/app/shared/services/shop.service';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'gs-top-navbar',
@@ -36,7 +40,10 @@ export class TopNavbarComponent implements OnInit {
   };
   unreadMessages: number = 0;
   matBudgeCounter: number = this.user.cartTracks.length;
-  showHoverable: boolean = false;
+
+  isHoverable: boolean = false;
+  timer: any; 
+
   private _username: string = this.user.username;
   public get username(): string {
     return this._username;
@@ -53,15 +60,29 @@ export class TopNavbarComponent implements OnInit {
     this._userPlan = value;
   }
 
-  constructor(private _snackBarCard: MatSnackBar) { }
+  constructor(private _snackBarCard: MatSnackBar, private productService: ShopService) { }
 
   ngOnInit(): void {
-    
   }
+  
   openSnackBar(): void {
     let config = new MatSnackBarConfig();
     config.duration = 5000;
     this._snackBarCard.open("You have no items in your Cart", "OK", config);
+  }
+
+  timeout(show: boolean): void {
+    clearTimeout(this.timer);
+    this.isHoverable = show;
+  }
+
+  showHoverable(): void {
+    this.timer = setTimeout(() => {this.timeout(true)}, 500);
+  }
+
+  hideHoverable(): void {
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => {this.timeout(false)}, 500);
   }
 
   public get userCartTracks() {

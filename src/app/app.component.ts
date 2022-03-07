@@ -1,12 +1,20 @@
-import { Component, HostListener, ViewEncapsulation } from "@angular/core";
+import { Component, HostListener, OnInit, ViewEncapsulation } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "gs-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title:string = "gspark";
+
+  constructor() {
+
+  }
+
+  ngOnInit(): void {
+  }
 
   @HostListener("window:scroll", ["$event"])
     onWindowScroll() {

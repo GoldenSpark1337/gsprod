@@ -11,7 +11,7 @@ import { QuickStatsComponent } from './components/quick-stats/quick-stats.compon
 import { QuickStatsPanelsComponent } from "./components/quick-stats/components/quick-stats-panels/quick-stats-panels.component";
 
 const routes: Routes = [
-    { path: 'dashboard', component: DashboardComponent }
+    { path: '', component: DashboardComponent }
 ]
 
 @NgModule({

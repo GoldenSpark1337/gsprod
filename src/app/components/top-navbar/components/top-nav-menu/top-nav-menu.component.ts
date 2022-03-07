@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'gs-top-nav-menu',
@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-nav-menu.component.css']
 })
 export class TopNavMenuComponent implements OnInit {
-
+  @Output() onChanged = new EventEmitter<boolean>();
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  change(isHovered:any) {
+    this.onChanged.emit(isHovered);
+  }
 }

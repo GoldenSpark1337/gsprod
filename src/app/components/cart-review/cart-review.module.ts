@@ -7,6 +7,7 @@ import { CartReviewComponent } from './cart-review.component';
 import { MainHeaderComponent } from './components/main-header/main-header.component';
 import { ComponentContainerComponent } from './components/component-container/component-container.component';
 import { CartComponent } from './components/cart/cart.component';
+import { CartGroupComponent } from './components/cart/components/cart-group/cart-group.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [CartReviewComponent, MainHeaderComponent, ComponentContainerComponent, CartComponent],
+  declarations: [CartReviewComponent, MainHeaderComponent, ComponentContainerComponent, CartComponent, CartGroupComponent],
   imports: [
     CommonModule,
     MaterialModule,

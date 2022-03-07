@@ -1,0 +1,100 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+:host {
+    display: block;
+}
+
+.padding-container {
+    position: relative;
+    width: 100%;
+    padding: 0 15px 15px;
+    overflow: hidden;
+}
+
+@media (min-width: 480px) {
+    .padding-container {
+        padding: 0 24px 20px;
+    }
+}
+
+@media (min-width: 1348px) {
+    .padding-container {
+        padding: 0 0 30px;
+    }
+}
+
+.padding-container {
+    overflow: visible;
+}
+
+.max-width-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+}
+
+@media (min-width: 600px) {
+    .content {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .content {
+        width: 50%;
+    }
+}
+
+h1 {
+    padding: 10px 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.content .title, .content .title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 65px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    color: #fff;
+    letter-spacing: .2px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+    h1 {
+    font-size: 40px;
+    }
+}
+
+@media (min-width: 480px)
+{ .content .title, .title span {
+    font-size: 48px;
+}}
+
+@media (min-width: 600px)
+{ .content .title, .title span {
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: normal;
+    line-height: 1.03;
+    color: #fff;
+    letter-spacing: -.4px;
+}}
+
+@media (min-width: 1024px)
+{ .content .title, .content .title span {
+    padding-bottom: 0;
+}}
+
+@media (min-width: 1280px)
+{ .content .title .extra-title, .content .title > span .extra-title {
+    display: inline-block;
+}}
+
+
+
+
