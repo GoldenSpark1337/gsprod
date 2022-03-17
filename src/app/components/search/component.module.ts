@@ -6,11 +6,7 @@ import { ComponentComponent } from './component.component';
 import { RouterModule } from '@angular/router';
 import { LoaderComponent } from './components/loader/loader.component';
 import { SearchComponent } from './components/search/search.component';
-import { MainSearchComponent } from './components/main-search/main-search.component';
-import { ContainerGridComponent } from './components/main-search/components/container-grid/container-grid.component';
-import { SearchFiltersComponent } from './components/main-search/components/container-grid/search-filters/search-filters.component';
-import { CategoriesRadioGroupComponent } from './components/main-search/components/container-grid/search-filters/components/categories-radio-group/categories-radio-group.component';
-import { SearchHeaderComponent } from './components/main-search/components/container-grid/search-header/search-header.component';
+import { MainSearchModule } from './components/main-search/main-search.module';
 
 const routes = [
   {
@@ -19,12 +15,13 @@ const routes = [
 ]
 
 @NgModule({
-  declarations: [ComponentComponent, MainSearchComponent, LoaderComponent, SearchComponent, ContainerGridComponent, SearchFiltersComponent, CategoriesRadioGroupComponent, SearchHeaderComponent],
+  declarations: [ComponentComponent, LoaderComponent, SearchComponent],
   imports: [
     CommonModule,
     FormsModule,
     MaterialModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MainSearchModule
   ]
 })
 export class ComponentModule { }

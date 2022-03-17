@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from 'src/app/shared/models/product';
+import { IUser } from 'src/app/shared/models/user';
 import { ShopService } from 'src/app/shared/services/shop.service';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'gs-component',
@@ -9,15 +11,28 @@ import { ShopService } from 'src/app/shared/services/shop.service';
 })
 export class ComponentComponent implements OnInit {
   public products: IProduct[] = [];
-  constructor(private shopService: ShopService) { }
+  public users: IUser[] = [];
+  constructor(private shopService: ShopService, private userService: UserService) { }
 
   ngOnInit(): void {
+    this.getProducts();
+    this.getUsers();
+  }
+
+  getUsers(){
+    this.userService.getUsers().subscribe((response: IUser[]) => {
+      this.users = response;
+      console.log(this.users);
+    }, error => console.log(error));
+  }
+
+  getProducts() {
     this.shopService.getProducts().subscribe(
       (response: IProduct[]) => {
         this.products = response;
+        console.log(this.products);
       }, 
       error => 
         console.log(error));
   }
-
 }

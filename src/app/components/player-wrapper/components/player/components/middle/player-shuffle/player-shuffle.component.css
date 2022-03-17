@@ -1,0 +1,22 @@
+.btn-shuffle {
+    display: none;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+@media (min-width: 1024px) {
+    .btn-shuffle {
+        display: block;
+    } 
+}
+
+.btn-shuffle {
+    margin-right: 4px;
+}
+
+.btn-shuffle mat-icon {
+    position: relative;
+    top: 1px;
+    font-size: var(--mobile-shuffle-icon-size,18px);
+    color: var(--player-button-disable,#9f9f9f);
+}

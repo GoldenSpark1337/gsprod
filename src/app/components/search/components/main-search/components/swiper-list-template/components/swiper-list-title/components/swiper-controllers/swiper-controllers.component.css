@@ -1,0 +1,76 @@
+:host .wrapper-swiper-controller {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    :host .wrapper-swiper-controller {
+        display: flex;
+    }
+}
+
+:host .wrapper-swiper-controller ::ng-deep gs-square-button:last-child {
+    margin-left: 8px;
+}
+
+::ng-deep .vb-btn-secondary-icon-s button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 31px;
+    height: 31px;
+    cursor: pointer;
+    box-shadow: unset;
+}
+
+::ng-deep .vb-btn-secondary-icon-s a, 
+::ng-deep .vb-btn-secondary-icon-s a, 
+::ng-deep .vb-btn-secondary-icon-s button, 
+::ng-deep .vb-btn-secondary-icon-s button {
+    background-color: var(--gs-indigo);
+    padding: 10px;
+    border-radius: 50%;
+    border: 0 solid transparent;
+}
+
+::ng-deep .vb-btn-secondary-icon-s button .icon-arrow {
+    font-size: 20px;
+}
+
+::ng-deep .vb-btn-secondary-icon-s a:focus,  
+::ng-deep .vb-btn-secondary-icon-s a:focus, 
+::ng-deep .vb-btn-secondary-icon-s button:focus,  
+::ng-deep .vb-btn-secondary-icon-s button:focus {
+    /* background-color: var(--gs-pink); */
+    box-shadow: none;
+}
+
+@media (min-width: 1024px) {
+    ::ng-deep .vb-btn-secondary-icon-s a:active, ::ng-deep  .vb-btn-secondary-icon-s a:active, ::ng-deep .vb-btn-secondary-icon-s button:active, ::ng-deep  .vb-btn-secondary-icon-s button:active {
+        border: 0 solid transparent;
+        background-color: var(--gs-red-violet);
+        box-shadow: 0 0 0 3px var(--gs-dark-purple);
+    }
+}
+
+::ng-deep .vb-btn-secondary-icon-s.disabled a, 
+::ng-deep .vb-btn-secondary-icon-s.disabled a, 
+::ng-deep .vb-btn-secondary-icon-s.disabled button, 
+::ng-deep .vb-btn-secondary-icon-s.disabled button {
+    border: none;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #262626;
+}

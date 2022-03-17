@@ -1,0 +1,18 @@
+<div class="swiper-list-title offset">
+    <ng-content select=".title"></ng-content>
+    <div class="right-side-wrapper">
+        <a href="" class="show-more active">Show All</a>
+        <gs-swiper-controllers>
+            <gs-square-button class="btn-prev-tracks btn-swiper-controller previous vb-btn-secondary-icon-s vb-system">
+                <button class="action-element primary" mat-icon-button type="button" (click)="swipePrev()">
+                    <mat-icon class="icon-arrow">keyboard_arrow_left</mat-icon>
+                </button>
+            </gs-square-button>
+            <gs-square-button class="btn-next-tracks btn-swiper-controller next vb-btn-secondary-icon-s vb-system">
+                <button class="action-element primary" mat-icon-button type="button" (click)="swipeNext()">
+                    <mat-icon class="icon-arrow">keyboard_arrow_right</mat-icon>
+                </button>
+            </gs-square-button>
+        </gs-swiper-controllers>
+    </div>
+</div>

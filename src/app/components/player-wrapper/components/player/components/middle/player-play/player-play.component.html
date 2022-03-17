@@ -1,0 +1,7 @@
+<button class="btn-play-pause" *ngIf="!isPlaying">
+    <mat-icon class="icon-play-player" >play_circle_outline</mat-icon>
+</button>
+
+<button class="btn-play-pause" (click)="player.pause()" *ngIf="isPlaying">
+    <mat-icon class="icon-pause-player">pause_circle_outline</mat-icon>
+</button>

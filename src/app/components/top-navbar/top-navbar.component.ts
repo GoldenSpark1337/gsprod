@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, HostListener, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+import { Observable } from 'rxjs';
 import { IUser } from 'src/app/shared/models/user';
 import { ShopService } from 'src/app/shared/services/shop.service';
-import { UserService } from 'src/app/shared/services/user.service';
+import { AccountService } from 'src/app/shared/services/account.service';
 
 @Component({
   selector: 'gs-top-navbar',
@@ -12,6 +13,7 @@ import { UserService } from 'src/app/shared/services/user.service';
 })
 
 export class TopNavbarComponent implements OnInit {
+  currentUser$: Observable<IUser> = null;
   user = 
   {
     username: "Admin",
@@ -39,30 +41,16 @@ export class TopNavbarComponent implements OnInit {
     ]
   };
   unreadMessages: number = 0;
-  matBudgeCounter: number = this.user.cartTracks.length;
+  matBudgeCounter: number = 3;
 
   isHoverable: boolean = false;
-  timer: any; 
+  timer: any;
 
-  private _username: string = this.user.username;
-  public get username(): string {
-    return this._username;
-  }
-  public set username(value: string) {
-    this._username = value;
-  }
-
-  private _userPlan: string = this.user.userPlan;
-  public get userPlan(): string {
-    return this._userPlan;
-  }
-  public set userPlan(value: string) {
-    this._userPlan = value;
-  }
-
-  constructor(private _snackBarCard: MatSnackBar, private productService: ShopService) { }
+  constructor(private _snackBarCard: MatSnackBar, private productService: ShopService, public userService: AccountService) { }
 
   ngOnInit(): void {
+    this.currentUser$ = this.userService.currentUser$;
+    console.log(this.currentUser$);
   }
   
   openSnackBar(): void {
@@ -77,6 +65,7 @@ export class TopNavbarComponent implements OnInit {
   }
 
   showHoverable(): void {
+    console.log(this.currentUser$);
     this.timer = setTimeout(() => {this.timeout(true)}, 500);
   }
 
@@ -87,5 +76,10 @@ export class TopNavbarComponent implements OnInit {
 
   public get userCartTracks() {
     return this.user.cartTracks;
+  }
+
+  logout(){
+    console.log(this.userService.currentUser$)
+    this.userService.logout();
   }
 }

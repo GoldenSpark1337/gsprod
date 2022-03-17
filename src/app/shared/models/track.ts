@@ -3,6 +3,7 @@ export interface ITrack {
     title: string;
     user: string;
     artwork: string;
+    srcPath: string;
     price: number;
     releaseDate: Date;
     bpm: string;

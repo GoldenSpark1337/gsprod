@@ -1,0 +1,22 @@
+.btn-repeat {
+    display: none;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+@media (min-width: 1024px) {
+    .btn-repeat {
+        display: block;
+    }
+}
+
+.btn-repeat {
+    margin-left: 4px;
+}
+
+.btn-repeat mat-icon {
+    position: relative;
+    top: 1px;
+    font-size: var(--mobile-repeat-icon-size,18px);
+    color: var(--player-button-disable,#9f9f9f);
+}

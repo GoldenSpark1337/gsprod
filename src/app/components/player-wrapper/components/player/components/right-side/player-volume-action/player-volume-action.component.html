@@ -1,0 +1,11 @@
+<div class="player-volume">
+    <button mat-icon-button 
+        matTooltip="Mute" 
+        matTooltipPosition="above" 
+        matTooltipShowDelay="800"
+        (click)="changeVolume()">
+        <mat-icon class="icon-volume-high" *ngIf="value > 0">volume_up</mat-icon>
+        <mat-icon class="icon-volume-mute" *ngIf="value == 0">volume_off</mat-icon>
+    </button>
+    <mat-slider [(ngModel)]="value"></mat-slider>
+</div>

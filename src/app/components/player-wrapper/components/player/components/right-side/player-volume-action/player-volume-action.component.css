@@ -1,0 +1,79 @@
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.player-volume button {
+    margin-right: var(--volume-icon-margin-right-to-line,10px);
+}
+
+.player-volume button mat-icon {
+    font-size: var(--mobile-volume-icon-size,24px);
+    color: var(--player-volume-normal,var(--bs-white));
+}
+
+.player-volume .mat-slider-horizontal {
+    padding: 0;
+}
+
+.player-volume .mat-slider-horizontal {
+    min-width: 84px;
+    width: auto!important;
+}
+
+.mat-slider:not(.mat-slider-disabled):active, .mat-slider.mat-slider-sliding:not(.mat-slider-disabled) {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+}
+
+.player-volume ::ng-deep .mat-slider-horizontal .mat-slider-wrapper {
+    top: 16px;
+    right: 0;
+    left: -3px;
+    width: var(--player-volume-slider-width,84px);
+    height: 14px;
+    cursor: pointer;
+}
+
+.player-volume ::ng-deep .mat-slider-horizontal .mat-slider-wrapper .mat-slider-track-wrapper {
+    top: 7px;
+    height: var(--player-volume-fill-height,2px)!important;
+}
+
+.player-volume ::ng-deep .mat-slider-horizontal .mat-slider-wrapper .mat-slider-track-wrapper .mat-slider-track-background {
+    height: 2px;
+    background-color: transparent;
+}
+
+.player-volume ::ng-deep .mat-slider-horizontal .mat-slider-wrapper .mat-slider-track-wrapper .mat-slider-track-background {
+    background-color: var(--player-volume-fill-bg,#464646);
+}
+
+.player-volume ::ng-deep .mat-slider-horizontal .mat-slider-wrapper .mat-slider-track-wrapper .mat-slider-track-fill {
+    height: var(--player-volume-fill-height,2px);
+    background-color: var(--player-volume-fill,var(--white));
+}
+
+.player-volume ::ng-deep .mat-slider-horizontal .mat-slider-wrapper .mat-slider-ticks-container {
+    height: var(--player-volume-fill-height,2px);
+    top: 7px;
+}
+
+.player-volume ::ng-deep .mat-slider-horizontal .mat-slider-wrapper .mat-slider-thumb-container .mat-slider-thumb {
+    top: var(--player-slider-thumb,-9px);
+    background-color: var(--player-progress-bar-active,var(--white));
+    border: none;
+    transform: scale(0);
+}
+
+.player-volume ::ng-deep .mat-slider-horizontal .mat-slider-wrapper .mat-slider-thumb-container .mat-slider-thumb {
+    background-color: var(--player-volume-thumb,var(--white));
+    border: var(--player-volume-thumb-border,none);
+    box-shadow: var(--player-volume-thumb-shadow,unset);
+}
+
+.player-volume ::ng-deep .mat-slider-horizontal .mat-slider-wrapper:hover .mat-slider-thumb-container .mat-slider-thumb {
+    transform: scale(.8);
+}

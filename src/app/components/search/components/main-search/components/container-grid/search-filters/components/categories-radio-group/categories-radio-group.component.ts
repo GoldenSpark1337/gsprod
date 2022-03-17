@@ -1,5 +1,6 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Directive } from '@angular/core';
+import { Router, RouterLinkActive } from '@angular/router';
 
 @Directive({ selector: '[isolate]' })
   export class NameDirective {
@@ -21,7 +22,7 @@ export class CategoriesRadioGroupComponent implements OnInit {
   public set isToggle(value: boolean) {
     this._isToggle = value;
   }
-  constructor(private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -34,5 +35,11 @@ export class CategoriesRadioGroupComponent implements OnInit {
     this.renderer.addClass(event.target,"selected");
   }
   
-  
+  isSelected(toRoute: string): boolean {
+    return this.router.isActive(`/${toRoute}`, true);
+  }
+
+  navigateTo(toRoute: string) {
+    this.router.navigateByUrl(`/${toRoute}`);
+  }
 }

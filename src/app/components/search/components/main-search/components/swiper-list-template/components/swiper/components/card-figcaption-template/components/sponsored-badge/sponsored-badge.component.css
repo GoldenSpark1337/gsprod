@@ -1,0 +1,9 @@
+.sponsored-badge {
+    font-size: 9px;
+    letter-spacing: .4px;
+    line-height: 12px;
+    font-family: var(--font-primary);
+    font-weight: 500;
+    color: #9f9f9f;
+    text-transform: uppercase;
+}

@@ -1,4 +1,43 @@
-<ng-container >
-    <h1>Sign up!</h1>
-    <gs-header></gs-header>
-</ng-container>
+<gs-auth-wrapper>
+    <h1>Register</h1>
+    <div class="content">
+        <form #registerForm action="" (ngSubmit)="register()" autocomplete="off">
+            <div class="form-group">
+                <gs-text-input>
+                    <label for="input-1">Your username</label>
+                    <input type="text" placeHolder="Enter your display name" id="input-1" tabindex="1" name ="username"
+                        [(ngModel)]="model.username"/>
+                </gs-text-input>
+            </div>
+
+            <div class="form-group">
+                <gs-text-input>
+                    <label for="input-2">Your email adress</label>
+                    <input type="email" placeHolder="Enter your email" id="input-2" tabindex="2" name="email" 
+                        [(ngModel)]="model.email" />
+                </gs-text-input>
+            </div>
+
+            <div class="form-group">
+                <gs-text-input>
+                    <label for="input-3">Password</label>
+                    <input type="password" placeHolder="Enter your password" id="input-3" tabindex="3" name="password"
+                        [(ngModel)]="model.password" />
+                </gs-text-input>
+            </div>
+
+            <div class="form-group">
+                <gs-text-input>
+                    <label for="input-4">Confirm password</label>
+                    <input type="password" placeHolder="Confirm your password" id="input-4" tabindex="4" name="confirmpassword"
+                        [(ngModel)]="model.confirmpassword" />
+                </gs-text-input>
+            </div>
+
+            <gs-square-button class="btn-sign-up">
+                <button type="submit" class="action-element primary">Create account</button>
+            </gs-square-button>
+            
+        </form>
+    </div>
+</gs-auth-wrapper>

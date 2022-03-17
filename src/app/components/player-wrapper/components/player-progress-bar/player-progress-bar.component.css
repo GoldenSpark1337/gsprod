@@ -1,0 +1,105 @@
+:host {
+    position: absolute;
+    top: -16px;
+    z-index: 10000;
+    display: block;
+    width: 100%;
+    max-width: var(--player-max-width,1300px);
+    height: 20px;
+    margin: 0 auto;
+}
+
+.progress-bar-player ::ng-deep .mat-slider-horizontal {
+    padding: 0;
+}
+
+.progress-bar-player ::ng-deep .mat-slider-horizontal {
+    width: 100%;
+    height: 20px;
+}
+
+.progress-bar-player ::ng-deep .mat-slider-horizontal .mat-slider-wrapper {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 25px;
+    cursor: pointer;
+}
+
+.progress-bar-player ::ng-deep .mat-slider-horizontal .mat-slider-wrapper {
+    top: var(--player-progress-slider-position,0);
+}
+
+.progress-bar-player ::ng-deep .mat-slider-horizontal .mat-slider-wrapper .mat-slider-track-wrapper {
+    top: var(--player-slider-wrapper-top,10px);
+    height: 2px;
+}
+
+.progress-bar-player ::ng-deep .mat-slider-horizontal .mat-slider-wrapper .mat-slider-track-wrapper {
+    height: var(--player-progress-bar-height,2px);
+}
+
+.progress-bar-player ::ng-deep .mat-slider-horizontal .mat-slider-wrapper .mat-slider-track-wrapper .mat-slider-track-background {
+    height: 2px;
+}
+
+.progress-bar-player ::ng-deep .mat-slider-horizontal .mat-slider-wrapper .mat-slider-track-wrapper .mat-slider-track-background {
+    background-color: transparent;
+}
+
+.progress-bar-player ::ng-deep .mat-slider-horizontal .mat-slider-wrapper .mat-slider-track-wrapper .mat-slider-track-fill {
+    background-color: var(--player-progress-bar-line-bg-active,var(--white));
+    height: var(--player-progress-bar-height,2px);
+}
+
+.progress-bar-player ::ng-deep .mat-slider-horizontal .mat-slider-wrapper .mat-slider-ticks-container {
+    top: 10px;
+}
+
+.progress-bar-player ::ng-deep .mat-slider-horizontal .mat-slider-wrapper .mat-slider-thumb-container {
+    top: 12px;
+}
+
+.progress-bar-player ::ng-deep .mat-slider-horizontal .mat-slider-wrapper .mat-slider-thumb-container .mat-slider-thumb {
+    top: var(--player-slider-thumb,-11px);
+    background-color: var(--player-progress-bar-active,var(--white));
+    border: none;
+    transform: scale(0);
+}
+
+.progress-bar-player ::ng-deep .mat-slider-horizontal .mat-slider-wrapper .mat-slider-thumb-container .mat-slider-thumb {
+    box-shadow: var(--player-progress-bar-thumb-shadow,unset);
+    border: var(--player-progress-bar-circle-border,none);
+}
+
+.progress-bar-player ::ng-deep .mat-slider-horizontal .mat-slider-wrapper:hover .mat-slider-thumb-container .mat-slider-thumb {
+    transform: scale(.8);
+}
+
+.tooltip {
+    position: absolute;
+    top: -16px;
+    display: none;
+    height: 16px;
+    padding: var(--player-progress-tooltip-padding,0 5px);
+    margin-left: -15px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--player-progress-bar-tooltip,var(--white));
+    text-align: center;
+    background-color: var(--player-progress-bar-tooltip-bg,#1b1b1b);
+    border-radius: 3px;
+    box-shadow: 0 0 1px 0 var(--player-progress-bar-tooltip-shadow,#9f9f9f);
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+
+@media (min-width: 1024px) {
+    .tooltip {
+        display: block;
+    }
+}
+
+.player-container:hover .tooltip {
+    opacity: .9!important;
+}

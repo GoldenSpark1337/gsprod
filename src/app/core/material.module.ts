@@ -7,6 +7,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatSliderModule} from '@angular/material/slider';
 
 const materials = [
     MatButtonModule,
@@ -16,7 +19,10 @@ const materials = [
     MatSnackBarModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule,
+    MatTooltipModule,
+    MatSliderModule
 ]
 
 @NgModule({

@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit, ViewEncapsulation } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { IUser } from "./shared/models/user";
+import { AccountService } from "./shared/services/account.service";
 
 @Component({
   selector: "gs-root",
@@ -9,11 +10,18 @@ import { HttpClient } from "@angular/common/http";
 export class AppComponent implements OnInit {
   title:string = "gspark";
 
-  constructor() {
+  play: boolean = false; // TODO: make service for player 
+  constructor(private userService: AccountService) {
 
   }
 
   ngOnInit(): void {
+    this.setCurrentUser()
+  }
+
+  setCurrentUser() {
+    const user: IUser = JSON.parse(localStorage.getItem("user"));
+    this.userService.setCurrentUser(user);
   }
 
   @HostListener("window:scroll", ["$event"])

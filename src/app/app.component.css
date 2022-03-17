@@ -15,6 +15,13 @@
     position: relative;
 }
 
+@media (min-width: 1280px) {
+    .app-content.normal.player-opened {
+        min-height: calc(var(--vh, 1vh) * 100 - 104px - 70px);
+        padding-bottom: 70px;
+    }
+}
+
 .app-content {
     background-color: #14002E;
 }
@@ -43,6 +50,14 @@
     ::ng-deep .small-top-nav .bottom {
         display: none!important;
     }
+}
+
+gs-player-wrapper {
+    visibility: hidden;
+}
+
+gs-player-wrapper.player-opened {
+    visibility: visible;
 }
 
 ::ng-deep html::-webkit-scrollbar {

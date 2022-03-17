@@ -1,0 +1,146 @@
+::ng-deep .mat-dialog-container {
+    max-width: 100%;
+    overflow-x: hidden;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+::ng-deep .mat-dialog-container {
+    max-width: 100%!important;
+    width: 100%!important;
+    padding: 0;
+    overflow: hidden;
+    color: var(--white);
+    background-color: transparent;
+}
+
+@media (min-width: 1400px) {
+    :host {
+        display: grid;
+        justify-content: center;
+        row-gap: 64px;
+        -moz-column-gap: 32px;
+        column-gap: 32px;
+        padding: 0 32px;
+        grid-template-columns: repeat(12,84px);
+        -moz-column-width: 84px;
+        column-width: 84px;
+    }
+}
+
+@media (min-width: 1024px) {
+    :host >.vb-col-lg-span-f3-t8 {
+        grid-column: 3/span 8;
+        display: block;
+    }
+}
+
+:host .wrapper-full-screen-dialog {
+    position: relative;
+    height: calc(var(--vh, 1vh) * 100);
+    overflow: hidden;
+    color: var(--bs-fi-primary);
+    background-color: var(--gs-black);
+    border-radius: 12px;
+}
+
+@media (min-width: 480px) {
+    :host .wrapper-full-screen-dialog {
+        height: 100%;
+        max-height: calc(var(--vh, 1vh) * 90);
+        padding-bottom: unset;
+        background-color: #1a1a1a;
+    }
+}
+
+@media (min-width: 960px) {
+    :host .wrapper-full-screen-dialog {
+        height: 100%;
+        max-height: calc(var(--vh, 1vh) * 80);
+    }
+}
+
+:host .wrapper-full-screen-dialog .header-container {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #141414;
+    border-bottom: 0.5px solid var(--bs-outline-silent);
+}
+
+@media (min-width: 480px) {
+    :host .wrapper-full-screen-dialog .header-container {
+        background-color: transparent;
+        border-bottom: 0.5px solid transparent;
+    }
+}
+
+@media (min-width: 768px) {
+    :host .wrapper-full-screen-dialog .header-container {
+        padding: 24px;
+    }
+}
+
+@media (min-width: 1024px) {
+    :host .wrapper-full-screen-dialog .header-container {
+        padding: 32px;
+    }
+}
+
+@media (min-width: 1024px) {
+    :host .wrapper-full-screen-dialog .header-container .header-title {
+        font-size: 28px;
+        letter-spacing: -.2px;
+        line-height: 36px;
+        font-family: var(--font-primary);
+        font-weight: 500;
+        text-transform: none;
+        color: var(--bs-fi-primary);
+        padding: 0;
+        margin: 0;
+    }
+}
+
+:host .wrapper-full-screen-dialog .header-container .close-button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+    cursor: pointer;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 26px;
+    font-family: var(--font-primary);
+    font-weight: 500;
+    text-transform: none;
+    color: var(--bs-fi-primary);
+}
+
+@media (min-width: 1024px) {
+    :host .wrapper-full-screen-dialog .header-container .close-button {
+        font-size: 28px;
+        letter-spacing: -.2px;
+        line-height: 36px;
+        font-family: var(--font-primary);
+        font-weight: 500;
+        text-transform: none;
+        color: var(--bs-fi-primary);
+    }
+}
+
+@media (min-width: 1024px) {
+    :host .wrapper-full-screen-dialog .header-container .close-button mat-icon.close-icon {
+        font-size: 40px;
+        width: auto;
+        height: auto;
+    }
+}

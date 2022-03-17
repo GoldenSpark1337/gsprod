@@ -1,0 +1,25 @@
+img {
+    max-width: 100%;
+}
+
+:host img.medium {
+    display: none;
+    width: var(--player-medium-image-height,58px);
+    max-width: var(--player-medium-image-height,58px);
+    height: var(--player-medium-image-height,58px);
+}
+
+@media (min-width: 1024px) {
+    :host img.medium {
+        width: var(--player-medium-image-height-desktop,55px);
+        max-width: var(--player-medium-image-height-desktop,55px);
+        height: var(--player-medium-image-height-desktop,55px);
+        border-radius: 3px;
+    }
+}
+
+@media (min-width: 480px) {
+    :host img.medium {
+        display: block;
+    }
+}

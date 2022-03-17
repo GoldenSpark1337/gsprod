@@ -9,3 +9,7 @@
         padding-left: 0!important;
     }
 }
+
+.swiper-list:not(::ng-deep :last-child) {
+    margin-bottom: 48px;
+}

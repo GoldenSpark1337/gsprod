@@ -1,0 +1,109 @@
+:host {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+@media (min-width: 769px) {
+    :host .vb-list-view-buy-button.btn-text {
+    display: flex;
+    }
+}
+
+a, a, button, button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: unset;
+    height: unset;
+    cursor: pointer;
+    box-shadow: unset;
+}
+
+::ng-deep .vb-btn-primary-text-s a, 
+::ng-deep .vb-btn-primary-text-s a, 
+::ng-deep .vb-btn-primary-text-s button, 
+::ng-deep .vb-btn-primary-text-s button {
+    background-color: var(--gs-blue);
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 0 solid transparent;
+}
+
+::ng-deep .vb-btn-primary-text-s a, 
+::ng-deep .vb-btn-primary-text-s a, 
+::ng-deep .vb-btn-primary-text-s .in-cart, 
+::ng-deep .vb-btn-primary-text-s .in-cart{
+    background-color: #262626;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 0 solid transparent;
+}
+
+::ng-deep .vb-btn-primary-text-s a mat-icon, 
+::ng-deep .vb-btn-primary-text-s a mat-icon, 
+::ng-deep .vb-btn-primary-text-s button mat-icon, 
+::ng-deep .vb-btn-primary-text-s button mat-icon {
+    letter-spacing: 0!important;
+    line-height: 25px;
+}
+
+::ng-deep .vb-btn-primary-text-s a mat-icon:not(:last-child), 
+::ng-deep .vb-btn-primary-text-s a mat-icon:not(:last-child), 
+::ng-deep .vb-btn-primary-text-s button mat-icon:not(:last-child), 
+::ng-deep .vb-btn-primary-text-s button mat-icon:not(:last-child) {
+    font-size: 15px;
+    margin-right: 4px;
+}
+
+::ng-deep .vb-btn-primary-text-s a span, 
+::ng-deep .vb-btn-primary-text-s a span, 
+::ng-deep .vb-btn-primary-text-s button span, 
+::ng-deep .vb-btn-primary-text-s button span {
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 18px;
+    font-family: var(--font-primary);
+    font-weight: 500;
+    text-transform: none;
+    color: var(--bs-fi-inverted-interactive);
+}
+::ng-deep .vb-btn-primary-text-s a span, 
+::ng-deep .vb-btn-primary-text-s a span, 
+::ng-deep .vb-btn-primary-text-s button span, 
+::ng-deep .vb-btn-primary-text-s button span {
+    white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+    ::ng-deep .vb-btn-primary-text-s a:hover, 
+    ::ng-deep .vb-btn-primary-text-s a:hover, 
+    ::ng-deep .vb-btn-primary-text-s button:hover, 
+    ::ng-deep .vb-btn-primary-text-s button:hover {
+        border: 0 solid transparent;
+        background-color: var(--gs-light-blue);
+    }
+}
+
+@media (min-width: 1024px) {
+    ::ng-deep .vb-btn-primary-text-s a:hover, 
+    ::ng-deep .vb-btn-primary-text-s a:hover, 
+    ::ng-deep .vb-btn-primary-text-s .in-cart:hover,
+    ::ng-deep .vb-btn-primary-text-s .in-cart:hover {
+        border: 0 solid transparent;
+        background-color: #383838;
+    }
+}

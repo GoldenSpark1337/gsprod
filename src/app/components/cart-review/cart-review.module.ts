@@ -11,7 +11,7 @@ import { CartGroupComponent } from './components/cart/components/cart-group/cart
 
 const routes: Routes = [
   {
-    path: "checkout", component: CartReviewComponent
+    path: '', component: CartReviewComponent
   }
 ];
 
