@@ -24,6 +24,12 @@
     }
 }
 
+@media (min-width: 1280px) {
+    ::ng-deep .small-top-nav .search-results gs-search-header-template.search-header, ::ng-deep .small-top-nav .search-results gs-search-header.search-header {
+        top: calc(70px + var(--notice-banner-height, 0px) + 0px);
+    }
+}
+
 .header-container .overflow-content {
     display: none;
 }
@@ -33,7 +39,7 @@
         display: block;
         position: absolute;
         width: 40px;
-        right: -40px;
+        right: -43px;
         z-index: 1002;
         background: #c6008985;
         top: 0;

@@ -1,55 +1,55 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainSearchComponent } from './main-search.component';
-import { ContainerGridComponent } from './components/container-grid/container-grid.component';
-import { SwiperListTracksComponent } from './components/swiper-list-tracks/swiper-list-tracks.component';
-import { SwiperListTemplateComponent } from './components/swiper-list-template/swiper-list-template.component';
-import { SwiperListTitleComponent } from './components/swiper-list-template/components/swiper-list-title/swiper-list-title.component';
-import { SwiperComponent } from './components/swiper-list-template/components/swiper/swiper.component';
-import { SwiperControllersComponent } from './components/swiper-list-template/components/swiper-list-title/components/swiper-controllers/swiper-controllers.component';
 import { SearchHeaderComponent } from './components/container-grid/search-header/search-header.component';
-import { SearchFiltersComponent } from './components/container-grid/search-filters/search-filters.component';
-import { CategoriesRadioGroupComponent } from './components/container-grid/search-filters/components/categories-radio-group/categories-radio-group.component';
 import { MaterialModule } from 'src/app/core/material.module';
 import { MatIconModule } from '@angular/material/icon';
-import { SwiperModule } from 'swiper/angular';
-import { CardFigureTrackComponent } from './components/swiper-list-template/components/swiper/components/card-figure-track/card-figure-track.component';
-import { CardFigureTemplateComponent } from './components/swiper-list-template/components/swiper/components/card-figure-template/card-figure-template.component';
-import { CardFigcaptionTemplateComponent } from './components/swiper-list-template/components/swiper/components/card-figcaption-template/card-figcaption-template.component';
-import { CaptionFigureTemplateComponent } from './components/swiper-list-template/components/swiper/components/card-figcaption-template/components/caption-figure-template/caption-figure-template.component';
-import { SponsoredBadgeComponent } from './components/swiper-list-template/components/swiper/components/card-figcaption-template/components/sponsored-badge/sponsored-badge.component';
-import { ButtonPlayTrackComponent } from './components/swiper-list-template/components/swiper/components/button-play-track/button-play-track.component'
 import { SquareButtonModule } from 'src/app/shared/modules/square-button/square-button.module';
 import { RouterModule } from '@angular/router';
-
+import { BuyCardFigureTemplateModule } from 'src/app/shared/modules/btn-buy-from-track/components/buy-card-figure-template/buy-card-figure-template.module';
+import { SwiperModule } from 'ngx-swiper-wrapper';
+import { SwiperListMembersComponent } from './components/members/swiper-list-members/swiper-list-members.component';
+import { CardFigureMemeberComponent } from './components/members/components/card-figure-memeber/card-figure-memeber.component';
+import { CardFigureTemplateCarouselComponent } from './components/members/components/card-figure-template-carousel/card-figure-template-carousel.component';
+import { CardFigcaptionTemplateCarouselComponent } from './components/members/components/card-figcaption-template-carousel/card-figcaption-template-carousel.component';
+import { CaptionFigureTemplateModule } from 'src/app/shared/modules/caption-figure-template/caption-figure-template.module';
+import { SwiperListTracksModule } from './components/swiper-list-tracks/swiper-list-tracks.module';
+import { SwiperListTemplateModule } from './components/swiper-list-template/swiper-list-template.module';
+import { SwiperListTitleModule } from './components/swiper-list-template/components/swiper-list-title/swiper-list-title.module';
+import { SwiperControllersModule } from './components/swiper-list-template/components/swiper-list-title/components/swiper-controllers/swiper-controllers.module';
+import { AppSwiperModule } from './components/swiper-list-template/components/swiper/swiper.module';
+import { CardFigureTrackModule } from './components/swiper-list-template/components/swiper/components/card-figure-track/card-figure-track.module';
+import { SwiperListSoundKitsModule } from './components/kits/swiper-list-sound-kits/swiper-list-sound-kits.module';
+import { SwiperListVstsModule } from './components/vsts/swiper-list-vsts/swiper-list-vsts.module';
+import { SearchFiltersModule } from './components/container-grid/search-filters/search-filters.module';
+import { ContainerGridModule } from './components/container-grid/container-grid.module';
 
 
 @NgModule({
   declarations: [
     MainSearchComponent,
-    ContainerGridComponent,
     SearchHeaderComponent,
-    SearchFiltersComponent,
-    CategoriesRadioGroupComponent,
-    SwiperListTracksComponent, 
-    SwiperListTemplateComponent, 
-    SwiperListTitleComponent, 
-    SwiperComponent, 
-    SwiperControllersComponent, 
-    CardFigureTrackComponent, 
-    CardFigureTemplateComponent, 
-    CardFigcaptionTemplateComponent, 
-    CaptionFigureTemplateComponent, 
-    SponsoredBadgeComponent, 
-    ButtonPlayTrackComponent
+    SwiperListMembersComponent, CardFigureMemeberComponent, CardFigureTemplateCarouselComponent, CardFigcaptionTemplateCarouselComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
     MatIconModule,
-    SwiperModule,
+    ContainerGridModule,
     SquareButtonModule,
-    RouterModule
+    RouterModule,
+    BuyCardFigureTemplateModule,
+    SwiperModule,
+    CaptionFigureTemplateModule,
+    SwiperListTemplateModule,
+    SearchFiltersModule,
+    SwiperListTitleModule,
+    SwiperListTracksModule,
+    SwiperControllersModule,
+    AppSwiperModule,
+    CardFigureTrackModule,
+    SwiperListSoundKitsModule,
+    SwiperListVstsModule
   ],
   exports: [
     MainSearchComponent

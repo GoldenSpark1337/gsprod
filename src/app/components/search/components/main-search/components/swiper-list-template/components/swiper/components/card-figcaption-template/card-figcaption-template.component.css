@@ -1,0 +1,82 @@
+:host {
+    display: grid;
+}
+
+.grid-item:host, .grid-item :host {
+    grid-template-columns: minmax(0,1fr);
+    grid-template-rows: repeat(3,auto);
+    grid-row-gap: 4px;
+    grid-template-areas:
+        "extra-info"
+        "item-title"
+        "item-subtitle";
+}
+
+:host .item-title {
+    grid-area: item-title;
+}
+
+:host .fit-parent ::ng-deep, .fit-parent :host {
+    width: 100%;
+}
+
+:host .item-subtitle {
+    grid-area: item-subtitle;
+}
+
+:host .extra-info, :host .item-subtitle {
+    display: flex;
+    align-items: center;
+}
+
+:host .extra-info {
+    grid-area: extra-info;
+}
+
+:host .extra-info, :host .item-subtitle {
+    display: flex;
+    align-items: center;
+}
+
+.grid-item:host .extra-info, .grid-item :host .extra-info {
+    display: grid;
+    row-gap: 0;
+    -moz-column-gap: 0;
+    column-gap: 0;
+    grid-template-columns: repeat(auto-fit,minmax(0,-webkit-max-content));
+    grid-template-columns: repeat(auto-fit,minmax(0,max-content));
+    grid-template-rows: 1fr;
+}
+
+.grid-item:host .extra-info:not(:empty), .grid-item :host .extra-info:not(:empty) {
+    height: 20px;
+}
+
+:host .--bs-fi-secondary ::ng-deep .name, .--bs-fi-secondary :host .name {
+    color: #9f9f9f!important;
+}
+
+gs-buy-card-figure-template > span.blue-label {
+ cursor: pointer !important;
+ font-size: 14px;
+ letter-spacing: .1px;
+ line-height: 20px;
+ font-weight: 500;
+ text-transform: none;
+ color: var(--gs-light-blue);
+ white-space: nowrap;
+ text-overflow: ellipsis;
+ overflow: hidden;
+}
+
+.grid-item:host .extra-info >:not(:first-child):before, .grid-item :host .extra-info >:not(:first-child):before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    margin-right: 4px;
+    margin-left: 4px;
+    border-radius: 50%;
+    background-color: #9f9f9f;
+    flex-shrink: 0;
+    display: inline-block;
+}

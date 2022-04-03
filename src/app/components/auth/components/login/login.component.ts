@@ -1,4 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { MatSnackBar, MatSnackBarConfig } from "@angular/material/snack-bar";
 import { AccountService } from "src/app/shared/services/account.service";
 
 @Component({
@@ -7,13 +9,30 @@ import { AccountService } from "src/app/shared/services/account.service";
     styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent {
+export class LoginComponent implements OnInit {
     model: any = {};
+    loginForm: FormGroup;
 
+    constructor(private userService: AccountService, private snackBar: MatSnackBar) {}
 
-    constructor(private userService: AccountService) {}
+    ngOnInit(): void {
+        this.createLoginForm();
+    }
+
+    createLoginForm() {
+        this.loginForm = new FormGroup({
+            email: new FormControl('', [Validators.required, Validators.email]),
+            password: new FormControl('', Validators.required)
+        });
+    }
 
     login() {
-        this.userService.login(this.model).subscribe(responsee => console.log(responsee));
+        this.userService.login(this.loginForm.value).subscribe(responsee => {
+            console.log(responsee)
+        }, error => {
+            let config = new MatSnackBarConfig();
+            config.duration = 8000;
+            this.snackBar.open("Username or password is incorrect", "OK", config);
+        });
     }
 }

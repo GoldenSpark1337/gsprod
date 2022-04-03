@@ -1,25 +1,12 @@
 <gs-auth-wrapper>
     <h1>Login</h1>
     <div class="content">
-        <form autocomplete="off" (ngSubmit)="login()">
-            <div class="form-group">
-                <gs-text-input>
-                    <label for="input-1">Email</label>
-                    <input type="text" placeHolder="Enter your email" id="input-1" tabindex="1" name="email"
-                        [(ngModel)]="model.email" />
-                </gs-text-input>
-            </div>
-
-            <div class="form-group">
-                <gs-text-input>
-                    <label for="input-2">Password</label>
-                    <input type="password" placeHolder="Enter your password" id="input-2" tabindex="2" name="password"
-                        [(ngModel)]="model.password" />
-                </gs-text-input>
-            </div>
+        <form autocomplete="off" (ngSubmit)="login()" [formGroup]="loginForm">
+            <gs-text-input formControlName="email" [label]="'Email'"></gs-text-input>
+            <gs-text-input formControlName="password" [label]="'Password'" [type]="'Password'"></gs-text-input>
             
             <gs-square-button class="btn-login">
-                <button type="submit" class="action-element primary">Login</button>
+                <button type="submit" class="action-element primary" [disabled]="loginForm.invalid">Login</button>
             </gs-square-button>
         </form>
     </div>

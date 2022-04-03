@@ -1,0 +1,14 @@
+<figure class="card-figure">
+    <div class="thumbnail-group">
+        <div class="hover-thumbnail-group">
+            <div class="hover-section"></div>
+        </div>
+        <a routerLink="/users/{{product.username}}" class="figure-data">
+            <div class="shadow-overlay circle"></div>
+            <img [src]="product.image" alt="Profile picture" class="figure-image circle">
+        </a>
+    </div>
+    <figcaption>
+        <gs-card-figcaption-template-carousel [product]="product" class="figcaption-member-template grid-item"></gs-card-figcaption-template-carousel>
+    </figcaption>
+</figure>

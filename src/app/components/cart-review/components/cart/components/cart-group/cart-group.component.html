@@ -1,15 +1,58 @@
-<div class="cart-group">
-  <div class="group">
-    <div class="musician">
-      <div class="avatar">
-        <img src="" alt="">
-      </div>
-      <div class="totals">
-        <span></span>
+<ng-container *ngIf="(cart$ | async) as cart">
+  <ng-container >
+    <div class="cart-group">
+      <div class="group">
+        <div class="musician">
+          <div class="avatar">
+            <img [src]="user.image || 'assets/img/user_undefined.jpg'" alt="Product avatar">
+            <div class="name" routerLink="/users/{{group.key}}">
+              {{group.key}}
+            </div>
+          </div>
+          <div class="totals">
+            <span></span>
+          </div>
+        </div>
+        <div class="products-title">
+          <p class="product">ITEM</p>
+          <p class="price">PRICE</p>
+        </div>
+          <ng-container *ngFor="let item of group.value">
+            <mat-card>
+              <mat-card-content>
+                  <div class="item">
+                    <div class="left">
+                      <div class="avatar">
+                        <img [src]="item.image" alt="Item Image">
+                        <div class="info">
+                          <a routerLink="/{{item.type | lowercase}}/{{item.id}}" class="title">{{item.title}}</a>
+                          <div class="product-type">
+                            <p>{{item.type}}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <gs-button-play-item class="btn-play"></gs-button-play-item>
+                    </div>
+                    <div class="right">
+                      <div class="price">
+                        <span>{{item.price | currency}}</span>
+                      </div>
+                      <div class="actions">
+                        <div class="btn-remove-container">
+                          <gs-round-button class="btn-remove">
+                            <button class="ripple" (click)="removeItemFromCart()">
+                              <mat-icon class="icon-close">close</mat-icon>
+                            </button>
+                          </gs-round-button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </mat-card-content>
+            </mat-card>
+          </ng-container>
+        <div class="coupon-deals-container"></div>
       </div>
     </div>
-    <div class="products-title"></div>
-    <mat-card></mat-card>
-    <div class="coupon-deals-container"></div>
-  </div>
-</div>
+  </ng-container>
+</ng-container>

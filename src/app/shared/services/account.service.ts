@@ -18,23 +18,6 @@ export class AccountService {
     return this.http.get<IUser>(this.baseUrl);
   }
 
-  // getCurrentUserValue() {
-  //   return this.currentUserSource.;
-  // }
-
-  // loadCurrentUser(token: string) {
-  //   let headers = new HttpHeaders();
-  //   headers = headers.set("Authorization", `Bearer ${token}`);
-  //   return this.http.get(this.baseUrl + "", {headers}).pipe(
-  //     map((user: IUser) => {
-  //       if (user) {
-  //         localStorage.setItem("token", user.token);
-  //         this.currentUserSource.next(user);
-  //       }
-  //     })
-  //   );
-  // }
-
   login(model: any) {
     return this.http.post(this.baseUrl + "/login", model).pipe(
       map((response: IUser) => {
@@ -55,6 +38,7 @@ export class AccountService {
         if (user) {
           localStorage.setItem("user", JSON.stringify(user));
           this.currentUserSource.next(user);
+          this.route.navigateByUrl("/");
           return user;
         }
         return user;

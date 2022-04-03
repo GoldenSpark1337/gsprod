@@ -35,6 +35,12 @@
 }
 }
 
+@media (min-width: 1280px) {
+    ::ng-deep .small-top-nav gs-search-filters.search-filters-container, .small-top-nav gs-search-template-filters.search-filters-container {
+        top: calc(70px + var(--notice-banner-height, 0px) + 0px);
+    }
+}
+
 @media (min-width: 1024px) {
     .search-filters-container-inner {
         display: flex;
@@ -107,7 +113,7 @@
     margin-bottom: 32px;
 }
 
-.search-filters-container-inner .search-filters .categories-title {
+.search-filters-container-inner .search-filters ::ng-deep .categories-title {
     margin-top: 16px;
     font-size: 18px;
     letter-spacing: 0;

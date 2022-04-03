@@ -1,0 +1,58 @@
+@import url("~@uppy/core/dist/style.min.css");
+@import url("~@uppy/drag-drop/dist/style.min.css");
+
+::ng-deep .upload-button-dialog .mat-dialog-container {
+    padding: 0 !important;
+}
+
+::ng-deep mat-dialog-content {
+    height: auto;
+    max-height: calc(var(--vh, 1vh) * 100)!important;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+::ng-deep .mat-dialog-container {
+    position: relative;
+    max-width: 90vw !important;
+    color: #fff;
+    background-color: var(--gs-black);
+    border-radius: 5px !important;
+}
+
+.dialog-nav-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content {
+    display: block;
+    flex: 1;
+    width: calc(100% - 60px);
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    height: calc(var(--vh, 1vh) * 100);
+    max-height: calc(var(--vh, 1vh) * 100);
+}
+
+@media (min-width: 480px) {
+    .step {
+        width: 80vw;
+        min-width: 280px;
+        max-width: calc(80vw - 60px);
+        height: 100%;
+        min-height: 420px;
+        max-height: 540px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .step {
+        width: 600px;
+        max-width: unset;
+    }
+}

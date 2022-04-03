@@ -1,0 +1,16 @@
+<div class="item-title">
+    <div class="inline-flex fit-parent justify-c-center">
+        <div class="wrapper flex">
+            <gs-caption-figure-template class="fit-parent s-line text-m-loud center">
+                <a routerLink="/users/{{product.username}}" class="name" *ngIf="product.username">{{product.username}}</a>
+            </gs-caption-figure-template>
+        </div>
+    </div>
+</div>
+<div class="item-subtitle">
+    <gs-caption-figure-template class="s-line fit-parent text-s-silent center">
+        <a class="name" *ngIf="product.recordLabel">{{product.recordLabel}}</a>
+    </gs-caption-figure-template>
+</div>
+<div class="extra-info"></div>
+<div class="description"></div>

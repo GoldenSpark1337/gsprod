@@ -1,0 +1,18 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+hr {
+    border: none;
+    margin: unset;
+    background-color: unset;
+    height: 0;
+}
+
+::ng-deep .vb-h-line-solid-silent-regular hr, 
+::ng-deep .vb-h-line-solid-silent-regular hr {
+    height: 1px;
+    background-color: #383838;
+}
+

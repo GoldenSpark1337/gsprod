@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/shared/services/product.service';
 
 @Component({
   selector: 'gs-card-figure-template',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-figure-template.component.css']
 })
 export class CardFigureTemplateComponent implements OnInit {
-
-  constructor() { }
+  @Input() product!: any;
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
   }
-
 }

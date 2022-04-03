@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ShopService } from 'src/app/shared/services/shop.service';
+import { Observable } from 'rxjs';
+import { ITrack } from 'src/app/shared/models/track';
+import { ProductService } from 'src/app/shared/services/product.service';
+import { TrackService } from 'src/app/shared/services/track.service';
 
 @Component({
   selector: 'gs-main-search',
@@ -7,10 +10,12 @@ import { ShopService } from 'src/app/shared/services/shop.service';
   styleUrls: ['./main-search.component.css']
 })
 export class MainSearchComponent implements OnInit {
+  tracks$: Observable<ITrack[]>;
 
-  constructor(products: ShopService) { }
+  constructor(private trackService: TrackService, private productService: ProductService) { }
 
   ngOnInit(): void {
+    this.tracks$ = this.trackService.getTracks();
   }
 
 }

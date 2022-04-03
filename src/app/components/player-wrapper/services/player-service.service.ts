@@ -33,7 +33,7 @@ export class PlayerService implements OnInit{
     this.durationTime = undefined;
     this.audio.pause();
 
-    this.player.nativeElement.src = track.srcPath;
+    this.player.nativeElement.src = track.file;
     this.player.nativeElement.load();
     this.player.nativeElement.play();
     this.activeSong = track;
@@ -119,12 +119,12 @@ export class PlayerService implements OnInit{
     this.durationTime = undefined;
   }
 
-  getListOfSongs(): ITrack[] {
+  getListOfSongs(): any[] {
     return [
       {
         id: 1,
         title: 'Evanescence-Bring Me To Life(with lyrics).mp3',
-        artwork: 'https://cdn5.beatstars.com/eyJidWNrZXQiOiJidHMtY29udGVudCIsImtleSI6InVzZXJzL3Byb2QvMjAxMDIxL2ltYWdlL0s2UWx0SGZQVTdGZC9odW1ibGVqcGVnLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJmaWxsIiwid2lkdGgiOjE2MCwiaGVpZ2h0IjoxNjB9fX0=?t=1638285052319',
+        image: 'https://cdn5.beatstars.com/eyJidWNrZXQiOiJidHMtY29udGVudCIsImtleSI6InVzZXJzL3Byb2QvMjAxMDIxL2ltYWdlL0s2UWx0SGZQVTdGZC9odW1ibGVqcGVnLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJmaWxsIiwid2lkdGgiOjE2MCwiaGVpZ2h0IjoxNjB9fX0=?t=1638285052319',
         bpm: '88',
         collaborator: '',
         genre: 'Hip-Hop',

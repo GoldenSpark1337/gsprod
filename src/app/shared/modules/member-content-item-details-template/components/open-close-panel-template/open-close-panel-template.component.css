@@ -1,0 +1,78 @@
+::ng-deep .panel-sidebar-item-content-template .wrapper-panel-template, 
+::ng-deep .panel-sidebar-item-content-template  .wrapper-panel-template {
+    background-color: #141414;
+    border-radius: 8px;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+    ::ng-deep .panel-sidebar-item-content-template .wrapper-panel-template, 
+    ::ng-deep .panel-sidebar-item-content-template .wrapper-panel-template {
+        overflow: auto;
+        height: auto!important;
+    }
+}
+
+::ng-deep.panel-sidebar-item-content-template .wrapper-panel-template .panel-content, 
+::ng-deep.panel-sidebar-item-content-template  .wrapper-panel-template .panel-content {
+    display: flex;
+    flex-direction: column;
+}
+
+::ng-deep.panel-sidebar-item-content-template .wrapper-panel-template .panel-content .panel-header, 
+::ng-deep.panel-sidebar-item-content-template  .wrapper-panel-template .panel-content .panel-header {
+    display: flex;
+    height: 58px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+}
+
+@media (min-width: 1024px) {
+    ::ng-deep.panel-sidebar-item-content-template .wrapper-panel-template .panel-content .panel-header, 
+    ::ng-deep.panel-sidebar-item-content-template  .wrapper-panel-template .panel-content .panel-header {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    ::ng-deep.panel-sidebar-item-content-template .wrapper-panel-template .panel-content .panel-header, 
+    ::ng-deep.panel-sidebar-item-content-template  .wrapper-panel-template .panel-content .panel-header {
+        padding: 0 24px;
+    }
+}
+
+::ng-deep .wrapper-panel .more-info-wrapper {
+    display: grid;
+    grid-auto-flow: dense;
+    background-color: var(--bs-bg-fill-01);
+    grid-template-columns: 1fr;
+    padding: 0 16px 16px;
+}
+
+@media (min-width: 1024px) {
+    ::ng-deep .wrapper-panel .more-info-wrapper {
+        grid-template-columns: 1fr;
+        padding: 0 24px 24px;
+        -moz-column-gap: 32px;
+        column-gap: 32px;
+    }
+}
+
+@media (min-width: 1024px) {
+    ::ng-deep .wrapper-panel .more-info-wrapper .item-about, 
+    ::ng-deep .wrapper-panel .more-info-wrapper .item-collaborators, 
+    ::ng-deep .wrapper-panel .more-info-wrapper .item-details, 
+    ::ng-deep .wrapper-panel .more-info-wrapper .item-report, 
+    ::ng-deep .wrapper-panel .more-info-wrapper .item-tags, 
+    ::ng-deep .wrapper-panel .more-info-wrapper .separator-full-wide {
+        grid-column: unset;
+    }
+}
+
+::ng-deep .wrapper-panel .more-info-wrapper .item-details, 
+::ng-deep .wrapper-panel .more-info-wrapper .item-tags {
+    overflow: hidden;
+}

@@ -1,0 +1,81 @@
+@media (min-width: 0) {
+    :host {
+        margin-top: 24px!important;
+    }
+}
+
+@media (min-width: 0) {
+    .vb-btn-fluid, .vb-btn-fluid  {
+        width: 100%;
+    }
+}
+
+:host {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.vb-system a, .vb-system  a, .vb-system button, .vb-system  button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: unset;
+    height: unset;
+    cursor: pointer;
+    box-shadow: unset;
+}
+
+@media (min-width: 0) {
+    .vb-btn-fluid a, .vb-btn-fluid  a, .vb-btn-fluid button, .vb-btn-fluid  button {
+        width: inherit;
+    }
+}
+
+.vb-system.vb-btn-secondary-text-m a, .vb-system .vb-btn-secondary-text-m a, .vb-system.vb-btn-secondary-text-m button, .vb-system .vb-btn-secondary-text-m button {
+    background-color: var(--gs-pink);
+    padding: 10px 16px;
+    border-radius: 5px;
+    border: 0 solid transparent;
+}
+
+.vb-system.vb-btn-secondary-text-m a mat-icon, 
+.vb-system .vb-btn-secondary-text-m a mat-icon, 
+.vb-system.vb-btn-secondary-text-m button mat-icon, 
+.vb-system .vb-btn-secondary-text-m button mat-icon {
+    color: var(--bs-fi-primary);
+    letter-spacing: 0!important;
+    font-size: 16px;
+}
+
+@media (min-width: 1024px) {
+    :host .hide-tablet {
+        display: inline-block;
+    }
+}
+
+.vb-system.vb-btn-secondary-text-m a span, 
+.vb-system .vb-btn-secondary-text-m a span, 
+.vb-system.vb-btn-secondary-text-m button span, 
+.vb-system .vb-btn-secondary-text-m button span {
+    font-size: 14px;
+    letter-spacing: .1px;
+    line-height: 20px;
+    font-family: var(--font-primary);
+    font-weight: 500;
+    text-transform: none;
+    color: var(--bs-fi-primary);
+}

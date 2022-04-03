@@ -5,6 +5,9 @@ import { Observable } from 'rxjs';
 import { IUser } from 'src/app/shared/models/user';
 import { ShopService } from 'src/app/shared/services/shop.service';
 import { AccountService } from 'src/app/shared/services/account.service';
+import { CartService } from 'src/app/shared/services/cart.service';
+import { ICart } from 'src/app/shared/models/cart';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'gs-top-navbar',
@@ -14,43 +17,32 @@ import { AccountService } from 'src/app/shared/services/account.service';
 
 export class TopNavbarComponent implements OnInit {
   currentUser$: Observable<IUser> = null;
-  user = 
-  {
-    username: "Admin",
-    userPlan: "PRO PAGE",
-    messages: 5,
-    cartTracks: [
-      {
-        artwork: "https://main.v2.beatstars.com/fit-in/63x63/filters:format(.jpeg):quality(80):fill(000000)/users/prod/224460/i4t70k9rv.jpg",
-        title: "Bezerk",
-        price: "41.11",
-        type: "Track"
-      },
-      {
-        artwork: "https://main.v2.beatstars.com/fit-in/63x63/filters:format(.jpeg):quality(80):fill(000000)/users/prod/224460/i4t70k9rv.jpg",
-        title: "Bezerk",
-        price: "41.11",
-        type: "Track"
-      },
-      {
-        artwork: "https://main.v2.beatstars.com/fit-in/63x63/filters:format(.jpeg):quality(80):fill(000000)/users/prod/224460/i4t70k9rv.jpg",
-        title: "Bezerk",
-        price: "41.11",
-        type: "Track"
-      }
-    ]
-  };
+  userCart: any[] = [];
   unreadMessages: number = 0;
-  matBudgeCounter: number = 3;
+  cart$: Observable<ICart>;
+  user$: Observable<IUser>;
 
   isHoverable: boolean = false;
   timer: any;
 
-  constructor(private _snackBarCard: MatSnackBar, private productService: ShopService, public userService: AccountService) { }
+  constructor(private _snackBarCard: MatSnackBar, 
+      private productService: ShopService, 
+      public accountService: AccountService, 
+      private cartService: CartService, 
+      private userService: UserService) { }
 
   ngOnInit(): void {
-    this.currentUser$ = this.userService.currentUser$;
-    console.log(this.currentUser$);
+    this.currentUser$ = this.accountService.currentUser$;
+    this.cart$ = this.cartService.cart$;
+    this.getUser();
+  }
+
+  getUser() {
+    let username: string;
+    this.currentUser$.subscribe(res => username = res.username);
+    if (username) {
+      this.user$ = this.userService.getUser(username);
+    }
   }
   
   openSnackBar(): void {
@@ -65,7 +57,6 @@ export class TopNavbarComponent implements OnInit {
   }
 
   showHoverable(): void {
-    console.log(this.currentUser$);
     this.timer = setTimeout(() => {this.timeout(true)}, 500);
   }
 
@@ -74,12 +65,7 @@ export class TopNavbarComponent implements OnInit {
     this.timer = setTimeout(() => {this.timeout(false)}, 500);
   }
 
-  public get userCartTracks() {
-    return this.user.cartTracks;
-  }
-
   logout(){
-    console.log(this.userService.currentUser$)
-    this.userService.logout();
+    this.accountService.logout();
   }
 }

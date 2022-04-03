@@ -17,12 +17,12 @@
 
 @media (min-width: 1024px) {
     .btn-next {
-        width: 30px;
-        height: 30px;
+        width: 27px;
+        height: 27px;
     }
 }
 
 .btn-next mat-icon {
     font-size: var(--mobile-next-icon-size,25px);
-    color: var(--player-button-normal,var(--gs-white));
+    color: var(--player-button-normal,var(--white));
 }

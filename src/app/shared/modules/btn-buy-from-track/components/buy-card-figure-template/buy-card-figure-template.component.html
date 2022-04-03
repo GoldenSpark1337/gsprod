@@ -1,10 +1,2 @@
-<gs-square-button  class="btn-text vb-list-view-buy-button vb-system vb-btn-primary-text-s">
-    <button *ngIf="!inCart" type="button" class="action-element primary">
-        <mat-icon class="vb-icon-shopping-cart-m-regular-solid">shopping_cart</mat-icon>
-        <span class="button-content vb-list-view-buy-button">{{20 | currency}}</span>
-    </button>
-    <button *ngIf="inCart" type="button" class="action-element primary in-cart">
-        <mat-icon class="vb-icon-shopping-cart-m-regular-solid">add_shopping_cart</mat-icon>
-        <span class="button-content vb-list-view-buy-button">In Cart</span>
-    </button>
-</gs-square-button>
+<ng-content select="span.blue-label.button-content"></ng-content>
+<ng-content select="gs-square-button"></ng-content>

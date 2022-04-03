@@ -8,6 +8,9 @@ import { MainHeaderComponent } from './components/main-header/main-header.compon
 import { ComponentContainerComponent } from './components/component-container/component-container.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CartGroupComponent } from './components/cart/components/cart-group/cart-group.component';
+import { RoundButtonModule } from 'src/app/shared/modules/round-button/round-button.module';
+import { MatIconModule } from '@angular/material/icon';
+import { ButtonPlayItemModule } from 'src/app/shared/modules/button-play-item/button-play-item.module';
 
 const routes: Routes = [
   {
@@ -16,11 +19,20 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [CartReviewComponent, MainHeaderComponent, ComponentContainerComponent, CartComponent, CartGroupComponent],
+  declarations: [
+    CartReviewComponent, 
+    MainHeaderComponent, 
+    ComponentContainerComponent, 
+    CartComponent, 
+    CartGroupComponent,
+    ],
   imports: [
     CommonModule,
     MaterialModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MatIconModule,
+    RoundButtonModule,
+    ButtonPlayItemModule
   ],
   exports: []
 })

@@ -1,0 +1,9 @@
+:host .member-profile-page {
+    padding-bottom: 32px;
+}   
+
+@media (min-width: 1024px) {
+    :host .member-profile-page {
+        padding-top: 16px;
+    }
+}

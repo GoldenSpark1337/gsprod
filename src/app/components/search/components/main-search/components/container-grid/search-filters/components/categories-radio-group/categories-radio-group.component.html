@@ -1,19 +1,20 @@
 <section class="categories-container">
     <span class="category" (click)="navigateTo('search')" [class.selected]="isSelected('search')">All Categories</span>
     
-    <span class="category" (click)="isSelected('tracks')">
+    <span class="category" (click)="navigateTo('search/tracks')" [class.selected]="isSelected('tracks')">
         <i class="icon-arrow"></i>
         Tracks
     </span>
-    <span class="category" [ngClass]="{'selected': isToggle}" (click)="toggle($event)">
+    <span class="category" [class.selected]="isSelected('search/musicians')">
         <i class="icon-arrow"></i>Musicians 
     </span>
-    <span class="category" [ngClass]="{'selected': isToggle}" (click)="toggle($event)">
-        <i class="icon-arrow"></i>Playlists </span>
-    <span class="category" [ngClass]="{'selected': isToggle}" (click)="toggle($event)">
+    <span class="category" [class.selected]="isSelected('search/kits')">
         <i class="icon-arrow"></i>Sound Kits 
     </span>
-    <span class="category" [ngClass]="{'selected': isToggle}" (click)="toggle($event)">
+    <span class="category" [class.selected]="isSelected('search/services')">
         <i class="icon-arrow"></i>Services 
+    </span>
+    <span class="category" [class.selected]="isSelected('search/vsts')">
+        <i class="icon-arrow"></i>Vsts
     </span>
 </section>

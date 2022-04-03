@@ -1,8 +1,9 @@
+import { IProduct } from "./product";
+
  export interface IUser {
     id: number;
-    displayName: string;
+    username: string;
     email: string;
-    password: string;
     token: string;
     firstName: string;
     lastName: string;
@@ -13,5 +14,6 @@
     tracks: any[];
     kits: any[];
     services: any[];
+    products: IProduct[];
     recordLabel?: any;
 }

@@ -22,7 +22,6 @@ export class ComponentComponent implements OnInit {
   getUsers(){
     this.userService.getUsers().subscribe((response: IUser[]) => {
       this.users = response;
-      console.log(this.users);
     }, error => console.log(error));
   }
 
@@ -30,7 +29,6 @@ export class ComponentComponent implements OnInit {
     this.shopService.getProducts().subscribe(
       (response: IProduct[]) => {
         this.products = response;
-        console.log(this.products);
       }, 
       error => 
         console.log(error));

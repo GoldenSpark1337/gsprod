@@ -1,0 +1,10 @@
+<gs-swiper-list-template>
+    <gs-swiper-list-title class="vb-system">
+        <h2 class="title">Vsts</h2>
+    </gs-swiper-list-title>
+    <gs-swiper>
+        <gs-card-figure-vst *ngFor="let vst of vsts$ | async | slice:0:12" [vst]="vst"
+            class="swiper-slide grid-item swiper-slide-active" swiperSlide>
+        </gs-card-figure-vst>
+    </gs-swiper>
+</gs-swiper-list-template>

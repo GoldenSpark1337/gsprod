@@ -1,0 +1,12 @@
+<gs-swiper-list-template>
+    <gs-swiper-list-title class="vb-system">
+        <h2 class="title">Musicians</h2>
+    </gs-swiper-list-title>
+    <gs-swiper>
+        <gs-card-figure-memeber
+            *ngFor="let user of users$ | async"
+            [user]="user"
+            class="swiper-slide grid-item">
+        </gs-card-figure-memeber>
+    </gs-swiper>
+</gs-swiper-list-template>

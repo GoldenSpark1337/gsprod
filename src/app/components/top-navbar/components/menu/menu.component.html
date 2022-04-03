@@ -1,7 +1,7 @@
 <div class="search-types-menu">
     <div class="wrapper search-wrapper">
         <div class="menu-reference" [matMenuTriggerFor]="menu" #searchTrigger="matMenuTrigger"></div>
-        <button class="menu-button search-types-menu-btn" [matMenuTriggerFor]="menu" #searchTrigger="matMenuTrigger"><span>{{searchString}}</span>
+        <button class="menu-button search-types-menu-btn" [matMenuTriggerFor]="menu" #searchTrigger="matMenuTrigger" type="button"><span>{{searchString}}</span>
             <mat-icon class="icon-arrow">expand_more</mat-icon>
         </button>
         <mat-menu #menu="matMenu" xPosition="before" class="mat-menu">

@@ -1,7 +1,18 @@
 <div class="item-title">
-    <gs-caption-figure-template class="text-m-loud fit-parent s-line"></gs-caption-figure-template>
+    <gs-caption-figure-template class="text-m-loud fit-parent s-line">
+        <a routerLink="/{{product.productType | lowercase}}/{{product.id}}" class="name">{{product.title}}</a>
+    </gs-caption-figure-template>
 </div>
 <div class="item-subtitle">
-    <gs-caption-figure-template class="text-s-silent --bs-fi-secondary s-line fit-parent"></gs-caption-figure-template>
+    <gs-caption-figure-template class="text-s-silent --bs-fi-secondary s-line fit-parent">
+        <a routerLink="/users/{{product.user}}" class="name">{{product.user}}</a>
+    </gs-caption-figure-template>
 </div>
-<div class="extra-info"></div>
+<div class="extra-info">
+    <gs-buy-card-figure-template>
+        <span class="blue-label button-content">{{product.price | currency}}</span>
+    </gs-buy-card-figure-template>
+    <gs-caption-figure-template *ngIf="product.bpm" class="text-s-silent --bs-fi-secondary s-line bpm-tracks figcaption-parent">
+        <span class="name">{{product.bpm}} BPM</span>
+    </gs-caption-figure-template>
+</div>

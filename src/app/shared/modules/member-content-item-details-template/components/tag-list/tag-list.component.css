@@ -1,0 +1,78 @@
+:host ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.tags-wrap-s ul, .tags-wrap-s ul {
+    flex-flow: row wrap;
+    margin-bottom: -12px;
+}
+
+:host ul li {
+    overflow: hidden;
+}
+
+:host ul li:not(:last-child) {
+    margin-right: 8px;
+}
+
+.tags-wrap-s ul li, .tags-wrap-s ul li {
+    margin-bottom: 12px;
+}
+
+:host ul li .tag-item-button {
+    width: 100%;
+}
+
+.vb-system a, 
+.vb-system button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: unset;
+    height: unset;
+    cursor: pointer;
+    box-shadow: unset;
+}
+
+.vb-system.vb-btn-secondary-hash-tag-text-s a, .vb-system .vb-btn-secondary-hash-tag-text-s a, .vb-system.vb-btn-secondary-hash-tag-text-s button, .vb-system .vb-btn-secondary-hash-tag-text-s button {
+    background-color: #262626;
+    padding: 6px 16px;
+    border-radius: 999px;
+    border: 0 solid transparent;
+}
+
+.with-ellipsis a span, .with-ellipsis  a span, .with-ellipsis button span, .with-ellipsis  button span {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+}
+
+.vb-system.vb-btn-secondary-hash-tag-text-s a span, .vb-system .vb-btn-secondary-hash-tag-text-s a span, .vb-system.vb-btn-secondary-hash-tag-text-s button span, .vb-system .vb-btn-secondary-hash-tag-text-s button span {
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 18px;
+    font-family: var(--font-primary);
+    font-weight: 500;
+    text-transform: none;
+    color: var(--bs-fi-secondary);
+}
+
+.vb-system.vb-btn-secondary-hash-tag-text-s a span, .vb-system .vb-btn-secondary-hash-tag-text-s a span, .vb-system.vb-btn-secondary-hash-tag-text-s button span, .vb-system .vb-btn-secondary-hash-tag-text-s button span {
+    white-space: nowrap;
+}

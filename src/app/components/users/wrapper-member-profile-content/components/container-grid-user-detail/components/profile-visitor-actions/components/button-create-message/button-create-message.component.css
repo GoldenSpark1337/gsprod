@@ -1,0 +1,20 @@
+@media (min-width: 1400px) {
+    .btn-action .message-button .message-content {
+        display: inline-block;
+    }
+}
+
+.message-button ::ng-deep button span {
+    font-size: 14px;
+    letter-spacing: .1px;
+    font-weight: 500;
+    text-transform: none;
+}
+
+.message-button ::ng-deep .message-icon {
+    font-size: 15px;
+    width: auto;
+    height: auto;
+    margin-right: 4px;
+    line-height: 12px;
+}

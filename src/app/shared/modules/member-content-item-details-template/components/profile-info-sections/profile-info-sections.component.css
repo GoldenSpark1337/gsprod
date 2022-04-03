@@ -1,0 +1,44 @@
+:host {
+    display: block;
+    width: 100%;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+:host .profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+    :host .profile-info .profile-info-content, :host .profile-info .profile-info-title {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+:host .profile-info .profile-info-title {
+    margin-bottom: 16px;
+}
+
+@media (min-width: 1024px) {
+    :host .profile-info .profile-info-content, :host .profile-info .profile-info-title {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+:host ::ng-deep .profile-info .profile-info-title {
+    margin-bottom: 16px;
+}
+
+::ng-deep .tags-wrap-s ul, 
+::ng-deep .tags-wrap-s ul {
+    flex-flow: row wrap;
+    margin-bottom: -12px;
+}
+
+::ng-deep .tags-wrap-s ul li, 
+::ng-deep .tags-wrap-s ul li {
+    margin-bottom: 12px;
+}

@@ -1,0 +1,15 @@
+<ng-container *ngIf="(user$|async) as user">
+  <div class="circle profile-info-image">
+    <img [src]="user.image || 'assets/img/user_undefined.jpg'" alt="User profile image">
+  </div>
+  <gs-caption-figure-template class="s-line heading-s center">
+    <h1 class="name">{{user.username}}</h1>
+  </gs-caption-figure-template>
+  <gs-caption-figure-template class="fit-parent s-line center text-xs-silent --bs-fi-secondary user-location vb-margin-b-xl">
+    <span class="name">RecordLabel</span>
+  </gs-caption-figure-template>
+  <gs-profile-actions *ngIf="currentUser.username == user.username else visitoractions"></gs-profile-actions>
+  <ng-template #visitoractions>
+    <gs-profile-visitor-actions></gs-profile-visitor-actions>
+  </ng-template>
+</ng-container>

@@ -1,0 +1,20 @@
+:host .vb-item-action-button {
+    border: none;
+    margin: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: transparent;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

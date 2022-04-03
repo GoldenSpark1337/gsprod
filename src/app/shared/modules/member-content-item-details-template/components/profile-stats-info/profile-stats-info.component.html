@@ -1,0 +1,30 @@
+<div class="social-interactions">
+    <ng-container *ngIf="product">
+        <p class="social-interaction-line">
+            <span class="label">Published</span>
+            <span class="value">{{product.releaseDate}}</span>
+        </p>
+        <p class="social-interaction-line" *ngIf="product.bpm">
+            <span class="label">BPM</span>
+            <span class="value">{{product.bpm}}</span>
+        </p>
+        <p class="social-interaction-line" *ngIf="product.key">
+            <span class="label">Key</span>
+            <span class="value">{{product.key}}</span>
+        </p>
+        <p class="social-interaction-line" *ngIf="product.plays">
+            <span class="label">Plays</span>
+            <span class="value">{{product.plays}}</span>
+        </p>
+    </ng-container>
+    <ng-container *ngIf="user">
+        <p class="social-interaction-line">
+            <span class="label">Followers</span>
+            <span class="value">19</span>
+        </p>
+        <p class="social-interaction-line">
+            <span class="label">Plays</span>
+            <span class="value">220</span>
+        </p>
+    </ng-container>
+</div>

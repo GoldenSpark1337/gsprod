@@ -1,0 +1,43 @@
+:host {
+    display: flex;
+}
+
+:host button.btn-play {
+    display: flex;
+    cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+    :host button.btn-play.vb-list-view-play-button-cards {
+        margin: 0;
+        background-color: var(--gs-indigo);
+        padding: 10px;
+        border-radius: 50%;
+        border: 0 solid transparent;
+        display: flex;
+    }
+}
+
+@media (min-width: 1024px) {
+    :host button.btn-play.vb-list-view-play-button-cards ::ng-deep mat-icon {
+        color: var(--white);
+        letter-spacing: 0!important;
+    }
+}
+
+@media (min-width: 1024px) {
+    :host button.btn-play.vb-list-view-play-button-cards ::ng-deep mat-icon:last-child, :host button.btn-play.vb-list-view-play-button-cards span + mat-icon {
+        margin-right: 0;
+        font-size: 16px;
+        margin-left: 0;
+        width: auto;
+        height: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    :host button.btn-play.vb-list-view-play-button-cards mat-icon:first-child:last-child {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

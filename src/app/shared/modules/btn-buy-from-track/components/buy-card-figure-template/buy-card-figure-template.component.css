@@ -10,7 +10,7 @@
     }
 }
 
-a, a, button, button {
+:host ::ng-deep a, :host ::ng-deep button {
     border: none;
     margin: 0;
     padding: 0;
@@ -106,4 +106,18 @@ a, a, button, button {
         border: 0 solid transparent;
         background-color: #383838;
     }
+}
+
+.button-content.blue-label {
+  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: .1px;
+  line-height: 20px;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  text-transform: none;
+  color: blue;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }

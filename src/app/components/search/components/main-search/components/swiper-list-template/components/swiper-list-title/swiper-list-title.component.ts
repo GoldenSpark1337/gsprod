@@ -1,6 +1,6 @@
 import { ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { SwiperComponent } from 'swiper/angular';
+import { SwiperComponent, SwiperDirective } from 'ngx-swiper-wrapper';
 
 @Component({
   selector: 'gs-swiper-list-title',
@@ -9,6 +9,8 @@ import { SwiperComponent } from 'swiper/angular';
 })
 export class SwiperListTitleComponent implements OnInit {
   @ViewChild(SwiperComponent) swiper!: SwiperComponent;
+  @ViewChild(SwiperDirective, { static: false }) directiveRef?: SwiperDirective;
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -16,11 +18,12 @@ export class SwiperListTitleComponent implements OnInit {
 
   swipePrev() {
     console.log("Prev from swiper list title");
-    // this.swiper.swiperRef.slidePrev();
+    this.directiveRef.prevSlide();
   }
 
   swipeNext() {
     console.log("Next from swiper list title");
+    this.directiveRef.nextSlide();
     // this.swiper.swiperRef.slideNext();
   }
 }

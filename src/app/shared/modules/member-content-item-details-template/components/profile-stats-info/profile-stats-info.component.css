@@ -1,0 +1,32 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+:host p {
+    font-size: 14px;
+    letter-spacing: .1px;
+    line-height: 20px;
+    font-weight: 400;
+    text-transform: none;
+    color: #9f9f9f;
+}
+
+:host .social-interaction-line {
+    display: flex;
+    justify-content: space-between;
+}
+
+:host p:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+:host .social-interaction-line .label {
+    margin-right: 12px;
+}
+
+:host .social-interaction-line .value {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

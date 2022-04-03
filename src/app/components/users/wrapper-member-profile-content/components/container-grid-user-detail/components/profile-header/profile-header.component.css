@@ -1,0 +1,48 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 32px 16px 0;
+}   
+
+:host {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 32px 16px 0;
+    background-color: #141414;
+}
+
+:host .profile-info-image {
+    margin-bottom: 12px;
+}
+
+:host img {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 1px solid hsla(0,0%,100%,.06);
+    border-radius: 5px;
+    width: 88px;
+    height: 88px;
+}
+
+.circl img, .circle img {
+    border-radius: 50%;
+}
+
+::ng-deep .center  {
+    justify-content: center;
+    width: 100%;
+}
+
+@media (min-width: 0) {
+    .vb-margin-b-xl {
+        margin-bottom: 24px!important;
+    }
+}
+

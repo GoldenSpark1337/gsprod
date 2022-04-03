@@ -1,0 +1,102 @@
+@media (min-width: 0px) {
+    .vb-margin-r-xs {
+        margin-right: 8px!important;
+    }
+}
+
+:host ::ng-deep .sponsored-v2, .sponsored-v2  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    flex-grow: 0;
+    background-color: #262626;
+    padding: 2px 4px;
+    border-radius: 5px;
+}
+
+::ng-deep .text-m-loud .name {
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 24px;
+    font-family: var(--font-primary);
+    font-weight: 500;
+    text-transform: none;
+    color: var(--white);
+} 
+
+.text-s-silent:host ::ng-deep .name, .text-s-silent :host ::ng-deep .name {
+    font-size: 14px;
+    letter-spacing: .1px;
+    line-height: 20px;
+    font-family: var(--font-primary);
+    font-weight: 400;
+    text-transform: none;
+    color: var(--bs-fi-primary);
+}
+
+:host {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+::ng-deep .s-line .name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+:host ::ng-deep .name {
+    display: inline-block;
+    text-align: left;
+}
+
+:host ::ng-deep a:hover {
+    text-decoration: underline;
+}
+
+:host ::ng-deep h1, :host ::ng-deep h2 {
+    padding: 0!important;
+}
+
+::ng-deep .ui-caption-m-loud .name, .ui-caption-m-loud  .name {
+    font-size: 11px;
+    letter-spacing: .4px;
+    line-height: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+::ng-deep .--bs-fi-tertiary .name, .--bs-fi-tertiary  .name {
+    color: #707070!important;
+}
+
+::ng-deep .s-line .name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+::ng-deep .text-xs-silent .name {
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 18px;
+    font-weight: 400;
+    text-transform: none;
+    color: var(--white);
+}
+
+::ng-deep .--bs-fi-secondary .name {
+    color: #9f9f9f;
+}
+
+::ng-deep .heading-s .name {
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 28px;
+    font-weight: 500;
+    text-transform: none;
+    color: var(--white);
+}

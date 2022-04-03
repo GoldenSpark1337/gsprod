@@ -1,0 +1,49 @@
+<gs-open-close-panel-template class="wrapper-panel panel-sidebar-item-content-template">
+    <div class="wrapper-panel-template panel-closed ng-trigger ng-trigger-openPanel">
+        <article class="panel-content">
+            <div class="panel-header panel-animated">
+                <h3 class="header-title">Track details</h3>
+            </div>
+            <div class="more-info-wrapper">
+                <div class="item-collaborators">
+                    <gs-horizontal-separator class="vb-h-line-solid-silent-regular separator-full-wide"></gs-horizontal-separator>
+                </div>
+                <div class="item-details">
+                    <gs-horizontal-separator class="vb-h-line-solid-silent-regular separator-full-wide"></gs-horizontal-separator>
+                    <gs-profile-info-sections>
+                        <gs-caption-figure-template class="profile-info-title s-line ui-caption-m-loud --bs-fi-tertiary">
+                            <h2 class="name">Information</h2>
+                        </gs-caption-figure-template>
+                        <div class="profile-info-content">
+                            <gs-profile-stats-info [product]="product"></gs-profile-stats-info>
+                        </div>
+                    </gs-profile-info-sections>
+                </div>
+                <div class="item-tags" *ngIf="product.tags">
+                    <gs-horizontal-separator class="vb-h-line-solid-silent-regular separator-full-wide"></gs-horizontal-separator>
+                    <gs-profile-info-sections>
+                        <gs-caption-figure-template class="profile-info-title s-line ui-caption-m-loud --bs-fi-tertiary">
+                            <h2 class="name">Tags</h2>
+                        </gs-caption-figure-template>
+                        <div class="profile-info-content">
+                            <gs-tag-list class="tags tags-wrap-s"></gs-tag-list>
+                        </div>
+                    </gs-profile-info-sections>
+                </div>
+                <div class="item-about" *ngIf="product.description">
+                    <gs-horizontal-separator class="vb-h-line-solid-silent-regular separator-full-wide"></gs-horizontal-separator>
+                    <gs-profile-info-sections>
+                        <gs-caption-figure-template class="profile-info-title s-line ui-caption-m-loud --bs-fi-tertiary">
+                            <h2 class="name">About</h2>
+                        </gs-caption-figure-template>
+                        <div class="profile-info-content">
+                            <div class="description-container truncate-description">
+                                <div class="bio-info">{{product.description}}</div>
+                            </div>
+                        </div>
+                    </gs-profile-info-sections>
+                </div>
+            </div>
+        </article>
+    </div>
+</gs-open-close-panel-template>

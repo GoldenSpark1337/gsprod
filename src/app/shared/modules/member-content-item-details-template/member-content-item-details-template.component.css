@@ -1,0 +1,18 @@
+:host {
+    display: block;
+}
+
+:host .wrapper-panel {
+    display: block;
+}
+
+:host .description-container .bio-info {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 14px;
+    letter-spacing: .1px;
+    line-height: 20px;
+    font-weight: 400;
+    text-transform: none;
+    color: #9f9f9f;
+}

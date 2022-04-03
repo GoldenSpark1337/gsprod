@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: left;
     width: 100%;
-    color: var(--item-subtitle,var(--bs-gray-40));
+    color: var(--item-subtitle,var(--gs-gray));
 }
 
 @media (min-width: 480px) {

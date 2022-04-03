@@ -29,5 +29,5 @@
 :host {
     display: flex;
     align-items: center;
-    color: var(--item-title,var(--bs-white));
+    color: var(--item-title,var(--white));
 }

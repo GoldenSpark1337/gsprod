@@ -2,3 +2,58 @@
 :host {
   display: inline-block;  
 }
+
+::ng-deep .vb-system a, 
+::ng-deep .vb-system :host a, 
+::ng-deep .vb-system button, 
+::ng-deep .vb-system :host button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: unset;
+    height: unset;
+    cursor: pointer;
+    box-shadow: unset;
+}
+
+@media (min-width: 0) {
+  ::ng-deep .vb-btn-fluid :host a, 
+  ::ng-deep .vb-btn-fluid a, 
+  ::ng-deep .vb-btn-fluid button, 
+  ::ng-deep .vb-btn-fluid :host button {
+      width: inherit;
+  }
+}
+
+::ng-deep .vb-system.vb-btn-secondary-text-m a, 
+::ng-deep .vb-system .vb-btn-secondary-text-m :host a, 
+::ng-deep .vb-system.vb-btn-secondary-text-m button, 
+::ng-deep .vb-system .vb-btn-secondary-text-m :host button {
+    background-color: #262626;
+    padding: 10px 16px;
+    border-radius: 5px;
+    border: 0 solid transparent;
+}
+
+::ng-deep .vb-btn-secondary-icon-s a, 
+::ng-deep .vb-btn-secondary-icon-s a, 
+::ng-deep .vb-btn-secondary-icon-s button, 
+::ng-deep .vb-btn-secondary-icon-s button {
+    background-color: var(--gs-indigo);
+    padding: 3px;
+    border-radius: 50%;
+    border: 0 solid transparent;
+}

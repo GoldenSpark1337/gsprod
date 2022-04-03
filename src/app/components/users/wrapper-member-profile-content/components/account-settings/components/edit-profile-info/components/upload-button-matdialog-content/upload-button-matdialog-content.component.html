@@ -1,0 +1,23 @@
+<mat-dialog-content id="file-dialog">
+  <div class="dialog-nav-container">
+    <div class="content">
+      <div class="step">
+        <gs-header>
+          <p>Upload Files</p>
+        </gs-header>
+        <div
+          class="drag-drop-container">
+          <div class="icons">
+            <mat-icon class="icon-upload-big">cloud_upload</mat-icon>
+          </div>
+          <h4>
+            <span>Upload files from your computer</span>
+          </h4>
+        </div>
+        <!-- Target DOM node #1 -->
+        <uppy-drag-drop [uppy]="uppy"></uppy-drag-drop>
+      </div>
+      
+    </div>
+  </div>
+</mat-dialog-content>

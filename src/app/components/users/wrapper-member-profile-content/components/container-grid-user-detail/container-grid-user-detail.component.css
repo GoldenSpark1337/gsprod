@@ -1,0 +1,100 @@
+@media (min-width: 768px) {
+    ::ng-deep .vb-padding-md-r-m {
+        padding-right: 16px!important;
+    }
+}
+
+@media (min-width: 768px) {
+    ::ng-deep .vb-padding-md-l-m {
+        padding-left: 16px!important;
+    }
+}
+
+@media (min-width: 1400px) {
+    :host {
+        display: grid;
+        justify-content: center;
+        row-gap: 64px;
+        -moz-column-gap: 32px;
+        column-gap: 32px;
+        padding: 0 32px;
+        grid-template-columns: repeat(12,84px);
+        -moz-column-width: 84px;
+        column-width: 84px;
+    }
+}
+
+@media (min-width: 0) {
+    ::ng-deep .vb-row-3 {
+        grid-template-rows: repeat(3,minmax(0,-webkit-min-content));
+        grid-template-rows: repeat(3,minmax(0,min-content));
+    }
+}
+
+@media (min-width: 0) {
+    ::ng-deep .vb-r-gap-none {
+        row-gap: 0;
+    }
+}
+
+@media (min-width: 0) {
+    :host >.vb-col-flex {
+        display: flex!important;
+    }
+}
+
+@media (min-width: 1200px) {
+    :host >.vb-col-xl-span-f1-t3 {
+        grid-column: 1/span 3;
+        display: block;
+    }
+}
+
+@media (min-width: 1200px) {
+    :host >.vb-row-xl-span-f1-t1 {
+        grid-row: 1/span 1;
+    }
+}
+
+@media (min-width: 1024px) {
+    :host .hidden-tabs-content {
+        display: block!important;
+    }
+}
+
+@media (min-width: 1024px) {
+    :host .tab-content-info {
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    :host >.vb-row-lg-span-f1-t3 {
+        grid-row: 1/span 3;
+    }
+}
+
+@media (min-width: 1200px) {
+    :host >.vb-col-xl-span-f4-t9 {
+        grid-column: 4/span 9;
+        display: block;
+    }
+}
+
+:host .tab-content-info, :host .tab-content-media {
+    opacity: 1;
+    -webkit-animation-name: fadein;
+    animation-name: fadein;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}   
+
+@media (min-width: 1024px) {
+    :host .tab-content-media {
+        margin-top: 0;
+    }
+}

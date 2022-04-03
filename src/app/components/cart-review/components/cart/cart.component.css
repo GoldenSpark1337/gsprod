@@ -53,7 +53,7 @@
 ::ng-deep .mat-card {
     /* font-family: Poppins,Roboto,Helvetica Neue,sans-serif!important; */
     color: #fff;
-    background-color: #1b1b1b;
+    background-color: var(--gs-black);
     border-radius: 3px!important;
     box-shadow: 0 3px 6px 0 rgba(0,0,0,.12)!important;
 }
@@ -121,4 +121,40 @@
     color: #707070;
     text-decoration: underline;
     cursor: pointer;
+}
+
+form.component-form {
+    max-width: 1300px;
+}
+
+.summary mat-card mat-card-content .actions .button-stripe {
+    display: block;
+    margin: 8px 0;
+}
+
+.btn-stripe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    height: 44px;
+    padding: 0;
+    font-family: Poppins,Roboto,Helvetica Neue,sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 500;
+    color: #253c80;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-stripe, .btn-stripe:not([disabled]).mat-focused, .btn-stripe:not([disabled]):hover {
+    background-color: #ffc439;
+}
+
+.btn-stripe img {
+    height: 20px;
+    margin-right: 4px;
 }

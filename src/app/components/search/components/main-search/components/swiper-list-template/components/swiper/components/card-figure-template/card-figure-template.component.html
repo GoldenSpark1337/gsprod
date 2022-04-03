@@ -5,12 +5,16 @@
                 <gs-button-play-track></gs-button-play-track>
             </div>
         </div>
-        <a [href]="" class="figure-data">
+        <a routerLink="/{{product.productType | lowercase}}/{{product.id}}" class="figure-data">
             <div class="shadow-overlay square"></div>
-            <img [src]="" alt="Track">
+            <img 
+            [src]="product.image || 'assets/img/track_undefined.jpg'" 
+            [alt]="product.title"
+            (error)="product.image ='assets/img/track_undefined.jpg'"
+            class="figure-image swiper-thumbnail">
         </a>
     </div>
     <figcaption>
-        <gs-card-figcaption-template class="grid-item"></gs-card-figcaption-template>
+        <gs-card-figcaption-template class="grid-item" [product]="product"></gs-card-figcaption-template>
     </figcaption>
 </figure>

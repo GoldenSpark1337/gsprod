@@ -1,0 +1,14 @@
+<gs-profile-header 
+    [currentUser]="currentUser"
+    [user$]="user$"
+    class="vb-col-flex vb-col-md-span-from-0 vb-col-lg-span-f1-t4 vb-col-xl-span-f1-t3 vb-row-xl-span-f1-t1">
+</gs-profile-header>
+<gs-profile-info class="tab-content-info vb-col-md-span-from-0 vb-col-lg-span-f1-t4 vb-col-xl-span-f1-t3 vb-row-span-f3-t1 vb-row-lg-span-f2-t1 hidden-tabs-content"></gs-profile-info>
+<section class="tab-content-media vb-col-md-span-from-0 vb-col-lg-span-f5-t8 vb-row-span-f3-t1 vb-col-xl-span-f4-t9 vb-row-lg-span-f1-t3">
+    <div class="content-media" *ngIf="(user$|async).products.length else emptyContent">
+        <gs-swiper-list-tracks [tracks]="tracks$ | async"></gs-swiper-list-tracks>
+    </div>
+    <ng-template #emptyContent>
+        <gs-empty-content-container></gs-empty-content-container>
+    </ng-template>
+</section>

@@ -3,3 +3,94 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.grid-item :host > figure.card-figure, .grid-item :host > figure.card-figure {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+:host > figure.card-figure > .thumbnail-group {
+    position: relative;
+}
+
+.grid-item:host > figure.card-figure > .thumbnail-group, .grid-item :host > figure.card-figure > .thumbnail-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+:host > figure.card-figure > .thumbnail-group > .hover-thumbnail-group {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+}
+
+@media (min-width: 480px) {
+    :host > figure.card-figure > .thumbnail-group > .hover-thumbnail-group > .hover-section {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 1024px) {
+    :host > figure.card-figure > .thumbnail-group:not(.active-hover-section) > .hover-thumbnail-group > .hover-section {
+        opacity: 0;
+    }
+}
+
+.grid-item:host > figure.card-figure > .thumbnail-group > .hover-thumbnail-group > .hover-section, .grid-item :host > figure.card-figure > .thumbnail-group > .hover-thumbnail-group > .hover-section {
+    width: 100%;
+    height: 100%;
+}
+
+.grid-item:host > figure.card-figure > .thumbnail-group > .figure-data, .grid-item :host > figure.card-figure > .thumbnail-group > .figure-data {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    padding-top: 100%;
+}
+
+:host > figure.card-figure > .thumbnail-group > .figure-data > img.figure-image {
+    box-sizing: border-box;
+    display: flex;
+    border: 1px solid hsla(0,0%,100%,.06);
+    border-radius: 5px;
+}
+
+.grid-item:host > figure.card-figure > .thumbnail-group > .figure-data > img.figure-image, .grid-item :host > figure.card-figure > .thumbnail-group > .figure-data > img.figure-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+:host > figure.card-figure > .thumbnail-group > .figure-data > .shadow-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: transparent;
+    border: 0;
+    transition: background .2s ease-in-out;
+}
+
+.grid-item:host > figure.card-figure > figcaption, .grid-item :host > figure.card-figure > figcaption {
+    margin-top: 16px;
+}
+
+.grid-item:host, .grid-item :host {
+    grid-template-columns: minmax(0,1fr);
+    grid-template-rows: repeat(3,auto);
+    grid-row-gap: 4px;
+    grid-template-areas:
+        "extra-info"
+        "item-title"
+        "item-subtitle";
+}

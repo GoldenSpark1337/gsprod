@@ -1,0 +1,29 @@
+:host {
+    width: 100%;
+    display: block;
+}
+
+@media (min-width: 0) {
+    .vb-btn-fluid, .vb-btn-fluid  {
+        width: 100%;
+    }
+}
+
+.vb-system.vb-btn-secondary-text-m a mat-icon:not(:last-child), 
+.vb-system.vb-btn-secondary-text-m button mat-icon:not(:last-child) {
+    font-size: 16px;
+    margin-right: 8px;
+    width: auto;
+    height: auto;
+}
+
+.vb-system.vb-btn-secondary-text-m a span,
+.vb-system.vb-btn-secondary-text-m button span {
+    font-size: 14px;
+    letter-spacing: .1px;
+    line-height: 20px;
+    font-weight: 500;
+    text-transform: none;
+    color: var(--white);
+    white-space: nowrap;
+}

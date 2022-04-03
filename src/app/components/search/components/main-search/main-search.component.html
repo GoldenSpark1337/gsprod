@@ -4,7 +4,10 @@
     </gs-search-header>
     <div class="search-results-container">
         <div class="wrapper-all-categories">
-            <gs-swiper-list-tracks class="swiper-list"></gs-swiper-list-tracks>
+            <gs-swiper-list-tracks class="swiper-list" [tracks]="tracks$ | async"></gs-swiper-list-tracks>
+            <gs-swiper-list-members class="swiper-list"></gs-swiper-list-members>
+            <gs-swiper-list-sound-kits class="swiper-list"></gs-swiper-list-sound-kits>
+            <gs-swiper-list-vsts class="swiper-list"></gs-swiper-list-vsts>
         </div>
     </div>
 </gs-container-grid>

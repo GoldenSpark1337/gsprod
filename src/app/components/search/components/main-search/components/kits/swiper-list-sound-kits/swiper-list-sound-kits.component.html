@@ -1,0 +1,10 @@
+<gs-swiper-list-template>
+    <gs-swiper-list-title class="vb-system">
+        <h2 class="title">Sound Kits</h2>
+    </gs-swiper-list-title>
+    <gs-swiper>
+        <gs-card-figure-sound-kit *ngFor="let kit of kits$ | async | slice:0:12" [kit]="kit"
+            class="swiper-slide grid-item swiper-slide-active" swiperSlide>
+        </gs-card-figure-sound-kit>
+    </gs-swiper>
+</gs-swiper-list-template>

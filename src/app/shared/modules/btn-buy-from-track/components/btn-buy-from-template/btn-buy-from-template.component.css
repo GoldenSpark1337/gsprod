@@ -2,3 +2,60 @@
     display: block;
     width: 100%;
 }
+
+@media (min-width: 0) {
+  .vb-btn-fluid, .vb-btn-fluid {
+      width: 100%;
+  }
+}
+
+.vb-system a, .vb-system button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: unset;
+    height: unset;
+    cursor: pointer;
+    box-shadow: unset;
+}
+
+@media (min-width: 0) {
+    .vb-btn-fluid a, .vb-btn-fluid button {
+        width: inherit;
+    }
+}
+
+.vb-system.vb-btn-secondary-text-m a, .vb-system.vb-btn-secondary-text-m button {
+    background-color: #262626;
+    padding: 10px 16px;
+    border-radius: 5px;
+    border: 0 solid transparent;
+}
+
+.vb-system.vb-btn-secondary-text-m a mat-icon,
+.vb-system.vb-btn-secondary-text-m button mat-icon {
+    color: var(--white);
+    letter-spacing: 0!important;
+    line-height: 20px;
+    width: auto;
+    height: auto;
+}
+
+.vb-system.vb-btn-secondary-text-m a mat-icon:not(:last-child), 
+.vb-system.vb-btn-secondary-text-m button mat-icon:not(:last-child) {
+    font-size: 16px;
+    margin-right: 8px;
+}

@@ -23,6 +23,8 @@
 }
 
 ::ng-deep .search-header {
+    display: block;
+    background-color: #14002E;
     position: fixed;
     z-index: 1000;
     padding-left: 16px;
@@ -36,7 +38,7 @@
     ::ng-deep .search-header {
         padding-left: 0;
         padding-right: 0;
-        right: calc((100 * var(--vw) - 1360px) / 2);
+        right: calc((100 * var(--vw) - 1368px) / 2);
         left: calc((100 * var(--vw) - 1360px) / 2)316px;
         top: 0;
     }

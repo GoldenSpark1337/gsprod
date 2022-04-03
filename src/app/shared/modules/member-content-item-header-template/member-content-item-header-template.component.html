@@ -1,0 +1,28 @@
+<div class="item-image">
+    <ng-container *ngIf="product.image">
+        <gs-image class="item-image center d-flex">
+            <img [src]="product.image" alt="Image">
+        </gs-image>
+    </ng-container>
+</div>
+<div class="item-title">
+    <div class="d-line heading-s center">
+        <h1 class="name">{{product.title}}</h1>
+        <!-- <ng-content select=".name"></ng-content> -->
+    </div>
+    <div class="text-s-silent --bs-fi-secondary s-line center">
+        <a routerLink="/users/{{product.user}}" class="name">{{product.user}}</a>
+        <!-- <ng-content select=".name"></ng-content> -->
+    </div>
+</div>
+<div class="inline-tags">
+</div>
+<div class="item-actions">
+    <gs-button-like-action-template></gs-button-like-action-template>
+    <gs-button-add-track-to-playlist></gs-button-add-track-to-playlist>
+</div>
+<div class="call-for-action-buttons">
+    <gs-button-free-download-track *ngIf="product.productType === 'Tracks'"></gs-button-free-download-track>
+    <gs-buy-btn-from-product *ngIf="product.productType !== 'Tracks'" [product]="product"></gs-buy-btn-from-product>
+</div>
+<div class="item-owner"></div>

@@ -3,53 +3,67 @@
     <div class="padding-container">
         <div class="max-width-container">
             <div class="cart">
-                <div class="items-container">
-                    <ng-container *ngIf="items.length else noItemsTemp">
-                        <div *ngFor="let item of items">
-                            <gs-cart-group></gs-cart-group>
-                        </div>
-                    </ng-container>
-                    <ng-template #noItemsTemp>
-                        <div class="no-items">You don't have items in cart</div>
-                    </ng-template>
-                </div>
-                <div class="summary">
-                    <mat-card>
-                        <mat-card-content>
-                            <h1 class="title">Cart Summary</h1>
-                            <div class="finalize">
-                                <div class="row gross">
-                                    <span class="name">Total Gross</span>
-                                    <span class="value" [innerText]="gross | currency:'USD':'symbol':'1.2-2'"></span>
-                                </div>
-                                <div class="row discount">
-                                    <span class="name">Discount</span>
-                                    <span class="value" [innerText]="discount | currency:'USD':'symbol':'1.2-2'"></span>
-                                </div>
-                                <div class="row total">
-                                    <span class="name">Total</span>
-                                    <span class="value" [innerText]="total | currency:'USD':'symbol':'1.2-2'"></span>
-                                </div>
-                            </div>
-                            <div class="actions">
-                                <ng-container *ngIf="items.length">
-                                    <div class="div">
-                                        <h5 class="user-checkout">
-                                            You are checking out as @goldenspark1337, not you?
-                                            <a href="">Logout</a>
-                                        </h5>
-                                    </div>
-                                    <div>
-                                        <p>
-                                            Please read our
-                                            <a href="" target="_blank">Refund Policy</a>.
-                                        </p>
+                    <ng-container *ngIf="(cart$ | async) as cart">
+                        <div class="items-container">
+                            <ng-container *ngIf="cart.items.length else noItemsTemp">
+                                <ng-container *ngFor="let group of groupedItems | keyvalue">
+                                    <gs-cart-group [group]="group"></gs-cart-group>
+                                </ng-container>
+                            </ng-container>
+                        <ng-template #noItemsTemp>
+                            <div class="no-items">You don't have items in cart</div>
+                        </ng-template>
+                    </div>
+                    <div class="summary">
+                        <mat-card>
+                            <mat-card-content>
+                                <h1 class="title">Cart Summary</h1>
+                                <ng-container *ngIf="(cartTotal$ | async) as total">
+                                    <div class="finalize">
+                                        <div class="row gross">
+                                            <span class="name">Total Gross</span>
+                                            <span class="value" [innerText]="total.subTotal | currency:'USD':'symbol':'1.2-2'"></span>
+                                        </div>
+                                        <div class="row discount">
+                                            <span class="name">Discount</span>
+                                            <span class="value" [innerText]="total.discount | currency:'USD':'symbol':'1.2-2'"></span>
+                                        </div>
+                                        <div class="row total">
+                                            <span class="name">Total</span>
+                                            <span class="value" [innerText]="total.total | currency:'USD':'symbol':'1.2-2'"></span>
+                                        </div>
                                     </div>
                                 </ng-container>
-                            </div>
-                        </mat-card-content>
-                    </mat-card>
-                </div>
+                                <div class="actions">
+                                    <div>
+                                        <form action="" class="component-form" (ngSubmit)="submitOrder()">
+                                            <div class="button-stripe">
+                                                <button id="btn-stripe" type="button" class="btn-stripe" (click)="submitOrder()">
+                                                    <img src="/assets/img/service-logos/stripe.png" alt="Stripe Logo">
+                                                    <span>Checkout via Stripe</span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <ng-container *ngIf="cart.items">
+                                        <div class="div">
+                                            <h5 class="user-checkout">
+                                                You are checking out as @goldenspark1337, not you?
+                                                <a href="">Logout</a>
+                                            </h5>
+                                        </div>
+                                        <div>
+                                            <p>
+                                                Please read our
+                                                <a href="" target="_blank">Refund Policy</a>.
+                                            </p>
+                                        </div>
+                                    </ng-container>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </ng-container>
             </div>
         </div>
     </div>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CartService } from 'src/app/shared/services/cart.service';
 
 @Component({
   selector: 'gs-badge-counter',
@@ -6,9 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./badge-counter.component.css']
 })
 export class BadgeCounterComponent implements OnInit {
-  @Input("counter") matBudgeCounter: number = 1;
+  @Input("counter") matBudgeCounter: number;
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
   }

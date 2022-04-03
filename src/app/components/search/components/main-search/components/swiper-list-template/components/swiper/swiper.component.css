@@ -1,0 +1,12 @@
+@import '~swiper/swiper-bundle.min.css';
+
+::ng-deep .swiper-container-pointer-events {
+    touch-action: pan-y;
+}
+
+:host swiper .swiper-container {
+    max-height: 100%;
+    position: relative;
+}
+
+.swiper-slide { width: 80% }

@@ -10,9 +10,9 @@
             <gs-search-track-top-bar class="search-container"></gs-search-track-top-bar>
         </div>
         <div class="right">
-            <div class="authenticated-actions" *ngIf="(currentUser$ | async) as user">
+            <div class="authenticated-actions" *ngIf="(user$ | async) as user">
                 <button class="btn-upload"><mat-icon class="icon-plus-medium">add</mat-icon><span>Upload</span></button>
-                <div class="divider-vertical"></div>
+                <div class="divider-vertical"></div> 
                 <div class="profile-wrapper">
                     <div class="wrapper-button-profile">
                         <div [matMenuTriggerFor]="userMenu" class="btn-you">
@@ -25,10 +25,10 @@
                     </div>
                 </div>
                 <mat-menu #userMenu="matMenu" xPosition="before" class="user-menu">
-                    <a href="/" class="profile">
-                        <div class="user-image" style="background-image: url(assets/img/user_undefined.jpg);"></div>
+                    <a routerLink="/users/{{user.username}}" class="profile">
+                        <div class="user-image" [ngStyle]="{'background-image': 'url(' + user.image + ')'}"></div>
                         <div class="info">
-                            <span class="username">{{user.displayName}}</span>
+                            <span class="username">{{user.username}}</span>
                             <span class="plan">FREE</span>
                         </div>
                     </a>
@@ -45,7 +45,7 @@
                         <a href="/"><mat-icon class="icon-like-no-fill">favorite_border</mat-icon><span>Favorites</span></a>
                         <a href="/"><mat-icon class="icon-history">history</mat-icon><span>History</span></a>
                         <a href="/"><mat-icon class="icon-lyrics">article</mat-icon><span>Lyrics</span></a>
-                        <a href="/"><mat-icon class="icon-purchased">shop_two</mat-icon><span>Purchased</span></a>
+                        <a routerLink="/purchased"><mat-icon class="icon-purchased">shop_two</mat-icon><span>Purchased</span></a>
                         <a href="/"><mat-icon class="vb-icon-collaborations-l-regular-solid">groups</mat-icon><span>Collaborations</span></a>
                         <div class="divider"></div>
                         <a href="/"><mat-icon class="icon-your-orders">list_alt</mat-icon><span>Your Orders</span></a>
@@ -95,10 +95,10 @@
                 </mat-menu>
             </div>
             <div class="non-authenticated-actions" *ngIf="(currentUser$ | async) === null">
-                <a routerLink="/account/register" href="" class="btn-sign-up">
+                <a routerLink="/account/register" class="btn-sign-up">
                     <span>Sign up</span>
                 </a>
-                <a routerLink="/account/login" href="" class="btn-login">
+                <a routerLink="/account/login" class="btn-login">
                     <span>Sign in</span>
                 </a>
                 <div class="divider-vertical"></div>
@@ -106,44 +106,48 @@
 
             <!-- Cart -->
             
-            <div class="cart-wrapper" (click)="matBudgeCounter == 0 ? openSnackBar() : cartTrigger.openMenu()">
-                <div class="menu-reference" [matMenuTriggerFor]="cartMenu" #cartTrigger="matMenuTrigger"></div>
-                <div class="btn-cart">
-                    <div class="icon">
-                        <mat-icon class="icon-cart material-icons-outlined">
-                            shopping_cart
-                        </mat-icon>
-                        <gs-badge-counter *ngIf="matBudgeCounter" [counter]="matBudgeCounter"></gs-badge-counter>
+            <ng-container *ngIf="(cart$ | async) as cart">
+                <div class="cart-wrapper" (click)="cart.items.length == 0 ? openSnackBar() : cartTrigger.openMenu()">
+                    <div class="menu-reference" [matMenuTriggerFor]="cartMenu" #cartTrigger="matMenuTrigger"></div>
+                    <div class="btn-cart">
+                        <div class="icon">
+                            <mat-icon class="icon-cart material-icons-outlined">
+                                shopping_cart
+                            </mat-icon>
+                            <gs-badge-counter [counter]="cart.items.length"></gs-badge-counter>
+                        </div>
+                        <mat-icon class="icon-arrow-down-solid" *ngIf="cart">arrow_drop_down</mat-icon>
                     </div>
-                    <mat-icon class="icon-arrow-down-solid" *ngIf="matBudgeCounter">arrow_drop_down</mat-icon>
                 </div>
-            </div>
+            </ng-container>
             <mat-menu #cartMenu="matMenu" class="cart-menu">
-                <div class="your-cart">
-                    <span style="color: #fff;">Your cart ({{matBudgeCounter}})</span>
-                </div>
-                <div class="cart-items">
-                    <ul>
-                        <li *ngFor="let track of userCartTracks" class="item">
-                            <div class="artwork">
-                                <img [src]="track.artwork" alt="Cart item artwork">
-                            </div>
-                            <div class="details">
-                                <div class="title-price">
-                                    <a href="" class="title" [innerText]="track.title"></a>
-                                    <span class="price" [innerText]="track.price | currency:'USD':'symbol':'1.2-2'"></span>
+                <ng-container *ngIf="(cart$ | async) as cart">
+                    <div class="your-cart">
+                        <span style="color: #fff;">Your cart ({{cart.items.length}})</span>
+                    </div>
+                    <div class="cart-items">
+                        <ul>
+                            <li *ngFor="let item of cart.items" class="item">
+                                <div class="artwork">
+                                    <img [src]="item.image" alt="Cart item artwork">
                                 </div>
-                                <div class="type">
-                                    <span class="product-type" [innerText]="track.type"></span>
+                                <div class="details">
+                                    <div class="title-price">
+                                        <a routerLink="/{{item.type | lowercase}}/{{item.id}}" class="title" [innerText]="item.title"></a>
+                                        <span class="price" [innerText]="item.price | currency:'USD':'symbol':'1.2-2'"></span>
+                                    </div>
+                                    <div class="type">
+                                        <span class="product-type" [innerText]="item.type"></span>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="checkout" mat-menu-item disableRipple>
-                    <button mat-button disableRipple routerLink="/checkout"
-                        routerLinkActive="router-link-active">Checkout</button>
-                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="checkout" mat-menu-item disableRipple>
+                        <button mat-button disableRipple routerLink="/checkout"
+                            routerLinkActive="router-link-active">Checkout</button>
+                    </div>
+                </ng-container>
             </mat-menu>
         </div>
     </div>

@@ -1,0 +1,36 @@
+:host {
+    display: grid;
+}
+
+:host .item-title {
+    grid-area: item-title;
+}
+
+.fit-parent, .fit-parent  {
+    width: 100%;
+}
+
+.inline-flex, .inline-flex  {
+    display: flex;
+    align-items: center;
+}
+
+.justify-c-center, .justify-c-center  {
+    justify-content: center;
+}
+
+.wrapper {
+    position: relative;
+    padding: 2px 0;
+}
+
+.wrapper.flex {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+:host .extra-info, :host .item-subtitle {
+    display: flex;
+    align-items: center;
+}
