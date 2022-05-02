@@ -8,6 +8,8 @@ import { ProductService } from 'src/app/shared/services/product.service';
 })
 export class CardFigureTemplateComponent implements OnInit {
   @Input() product!: any;
+  @Input() isList = false;
+  @Input() isPlayable = false;
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {

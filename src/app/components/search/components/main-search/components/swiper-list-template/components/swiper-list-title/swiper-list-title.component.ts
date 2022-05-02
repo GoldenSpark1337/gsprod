@@ -1,6 +1,7 @@
-import { ViewChild } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
-import { SwiperComponent, SwiperDirective } from 'ngx-swiper-wrapper';
+import { Component, Input, OnInit } from '@angular/core';
+import Swiper from 'swiper';
+import { SwiperComponent } from 'swiper/angular';
+import { SwiperOptionsService } from '../../../../services/swiper-options.service';
 
 @Component({
   selector: 'gs-swiper-list-title',
@@ -8,22 +9,27 @@ import { SwiperComponent, SwiperDirective } from 'ngx-swiper-wrapper';
   styleUrls: ['./swiper-list-title.component.css']
 })
 export class SwiperListTitleComponent implements OnInit {
-  @ViewChild(SwiperComponent) swiper!: SwiperComponent;
-  @ViewChild(SwiperDirective, { static: false }) directiveRef?: SwiperDirective;
+  @Input() productType: any;
+  swiper!: SwiperComponent;
   
-  constructor() { }
+  constructor(private swiperOptions: SwiperOptionsService) 
+  {
+    
+  }
 
   ngOnInit(): void {
+    this.swiperOptions.getComponentRef().subscribe(res => this.swiper = res);
   }
 
   swipePrev() {
     console.log("Prev from swiper list title");
-    this.directiveRef.prevSlide();
+    this.swiper.swiperRef.slidePrev();
   }
 
   swipeNext() {
     console.log("Next from swiper list title");
-    this.directiveRef.nextSlide();
+    console.log(this.swiper)
+    this.swiper.swiperRef.slideNext();
     // this.swiper.swiperRef.slideNext();
   }
 }

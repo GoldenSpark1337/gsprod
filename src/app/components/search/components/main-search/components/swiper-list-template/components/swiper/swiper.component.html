@@ -1,8 +1,1 @@
-<swiper
-    *ngIf="type == 'component' && show"
-    [config]="config"
-    (indexChange)="onIndexChange($event)" 
-    (swiperTransitionStart)="onSwiperEvent('transitionStart')" 
-    (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
-    <ng-content select=".swiper-slide.grid-item"></ng-content>
-</swiper>
+<ng-content select="swiper"></ng-content>

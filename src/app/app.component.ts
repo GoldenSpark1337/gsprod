@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit, ViewEncapsulation } from "@angular/cor
 import { IUser } from "./shared/models/user";
 import { AccountService } from "./shared/services/account.service";
 import { CartService } from "./shared/services/cart.service";
+import { SelectedTrackService } from "./shared/services/selected-track.service";
 
 @Component({
   selector: "gs-root",
@@ -14,7 +15,8 @@ export class AppComponent implements OnInit {
   play: boolean = false; // TODO: make service for player 
   constructor(
     private userService: AccountService,
-    private cartService: CartService
+    private cartService: CartService,
+    private selectedTrack: SelectedTrackService
     ) {
 
   }
@@ -22,6 +24,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.setCurrentUser();
     this.checkCart();
+    this.loadSelectedTrack();
   }
 
   setCurrentUser() {
@@ -29,6 +32,14 @@ export class AppComponent implements OnInit {
     if (user) {
       this.userService.setCurrentUser(user);
     }
+  }
+
+  loadSelectedTrack() {
+    this.selectedTrack.getTrack().subscribe(res => {
+      if(res) {
+        this.play = true;
+      }
+    });
   }
 
   checkCart() {

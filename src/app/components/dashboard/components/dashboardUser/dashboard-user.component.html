@@ -1,16 +1,16 @@
 <div class="padding-container">
     <div class="max-width-container">
         <div class="header">
-            <span class="title">DASHBOARD</span>
+            <span class="title">БАСҚАРУ ТАҚТАСЫ</span>
             <div class="actions">
                 <button mat-button disableRipple (click)="customizable()">
-                    <ng-container *ngIf="!isDraggable else draggableButtonOnTemp">
+                    <ng-container *ngIf="!(isDraggable$ | async)  else draggableButtonOnTemp">
                         <i class="material-icons icon-dashboard-customize">
                             tune
-                        </i> Customize
+                        </i> Теңшеу
                     </ng-container>
                     <ng-template #draggableButtonOnTemp>
-                        <i class="material-icons icon-check-thin">done</i> Finish Customizing
+                        <i class="material-icons icon-check-thin">done</i> Теңшеуді аяқтау
                     </ng-template>
                 </button>
             </div>

@@ -5,6 +5,7 @@ import { IProduct } from "./product";
     username: string;
     email: string;
     token: string;
+    roles: string[];
     firstName: string;
     lastName: string;
     image: string;

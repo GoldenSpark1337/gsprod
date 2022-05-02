@@ -63,14 +63,11 @@ export class CartService {
 
     findInCart(itemId: number) {
         const cart = this.getCurrentCart();
-        console.log(cart.items)
-        const index = cart.items.some(i => i.id === itemId);
+        const index = cart?.items.some(i => i.id === itemId);
         console.log(index);
         if (!index) {
-            console.log("hit false")
             this.inCartSource.next(false);
         } else {
-            console.log("hit hit true")
             this.inCartSource.next(true);
         }
     }

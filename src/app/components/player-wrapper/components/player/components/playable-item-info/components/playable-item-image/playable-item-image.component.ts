@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'gs-playable-item-image',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./playable-item-image.component.css']
 })
 export class PlayableItemImageComponent implements OnInit {
-
+  @Input() image: string;
   constructor() { }
 
   ngOnInit(): void {

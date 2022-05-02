@@ -1,10 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { NoopScrollStrategy } from '@angular/cdk/overlay';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { FileUploader } from 'ng2-file-upload';
-import { take } from 'rxjs/operators';
-import { IUser } from 'src/app/shared/models/user';
 import { AccountService } from 'src/app/shared/services/account.service';
-import { environment } from 'src/environments/environment';
 import { UploadButtonMatdialogContentComponent } from '../upload-button-matdialog-content/upload-button-matdialog-content.component';
 
 @Component({
@@ -13,17 +10,23 @@ import { UploadButtonMatdialogContentComponent } from '../upload-button-matdialo
   styleUrls: ['./upload-button.component.css']
 })
 export class UploadButtonComponent implements OnInit {
-
+  @Input() maxFileSize = 10 * 1024 * 1024;
+  @Input() url = "";
   constructor(private accountService: AccountService, public dialog: MatDialog) {
   }
 
   ngOnInit() {
   }
 
-  
-
   openUploadDialog() {
-    const dialogRef = this.dialog.open(UploadButtonMatdialogContentComponent, {panelClass: "upload-button-dialog"});
+    const dialogRef = this.dialog.open(UploadButtonMatdialogContentComponent, {
+      scrollStrategy: new NoopScrollStrategy(),
+      panelClass: "upload-button-dialog", 
+      data: {
+        maxfileSize: this.maxFileSize,
+        url: this.url
+      }
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

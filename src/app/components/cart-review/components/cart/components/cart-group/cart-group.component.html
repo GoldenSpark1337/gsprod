@@ -38,9 +38,10 @@
                         <span>{{item.price | currency}}</span>
                       </div>
                       <div class="actions">
+                        <button mat-button class="btn-review" (click)="opewReview()">Review license</button>
                         <div class="btn-remove-container">
                           <gs-round-button class="btn-remove">
-                            <button class="ripple" (click)="removeItemFromCart()">
+                            <button class="ripple" (click)="removeItemFromCart(item)">
                               <mat-icon class="icon-close">close</mat-icon>
                             </button>
                           </gs-round-button>

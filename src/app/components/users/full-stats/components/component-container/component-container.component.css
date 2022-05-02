@@ -1,0 +1,166 @@
+:host {
+    display: block;
+}
+
+@media (min-width: 1348px) {
+    .padding-container {
+        padding: 0 0 30px;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid hsla(0, 0%, 100%, .15);
+}
+
+.header .left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-right: 15px;
+    padding-bottom: 8px;
+}
+
+@media (min-width: 769px) {
+    .header .left {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1280px) {
+    .header .left {
+        width: auto;
+    }
+}
+
+.header .left div {
+    text-transform: uppercase;
+}
+
+.header .left .inner-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.header .left .inner-left>a,
+.header .left .inner-left>span {
+    margin-right: 20px;
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: .3px;
+}
+
+.header .left div {
+    text-transform: uppercase;
+}
+
+@media (min-width: 769px) {
+    .header .right {
+        align-items: center;
+    }
+}
+
+@media (min-width: 1280px) {
+    .header .right {
+        padding-bottom: 0;
+    }
+}
+
+.header .right .activity-type-filter {
+    display: flex;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    white-space: nowrap;
+}
+
+.header .right .activity-type-filter .item {
+    position: relative;
+    display: none;
+    padding-bottom: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (min-width: 1280px) {
+    .header .right .activity-type-filter .item {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.header .right .activity-type-filter .item:not(:last-of-type) {
+    margin-right: 28px;
+}
+
+.header .right .activity-type-filter .item i {
+    font-size: 20px;
+    margin-right: 6px;
+}
+
+.header .right .activity-type-filter .item.active i,
+.header .right .activity-type-filter .item:hover i {
+    color: var(--gs-pink);
+}
+
+.header .right .activity-type-filter .item.active:after,
+.header .right .activity-type-filter .item:hover:after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gs-indigo);
+}
+
+.graph-area {
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+
+.graph-area.visible {
+    opacity: 1;
+}
+
+.graph-area .graph-header {
+    font-size: 24px;
+    padding: 42px 0 40px;
+}
+
+.graph-area .graph-header .title {
+    font-weight: 600;
+    color: #fff;
+}
+
+.graph-area .graph-header .title i {
+    color: var(--bs-fi-interactive);
+    margin-right: 4px;
+}
+
+.graph-area .graph-header .sub-title {
+    color: #707070;
+}
+
+.graph-area .graph {
+    height: 275px;
+}
+
+.graph-area .graph ::ng-deep .ngx-charts text {
+    fill: var(--white);
+}
+
+::ng-deep .gridline-path-vertical {
+    display: none;
+}
+
+::ng-deep .ngx-charts .gridline-path {
+    stroke: var(--white);
+    opacity: .15;
+}

@@ -1,0 +1,16 @@
+<div class="left-header">
+  <h4>Messages</h4>
+  <gs-round-button matTooltip="New message" matTooltipPosition="above" matTooltipShowDelay="800"
+    class="mat-tooltip-trigger btn-new-message">
+
+    <button class="ripple" type="button">
+      <mat-icon class="icon-add">add</mat-icon>
+    </button>
+  </gs-round-button>
+</div>
+<div class="messages closed">
+  <gs-user-messages></gs-user-messages>
+</div>
+<div class="message-thread" [class.opened]="(threadUser$ | async)">
+  <gs-message-thread></gs-message-thread>
+</div>

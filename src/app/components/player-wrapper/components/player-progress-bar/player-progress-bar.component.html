@@ -1,6 +1,6 @@
 <div class="progress-bar-player">
-    <mat-slider></mat-slider>
-    <div class="tooltip"></div>
+    <mat-slider [value]="currentProgress$ | async" step="1" (input)="updateCurrentTime($event)"></mat-slider>
+    <div class="tooltip"> {{currentTime$ | async}} </div>
     <div class="repeat-start-point" style="left: 0%"></div>
     <div class="repeat-end-point" style="left: 100%"></div>
 </div>

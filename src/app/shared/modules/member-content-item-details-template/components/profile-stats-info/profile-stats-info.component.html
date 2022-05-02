@@ -2,7 +2,7 @@
     <ng-container *ngIf="product">
         <p class="social-interaction-line">
             <span class="label">Published</span>
-            <span class="value">{{product.releaseDate}}</span>
+            <span class="value">{{product.releaseDate | date}}</span>
         </p>
         <p class="social-interaction-line" *ngIf="product.bpm">
             <span class="label">BPM</span>

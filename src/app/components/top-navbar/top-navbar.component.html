@@ -10,91 +10,91 @@
             <gs-search-track-top-bar class="search-container"></gs-search-track-top-bar>
         </div>
         <div class="right">
-            <div class="authenticated-actions" *ngIf="(user$ | async) as user">
-                <button class="btn-upload"><mat-icon class="icon-plus-medium">add</mat-icon><span>Upload</span></button>
-                <div class="divider-vertical"></div> 
-                <div class="profile-wrapper">
-                    <div class="wrapper-button-profile">
-                        <div [matMenuTriggerFor]="userMenu" class="btn-you">
-                            <div  class="menu-reference"></div>
-                            <div class="icon">
-                                <div class="user-image" [ngStyle]="{'background-image': 'url(' + user.image + ')'}" ></div>
+            <ng-container *ngIf="(user$ | async) as user">
+            <div class="authenticated-actions" *ngIf="user !== null">
+                
+                    <button class="btn-upload"><mat-icon class="icon-plus-medium">add</mat-icon><span>Upload</span></button>
+                    <div class="divider-vertical"></div>
+                    <div class="profile-wrapper">
+                        <div class="wrapper-button-profile">
+                            <div [matMenuTriggerFor]="userMenu" class="btn-you">
+                                <div  class="menu-reference"></div>
+                                <div class="icon">
+                                    <div class="user-image" [ngStyle]="{'background-image': 'url(' + user.image + ')'}" ></div>
+                                </div>
+                                <mat-icon class="icon-arrow-down-solid">arrow_drop_down</mat-icon>
                             </div>
-                            <mat-icon class="icon-arrow-down-solid">arrow_drop_down</mat-icon>
                         </div>
                     </div>
-                </div>
-                <mat-menu #userMenu="matMenu" xPosition="before" class="user-menu">
-                    <a routerLink="/users/{{user.username}}" class="profile">
-                        <div class="user-image" [ngStyle]="{'background-image': 'url(' + user.image + ')'}"></div>
-                        <div class="info">
-                            <span class="username">{{user.username}}</span>
-                            <span class="plan">FREE</span>
-                        </div>
-                    </a>
-                    <gs-wallet-available-balance style="margin-top: 8px"></gs-wallet-available-balance>
-
-                    <!--<gs-gift-card-available-balance></gs-gift-card-available-balance>-->
-
-                    <div class="divider"></div>
-
-                    <!-- Menus -->
-
-                    <div class="you-menus">
-                        <a href="/"><mat-icon class="icon-playlist">queue_music</mat-icon><span>My Playlists</span></a>
-                        <a href="/"><mat-icon class="icon-like-no-fill">favorite_border</mat-icon><span>Favorites</span></a>
-                        <a href="/"><mat-icon class="icon-history">history</mat-icon><span>History</span></a>
-                        <a href="/"><mat-icon class="icon-lyrics">article</mat-icon><span>Lyrics</span></a>
-                        <a routerLink="/purchased"><mat-icon class="icon-purchased">shop_two</mat-icon><span>Purchased</span></a>
-                        <a href="/"><mat-icon class="vb-icon-collaborations-l-regular-solid">groups</mat-icon><span>Collaborations</span></a>
+                    <mat-menu #userMenu="matMenu" xPosition="before" class="user-menu">
+                        <a routerLink="/users/{{user.username}}" class="profile">
+                            <div class="user-image" [ngStyle]="{'background-image': 'url(' + user.image + ')'}"></div>
+                            <div class="info">
+                                <span class="username">{{user.username}}</span>
+                                <span class="plan">{{user.roles}}</span>
+                            </div>
+                        </a>
+                        <gs-wallet-available-balance style="margin-top: 8px"></gs-wallet-available-balance>
+                        <!--<gs-gift-card-available-balance></gs-gift-card-available-balance>-->
                         <div class="divider"></div>
-                        <a href="/"><mat-icon class="icon-your-orders">list_alt</mat-icon><span>Your Orders</span></a>
-                        <a href="/"><mat-icon class="vb-icon-gift-card-xl-regular">card_giftcard</mat-icon><span>Gift Card Orders</span></a>
-                        <a href="/"><mat-icon class="icon-negotiations">gavel</mat-icon><span>Negotiations</span></a>
-                        <a href="/"><mat-icon class="icon-chat-no-fill">forum</mat-icon><span>Messages</span></a>
-                        <button><mat-icon class="icon-connections">people</mat-icon><span>Connections</span></button>
-                        <a href="/"><mat-icon class="icon-account-settings">tune</mat-icon><span>Account Settings</span></a>
-                        <a href="/"><mat-icon class="icon-help">contact_support</mat-icon><span>Help</span></a>
-                    </div>
-                    <div class="divider"></div>
-
-                    <!-- Logout -->
-
-                    <button class="btn-logout" (click)="logout()">
-                        <mat-icon class="icon-logout">logout</mat-icon>
-                        <span>Log out</span>
-                    </button>
-                </mat-menu>
-                <div [matMenuTriggerFor]="notifyMenu" class="notifications-wrapper">
-                    <div class="menu-reference"></div>
-                    <div class="btn-notifications">
-                        <div class="icon">
-                            <mat-icon class="icon-bell material-icons-outlined">notifications</mat-icon>
-                            <mat-icon class="icon-arrow-down-solid">arrow_drop_down</mat-icon>
+                        <!-- Menus -->
+                        <div class="you-menus">
+                            <a href="/"><mat-icon class="icon-playlist">queue_music</mat-icon><span>My Playlists</span></a>
+                            <a routerLink="/favorites"><mat-icon class="icon-like-no-fill">favorite_border</mat-icon><span>Favorites</span></a>
+                            <a href="/"><mat-icon class="icon-history">history</mat-icon><span>History</span></a>
+                            <a href="/"><mat-icon class="icon-lyrics">article</mat-icon><span>Lyrics</span></a>
+                            <a routerLink="/purchased"><mat-icon class="icon-purchased">shop_two</mat-icon><span>Purchased</span></a>
+                            <a href="/"><mat-icon class="vb-icon-collaborations-l-regular-solid">groups</mat-icon><span>Collaborations</span></a>
+                            <div class="divider"></div>
+                            <a href="/"><mat-icon class="icon-your-orders">list_alt</mat-icon><span>Your Orders</span></a>
+                            <a href="/"><mat-icon class="vb-icon-gift-card-xl-regular">card_giftcard</mat-icon><span>Gift Card Orders</span></a>
+                            <a href="/"><mat-icon class="icon-negotiations">gavel</mat-icon><span>Negotiations</span></a>
+                            <a routerLink="messages"><mat-icon class="icon-chat-no-fill">forum</mat-icon><span>Messages</span></a>
+                            <button><mat-icon class="icon-connections">people</mat-icon><span>Connections</span></button>
+                            <a href="/"><mat-icon class="icon-account-settings">tune</mat-icon><span>Account Settings</span></a>
+                            <a href="/"><mat-icon class="icon-help">contact_support</mat-icon><span>Help</span></a>
+                        </div>
+                        <div class="divider"></div>
+                        <!-- Logout -->
+                        <button class="btn-logout" (click)="logout()">
+                            <mat-icon class="icon-logout">logout</mat-icon>
+                            <span>Log out</span>
+                        </button>
+                    </mat-menu>
+                    <div [matMenuTriggerFor]="notifyMenu" class="notifications-wrapper">
+                        <div class="menu-reference"></div>
+                        <div class="btn-notifications">
+                            <div class="icon">
+                                <mat-icon class="icon-bell material-icons-outlined">notifications</mat-icon>
+                                <mat-icon class="icon-arrow-down-solid">arrow_drop_down</mat-icon>
+                                <gs-badge-counter [counter]="unreadMessages"></gs-badge-counter>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <mat-menu #notifyMenu="matMenu" xPosition="before" class="notifications-menu">
-                    <ul>
-                        <li>
-                            <a href="/" class="notifications-messages">
-                                <div class="messages-icon">
-                                    <div>
-                                        <mat-icon class="icon-chat">message</mat-icon>
+                    <mat-menu #notifyMenu="matMenu" xPosition="before" class="notifications-menu">
+                        <ul>
+                            <li>
+                                <a routerLink="messages" class="notifications-messages">
+                                    <div class="messages-icon" [class.unread-messages]="unreadMessages">
+                                        <div>
+                                            <mat-icon class="icon-chat">message</mat-icon>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="info">
-                                    <span class="info-top">Inbox</span>
-                                    <span class="info-bottom">{{unreadMessages}} unread messages</span>
-                                </div>
-                            </a>
-                            <div class="divider"></div>
-                        </li>
-                    </ul>
-                    <gs-notifications-list></gs-notifications-list>
-                </mat-menu>
+                                    <div class="info">
+                                        <span class="info-top">Inbox</span>
+                                        <span class="info-bottom">{{unreadMessages}}{{unreadMessages === 20 ? '+' : ''}} unread messages</span>
+                                    </div>
+                                    <gs-highlight-mark *ngIf="unreadMessages"></gs-highlight-mark>
+                                </a>
+                                <div class="divider"></div>
+                            </li>
+                        </ul>
+                        <gs-notifications-list></gs-notifications-list>
+                    </mat-menu>
+                
             </div>
-            <div class="non-authenticated-actions" *ngIf="(currentUser$ | async) === null">
+            </ng-container>
+            <div class="non-authenticated-actions" *ngIf="(user$ | async) === null">
                 <a routerLink="/account/register" class="btn-sign-up">
                     <span>Sign up</span>
                 </a>
@@ -158,12 +158,10 @@
         <nav class="menu-options">
             <a routerLink="/" class="link-no-menu">Home</a>
             <a href="" class="link-no-menu">Feed</a>
-            <a href="" class="link-no-menu" (mouseover)="showHoverable()" (mouseout)="hideHoverable()">Tracks</a>
+            <a routerLink="/tracks" class="link-no-menu">Tracks</a>
             <a href="" class="link-no-menu">Distribution</a>
-            <a href="" class="link-no-menu">Publishing</a>
-            <a href="" class="link-no-menu">Beat ID</a>
-            <a href="" class="link-no-menu">Gift Cards</a>
-            <a routerLink="/dashboard" class="link-no-menu" (mouseover)="showHoverable()" (mouseout)="hideHoverable()" *ngIf="currentUser$ | async">My Media</a>
+            <!-- <a href="" class="link-no-menu">Publishing</a> -->
+            <a routerLink="/dashboard" class="link-no-menu" (mouseover)="showHoverable()" (mouseout)="hideHoverable()" *ngIf="user$ | async">My Media</a>
         </nav>
         <gs-top-nav-menu *ngIf="isHoverable" (onChanged)="timeout($event)"></gs-top-nav-menu>
     </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'gs-playable-item-title',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./playable-item-title.component.css']
 })
 export class PlayableItemTitleComponent implements OnInit {
-
+  @Input() title: string;
   constructor() { }
 
   ngOnInit(): void {

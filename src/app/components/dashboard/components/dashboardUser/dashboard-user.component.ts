@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, OnDestroy, Output } from '@angular/core';
 import { DragulaService } from 'ng2-dragula';
+import { Observable } from 'rxjs';
+import { last, map, take } from 'rxjs/operators';
 import { ServiceDashboardDragService } from './shared/service-dashboard-drag.service';
 
 @Component({
@@ -9,8 +11,7 @@ import { ServiceDashboardDragService } from './shared/service-dashboard-drag.ser
 })
 
 export class DashboardUserComponent implements OnInit, OnDestroy {
-  @Output() onChanged = new EventEmitter<boolean>();
-  public isDraggable: boolean = false;
+  public isDraggable$: Observable<boolean> = this.sharedDraggable.getDraggable();
 
   constructor(
     private sharedDraggable: ServiceDashboardDragService,
@@ -38,27 +39,40 @@ export class DashboardUserComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.dragulaService.destroy("DASHBOARD_PANELS");
-  }
-
-  get staticIsDraggable() {
-    return this.isDraggable;
+    const bag: any = this.dragulaService.find('DASHBOARD_PANELS');
+    if (bag !== undefined ) this.dragulaService.destroy('DASHBOARD_PANELS');
   }
 
   customizable(): void {
-    this.isDraggable = !this.isDraggable;
-    this.sharedDraggable.loadDraggable(this.isDraggable);
-
-    if (this.isDraggable == true) {
-      this.ngOnDestroy();
-      this.dragulaService.createGroup("DASHBOARD_PANELS", {
-        moves: (el, source, handle) => {
-          console.log("fsafsa");
-          return true;
+    this.isDraggable$.pipe(
+      take(1),
+      map((initDrag: boolean) => {
+        let drag = !initDrag;
+        this.sharedDraggable.loadDraggable(drag);
+        console.log(drag)
+        this.ngOnDestroy();
+        this.dragulaService.createGroup("DASHBOARD_PANELS", {
+          removeOnSpill: false,
+          moves: function (el:any, container:any, handle:any):any { 
+            debugger
+            console.log(el, container);
+            if (drag) {
+              if (el?.classList.contains("block-drag")) { return false; }
+              return true;
+            }
+            else {
+              console.log("ekf")
+              return false;
+            }
+          },
+          accepts: (el, target, source, sibling) => {
+        if (sibling === null) {
+          return false
         }
+        return true;
+      }
+        })
       })
-    }
-    this.onChanged.emit(this.isDraggable);
-    console.log(this.isDraggable);
+    ).subscribe();
   }
 }

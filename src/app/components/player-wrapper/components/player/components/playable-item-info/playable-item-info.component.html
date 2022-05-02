@@ -1,15 +1,17 @@
 <div class="wrapper-image-info">
-    <gs-playable-item-image></gs-playable-item-image>
+    <gs-playable-item-image *ngIf="track" [image]="track.image"></gs-playable-item-image>
 </div>
 <div class="information">
-    <div class="title">
-        <a href="" class="anchor-title">
-            <gs-playable-item-title class="player-info-title"></gs-playable-item-title>
-        </a>
-    </div>
-    <div class="subtitle">
-        <a href="" class="anchor-subtitle">
-            <gs-playable-item-subtitle></gs-playable-item-subtitle>
-        </a>
-    </div>
+    <ng-container *ngIf="track">
+        <div class="title">
+            <a routerLink="tracks/{{track.id}}" routerLinkActive="router-link-active"  class="anchor-title">
+                <gs-playable-item-title class="player-info-title" [title]="track.title"></gs-playable-item-title>
+            </a>
+        </div>
+        <div class="subtitle">
+            <a routerLink="users/{{track.user}}" class="anchor-subtitle">
+                <gs-playable-item-subtitle [user]="track.user" [plays]="track.plays"></gs-playable-item-subtitle>
+            </a>
+        </div>
+    </ng-container>
 </div>

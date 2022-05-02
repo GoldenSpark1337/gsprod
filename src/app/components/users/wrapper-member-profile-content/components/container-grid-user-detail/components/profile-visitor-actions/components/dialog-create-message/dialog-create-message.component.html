@@ -1,0 +1,42 @@
+<div class="header">
+  <h1 matdialogtitle class="mat-dialog-title" id="mat-dialog-title-1">Message</h1>
+  <gs-round-button>
+    <button type="button" mat-dialog-close>
+    <span aria-hidden="true" class="material-icons icon-close">
+      close
+    </span>
+    </button>
+  </gs-round-button>
+</div>
+<mat-dialog-content class="content">
+  <form #messageForm="ngForm" autocomplete="off" class="component-form" novalidate>
+    <div class="info">
+      <span>To:</span>
+      <div class="user">
+        <div class="user-image"
+          style="background-image: url({{user.image}});">
+        </div>
+        <span class="username">{{user.username}}</span>
+      </div>
+    </div>
+    <textarea 
+      name="messageContent"
+      placeholder="Message"
+      [(ngModel)]="messageContent"
+      required  
+      class="textarea-input-text input-text"></textarea>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions class="footer">
+  <gs-square-button buttontype="button" class="vb-system vb-btn-primary-text-m vb-btn-fluid">
+    <button 
+    type="button" 
+    tabindex="0" 
+    [disabled]="!messageForm.valid" 
+    mat-dialog-close 
+    (click)="sendMessage()">
+      <span
+        class="ng-star-inserted">Send</span>
+    </button>
+  </gs-square-button>
+</mat-dialog-actions>

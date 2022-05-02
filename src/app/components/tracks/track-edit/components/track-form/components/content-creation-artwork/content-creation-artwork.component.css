@@ -1,0 +1,36 @@
+.content-wrapper {
+    margin-top: 24px;
+}
+
+.content-wrapper .preview-container {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    border: 1px solid #707070;
+}
+
+.content-wrapper .preview-container.has-artwork {
+    background: url(/assets/img/placeholders/no-background-placeholder.png) no-repeat 50%;
+    background-size: cover;
+}
+
+.d-flex[_nghost-hdd-c310] {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.content-wrapper .info-container {
+    margin: 24px auto;
+    text-align: center;
+}
+
+p {
+    font-size: 12px;
+    font-weight: 500;
+    color: #707070;
+}
+
+.content-wrapper .upload-button-container {
+    margin-bottom: 24px;
+}

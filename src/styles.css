@@ -33,3 +33,14 @@ a {
     --gs-gray: #ccc;
 }
 
+:root {
+    /* --top-spacing: calc( 133px + 0px ); */
+    --top-spacing: calc(var(--top-nav-component-height, 0px) + var(--download-apps-banner-height, 0px));
+    --bottom-spacing: var(--player-component-height, 0px);
+}
+
+:root {
+    --player-component-height: 0px;
+    --top-nav-component-height: 114px;
+    --download-apps-banner-height: 0px;
+}

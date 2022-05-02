@@ -1,0 +1,45 @@
+.drop-container {
+    width: 250px;
+}
+
+.btn-files {
+    min-height: 65px;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+    background-color: #262626;
+}
+
+.btn-files .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.btn-files .wrapper div {
+    margin-left: 20px;
+    flex: 1;
+}
+
+.btn-files .wrapper p {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+}
+
+.btn-files .wrapper .files-info {
+    font-size: 11px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.btn-files .wrapper mat-icon {
+    width: auto;
+    height: auto;
+    font-size: 30px;
+    line-height: 50px;
+    color: #fff;
+}

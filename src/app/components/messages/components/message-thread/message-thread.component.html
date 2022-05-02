@@ -1,0 +1,35 @@
+<ng-container *ngIf="(username$ | async) as username">
+  <div class="header">
+    <gs-round-button class="close-conversation-btn">
+      <button class="ripple" type="button">
+        <mat-icon role="img"
+          class="mat-icon notranslate material-icons mat-icon-no-color">keyboard_arrow_left</mat-icon>
+      </button>
+    </gs-round-button>
+    <div class="username"> {{username}} </div>
+    <gs-menu-more-options-delete></gs-menu-more-options-delete>
+  </div>
+  <section class="messages-container">
+      <ng-container *ngIf="(messages$ | async) as messages">
+        <div class="message"
+        *ngFor="let message of messages"
+        [class.sender]="(currentUser$ | async).username === message.recipientUsername">
+          <div class="received">{{message.createdAt | timeago}}</div>
+          <div class="user-image" style="background-image: url({{message.senderImage}});" routerLink="/users/{{message.senderUsername}}"></div>
+          <div class="wrapper-text">
+            <div class="text">
+              {{message.content}}
+            </div>
+          </div>
+        </div>
+      </ng-container>
+  </section>
+  <section class="send-message-container">
+    <form #messageForm="ngForm" (ngSubmit)="sendMessage()" autocomplete="off">
+      <gs-input-mention [(message)]="messageContent"></gs-input-mention>
+      <div class="actions">
+        <button mat-button class="btn-send" type="submit" [disabled]="!messageForm.valid">Send</button>
+      </div>
+    </form>
+  </section>
+</ng-container>

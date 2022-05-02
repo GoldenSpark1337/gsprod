@@ -24,6 +24,7 @@ export class CartComponent implements OnInit {
     this.cart$ = this.cartService.cart$;
     this.cartTotal$ = this.cartService.cartTotal$;
     this.groupItems();
+    console.log(this.groupedItems);
   }
 
   groupItems() {
@@ -33,7 +34,6 @@ export class CartComponent implements OnInit {
             this.groupedItems[item.user] = [];
           }
           this.groupedItems[item.user].push(item);
-          console.log(this.groupItems[item.user])
         });
       })
   }

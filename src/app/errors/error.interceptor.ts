@@ -28,8 +28,10 @@ export class ErrorInterceptor implements HttpInterceptor {
                     modalStateErrors.push(error.error.errors[key]);
                 }
                 throw modalStateErrors.flat();
-              } else {
+              } else if (typeof(error.error) === "object") {
                 this.openSnackBar(`${error.status}: ${error.statusText}`)
+              } else {
+                this.openSnackBar(`${error.error}: ${error.status}`)
               }
               break;
 

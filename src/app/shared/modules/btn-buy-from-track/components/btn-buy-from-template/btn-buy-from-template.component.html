@@ -1,13 +1,13 @@
 <ng-container *ngIf="product">
     <div role="button">
         <gs-buy-card-figure-template>
-            <gs-square-button  class="btn-text vb-list-view-buy-button vb-system vb-btn-primary-text-m vb-btn-fluid" *ngIf="!(inCart$ | async)">
+            <gs-square-button  class="btn-text vb-list-view-buy-button vb-system vb-btn-primary-text-s vb-btn-fluid" *ngIf="!(inCart$ | async)">
                 <button type="button" class="action-element primary" (click)="addItemToCart()">
                     <mat-icon class="vb-icon-shopping-cart-m-regular-solid">shopping_cart</mat-icon>
                     <span class="button-content vb-list-view-buy-button">{{product.price | currency}}</span>
                 </button>
             </gs-square-button>
-            <gs-square-button class="btn-text vb-list-view-buy-button vb-system vb-btn-secondary-text-m vb-btn-fluid" *ngIf="inCart$ | async">
+            <gs-square-button class="btn-text vb-list-view-buy-button vb-system vb-btn-secondary-text-s vb-btn-fluid" *ngIf="inCart$ | async">
                 <button type="button" class="action-element primary in-cart" (click)="openSnackBar()">
                     <mat-icon class="vb-icon-shopping-cart-m-regular-solid">add_shopping_cart</mat-icon>
                     <span class="button-content vb-list-view-buy-button">In Cart</span>

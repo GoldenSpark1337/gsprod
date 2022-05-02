@@ -8,17 +8,20 @@ import { PlayerService } from 'src/app/components/player-wrapper/services/player
 })
 export class PlayerPlayComponent implements OnInit {
   isPlaying: boolean = false;
-  player: any;
-  play(track: any) {
-    this.service.playTrack(track);
-  }
-  constructor(private service: PlayerService) {
+  
+  constructor(private playerService: PlayerService) {
     
   }
 
   ngOnInit(): void {
-    
-    this.player = this.service.player; 
+    this.playerService.isPlaying$.subscribe(res => this.isPlaying = res);
   }
 
+  play() {
+    this.playerService.playTrack();
+  }
+
+  pause() {
+    this.playerService.onPause();
+  }
 }

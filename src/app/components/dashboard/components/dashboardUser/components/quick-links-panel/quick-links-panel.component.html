@@ -2,13 +2,13 @@
 
 <ng-template #gettingStartedContentTemp>
     <gs-dashboard-panel>
-        <span class="title">Getting Started</span>
+        <span class="title">Басталу</span>
         <div class="content">
             <div class="wrapper">
                 <div class="inner">
                     <a href="" target="_blank">
                         <i class="material-icons icon-promote">north_east</i>
-                        <span>Promote Yourself</span>
+                        <span>Өзіңізді жылжыту</span>
                     </a>
                 </div>
                 <div class="inner">
@@ -38,31 +38,31 @@
 
 <ng-template #addNewContentTemp>
     <gs-dashboard-panel>
-        <span class="title">Add New Content</span>
+        <span class="title">Жаңа мазмұн қосу</span>
         <div class="content">
             <div class="wrapper">
                 <div class="inner">
-                    <a href="" target="_blank">
+                    <a (click)="newTrack()">
                         <i class="material-icons icon-dashboard-track">music_note</i>
-                        <span>Create Track</span>
+                        <span>Track қосу</span>
                     </a>
                 </div>
                 <div class="inner">
-                    <a href="" target="_blank">
+                    <a >
                         <i class="material-icons icon-albums">album</i>
                         <span>Create Album</span>
                     </a>
                 </div>
                 <div class="inner">
-                    <a href="" target="_blank">
+                    <a (click)="newService()">
                         <i class="material-icons icon-services">play_arrow</i>
-                        <span>Create Service</span>
+                        <span>Service қосу</span>
                     </a>
                 </div>
                 <div class="inner">
                     <a href="" target="_blank">
                         <i class="material-icons icon-sound-kits">folder</i>
-                        <span>Create Sound Kit</span>
+                        <span>Sound Kit қосу</span>
                     </a>
                 </div>
             </div>

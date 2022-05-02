@@ -24,6 +24,10 @@
     font-size: 24px;
 }
 
+:host ::ng-deep .vb-item-action-button mat-icon.activated {
+    color: red;
+}
+
 :host {
     display: flex;
     align-items: center;

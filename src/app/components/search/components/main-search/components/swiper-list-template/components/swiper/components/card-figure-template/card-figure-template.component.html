@@ -1,8 +1,8 @@
 <figure class="card-figure">
     <div class="thumbnail-group">
         <div class="hover-thumbnail-group">
-            <div class="hover-section">
-                <gs-button-play-track></gs-button-play-track>
+            <div class="hover-section" *ngIf="isPlayable">
+                <gs-button-play-track class="vb-btn-play-absolute-center vb-grid-view-play-button-cards" [trackId]="product.id"></gs-button-play-track>
             </div>
         </div>
         <a routerLink="/{{product.productType | lowercase}}/{{product.id}}" class="figure-data">
@@ -15,6 +15,15 @@
         </a>
     </div>
     <figcaption>
-        <gs-card-figcaption-template class="grid-item" [product]="product"></gs-card-figcaption-template>
+        <gs-card-figcaption-template 
+            [product]="product" 
+            [ngClass]="isList === true ? 'list-item' : 'grid-item'">
+        </gs-card-figcaption-template>
     </figcaption>
 </figure>
+<div class="extra-card-figure-info">
+    <div class="extra-info" *ngIf="isList">
+        <gs-tag-list class="tags vb-secondary-compact"></gs-tag-list>
+        <gs-btn-buy-from-track></gs-btn-buy-from-track>
+    </div>
+</div>

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { SwiperModule } from 'swiper/angular';
 import { SwiperListTitleModule } from '../../swiper-list-template/components/swiper-list-title/swiper-list-title.module';
 import { AppSwiperModule } from '../../swiper-list-template/components/swiper/swiper.module';
 import { SwiperListTemplateModule } from '../../swiper-list-template/swiper-list-template.module';
@@ -13,6 +14,7 @@ import { SwiperListSoundKitsComponent } from './swiper-list-sound-kits.component
         SwiperListTemplateModule,
         SwiperListTitleModule,
         AppSwiperModule,
+        SwiperModule,
         CardFigureSoundKitModule
     ],
     declarations: [SwiperListSoundKitsComponent],

@@ -15,10 +15,28 @@ import { NotificationsListComponent } from './components/notifications-list/noti
 import { TopNavMenuComponent } from './components/top-nav-menu/top-nav-menu.component';
 import { BadgeCounterComponent } from './components/badge-counter/badge-counter.component';
 import { RouterModule } from "@angular/router";
+import { NotificationsCounterBadgeComponent } from "./components/notifications-counter-badge/notifications-counter-badge.component";
+import { HighlightMarkModule } from "./components/highlight-mark/highlight-mark.module";
 
 @NgModule({
-    declarations: [TopNavbarComponent, SearchTrackTopBarComponent, MenuComponent, WalletAvailableBalanceComponent, NotificationsListComponent, TopNavMenuComponent, BadgeCounterComponent],
-    imports: [CommonModule, FormsModule, BrowserAnimationsModule, MaterialModule, MatIconModule, FlexLayoutModule, RouterModule],
+    declarations: [
+        TopNavbarComponent, 
+        SearchTrackTopBarComponent, 
+        MenuComponent, 
+        WalletAvailableBalanceComponent, 
+        NotificationsListComponent, 
+        TopNavMenuComponent, 
+        BadgeCounterComponent,
+        NotificationsCounterBadgeComponent],
+    imports: [
+        CommonModule, 
+        FormsModule, 
+        BrowserAnimationsModule, 
+        MaterialModule, 
+        MatIconModule, 
+        HighlightMarkModule,
+        FlexLayoutModule, 
+        RouterModule],
     exports: [TopNavbarComponent]
 })
 

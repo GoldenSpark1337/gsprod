@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 import { SquareButtonModule } from 'src/app/shared/modules/square-button/square-button.module';
 import { SwiperControllersModule } from './components/swiper-controllers/swiper-controllers.module';
 import { SwiperListTitleComponent } from './swiper-list-title.component';
@@ -11,7 +12,8 @@ import { SwiperListTitleComponent } from './swiper-list-title.component';
         CommonModule,
         SwiperControllersModule,
         MatIconModule,
-        SquareButtonModule
+        SquareButtonModule,
+        RouterModule
     ],
     exports: [SwiperListTitleComponent],
     declarations: [SwiperListTitleComponent],

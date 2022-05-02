@@ -1,0 +1,79 @@
+.component-container {
+    position: relative;
+    width: 100%;
+    padding: 0 15px 15px;
+    overflow: hidden;
+}
+
+@media (min-width: 1348px) {
+    .component-container {
+        padding: 0 0 30px;
+    }
+}
+
+.component-container {
+    display: flex;
+    justify-content: center;
+}
+
+.component-container>div {
+    max-width: 652px;
+    margin: 0 auto;
+}
+
+.component-container>div,
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+form.component-form {
+    max-width: 1300px;
+}
+
+fieldset {
+    border: none;
+}
+
+fieldset:first-child {
+    margin-top: 0;
+}
+
+form>fieldset {
+    max-width: 100%;
+    margin-bottom: 32px;
+}
+
+form>fieldset .profile-artwork {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+form .bio-container gs-textarea-input textarea {
+    height: 100px;
+}
+
+.big {
+    display: flex;
+    margin-right: 24px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.big .user-image {
+    width: 80px;
+    height: 80px;
+}
+
+.form-group:first-child {
+    margin-top: 0;
+}
+
+form .bio-container gs-textarea-input {
+    height: 100%;
+    background: none;
+}

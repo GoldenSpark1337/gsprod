@@ -1,3 +1,14 @@
-<button mat-icon-button class="btn-play no-scale vb-list-view-play-button-cards">
-  <mat-icon class="vb-icon-play-s-regular-solid">play_arrow</mat-icon>
+<button 
+  (click)="play()"
+  mat-icon-button class="btn-play no-scale"
+  [ngClass]="isList ? 
+    'vb-list-view-play-button-cards' :
+    'vb-grid-view-play-button-cards'">
+  <mat-icon [ngClass]="isList ? 
+    'vb-icon-play-s-regular-solid' :
+    'vb-icon-play-l-regular-solid'">
+    <ng-container *ngIf="!isPlaying">
+      play_arrow
+    </ng-container>
+  </mat-icon>
 </button>

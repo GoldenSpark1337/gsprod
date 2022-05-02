@@ -20,7 +20,7 @@
 
 @media (min-width: 1024px) {
     :host button.btn-play.vb-list-view-play-button-cards ::ng-deep mat-icon {
-        color: var(--white);
+        color: var(--gs-pink);
         letter-spacing: 0!important;
     }
 }
@@ -39,5 +39,12 @@
     :host button.btn-play.vb-list-view-play-button-cards mat-icon:first-child:last-child {
         margin-left: 0;
         margin-right: 0;
+    }
+}
+
+@media (min-width: 1024px) and (min-width: 1024px) {
+    ::ng-deep button.btn-play.vb-grid-view-play-button-cards:hover {
+        border: 0 solid transparent;
+        background-color: var(--gs-purple);
     }
 }

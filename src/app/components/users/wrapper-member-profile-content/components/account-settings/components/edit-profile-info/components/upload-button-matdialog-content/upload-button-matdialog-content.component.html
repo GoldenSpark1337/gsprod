@@ -5,19 +5,18 @@
         <gs-header>
           <p>Upload Files</p>
         </gs-header>
-        <div
-          class="drag-drop-container">
-          <div class="icons">
-            <mat-icon class="icon-upload-big">cloud_upload</mat-icon>
+        <div class="drag-drop-container">
+          <div class="drag-drop-message">
+            <div class="icons">
+              <mat-icon class="icon-upload-big">cloud_upload</mat-icon>
+            </div>
+            <h4>
+              <span>Upload files from your computer</span>
+            </h4>
           </div>
-          <h4>
-            <span>Upload files from your computer</span>
-          </h4>
+          <uppy-drag-drop [uppy]="uppy" [classList]="'uppy-box'"></uppy-drag-drop>
         </div>
-        <!-- Target DOM node #1 -->
-        <uppy-drag-drop [uppy]="uppy"></uppy-drag-drop>
       </div>
-      
     </div>
   </div>
 </mat-dialog-content>

@@ -1,0 +1,14 @@
+<div class="input-text">
+  <input 
+    type="text" 
+    name="input-mention"
+    autocomplete="off" 
+    required=""
+    placeholder="Type a message"
+    [(ngModel)]="message"
+    (ngModelChange)="onText($event)">
+  <div class="mention-list align-top">
+    <ul>
+    </ul>
+  </div>
+</div>

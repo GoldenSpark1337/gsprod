@@ -1,0 +1,48 @@
+::ng-deep .mat-dialog-container {
+    position: relative;
+    max-width: 90vw !important;
+    color: #fff;
+    background-color: #1b1b1b;
+    border-radius: 5px !important;
+}
+
+.license-document {
+    color: #707070;
+    overflow-wrap: break-word;
+}
+
+p {
+    font-size: 12px;
+    font-weight: 500;
+    color: #707070;
+}
+
+.license-document p {
+    margin: 0 0 10px;
+}
+
+.license-document li,
+.license-document ol,
+.license-document p,
+.license-document ul {
+    font-size: 14px;
+}
+
+.license-document ol,
+.license-document ul {
+    margin: 0 0 5px 25px;
+}
+
+.license-document li,
+.license-document ol,
+.license-document p,
+.license-document ul {
+    font-size: 14px;
+}
+
+.license-document li,
+.license-document ol,
+.license-document p,
+.license-document ul {
+    font-size: 14px;
+}

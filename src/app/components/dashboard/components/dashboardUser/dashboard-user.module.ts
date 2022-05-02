@@ -15,6 +15,7 @@ import { LatestSalesPanelComponent } from './components/latest-sales-panel/lates
 import { LearnPanelComponent } from './components/learn-panel/learn-panel.component';
 import { QuickLinksPanelComponent } from './components/quick-links-panel/quick-links-panel.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import { FormsModule } from '@angular/forms';
         MatIconModule,
         FormsModule,
         YouTubePlayerModule,
-        DragulaModule
+        DragulaModule,
+        RouterModule
     ],
     exports: [DashboardUserComponent],
     providers: [],

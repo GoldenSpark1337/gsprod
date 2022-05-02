@@ -43,9 +43,34 @@
     }
 }
 
+@media (min-width: 1024px) {
+    :host > figure.card-figure > .thumbnail-group:hover > .hover-thumbnail-group > .hover-section {
+        opacity: 1;
+    }
+}
+
+.playing>figure.card-figure>.thumbnail-group>.hover-thumbnail-group>.hover-section {
+    opacity: 1 !important;
+}
+
 .grid-item:host > figure.card-figure > .thumbnail-group > .hover-thumbnail-group > .hover-section, .grid-item :host > figure.card-figure > .thumbnail-group > .hover-thumbnail-group > .hover-section {
     width: 100%;
     height: 100%;
+}
+
+.vb-btn-play-absolute-center,
+.vb-btn-play-absolute-center {
+    position: absolute;
+    width: unset;
+    height: unset;
+}
+
+@media (min-width: 480px) {
+    .vb-btn-play-absolute-center.vb-grid-view-play-button-cards,
+    .vb-btn-play-absolute-center .vb-grid-view-play-button-cards {
+        top: calc(50% - (48px / 2));
+        left: calc(50% - (48px / 2));
+    }
 }
 
 .grid-item:host > figure.card-figure > .thumbnail-group > .figure-data, .grid-item :host > figure.card-figure > .thumbnail-group > .figure-data {
@@ -93,4 +118,122 @@
         "extra-info"
         "item-title"
         "item-subtitle";
+}
+
+::ng-deep .list-item {
+    border-radius: 5px;
+    padding: 12px 0;
+    flex-flow: row nowrap;
+}
+
+@media (min-width: 1024px) {
+    ::ng-deep .list-item  {
+        padding: 12px 20px 12px 16px;
+    }
+}
+
+::ng-deep .list-item>figure.card-figure {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+}
+
+::ng-deep .list-item>figure.card-figure>.thumbnail-group {
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+img {
+    max-width: 100%;
+}
+
+::ng-deep .list-item>figure.card-figure>.thumbnail-group>.hover-thumbnail-group {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+}
+
+@media (min-width: 769px) {
+    ::ng-deep .list-item > figure.card-figure > .thumbnail-group > .hover-thumbnail-group {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 32px;
+        height: 32px;
+        margin-right: 16px;
+    }
+}
+
+::ng-deep .list-item>figure.card-figure>.thumbnail-group>.hover-thumbnail-group>.card-figure-counter {
+    font-size: 14px;
+    letter-spacing: .1px;
+    line-height: 20px;
+    font-family: var(--font-primary);
+    font-weight: 500;
+    text-transform: none;
+    color: var(--bs-fi-tertiary);
+    position: absolute;
+    display: none;
+    z-index: 10;
+}
+
+@media (min-width: 769px) {
+    ::ng-deep .list-item > figure.card-figure > .thumbnail-group > .hover-thumbnail-group > .card-figure-counter {
+        display: block;
+    }
+}
+
+::ng-deep .list-item>figure.card-figure>.thumbnail-group>.hover-thumbnail-group>.hover-section {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 11;
+}
+
+::ng-deep .list-item>figure.card-figure>.thumbnail-group>.figure-data {
+    position: relative;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+}
+
+@media (min-width: 1024px) {
+    .list-item, .list-item  {
+        grid-template-columns: 16px repeat(3,minmax(0,-webkit-max-content)) 12px;
+        grid-template-columns: 16px repeat(3,minmax(0,max-content)) 12px;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            ". item-title item-title item-title ."
+            ". item-subtitle extra-info . .";
+    }
+}
+
+.list-item>.extra-card-figure-info,
+.list-item >.extra-card-figure-info {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.list-item>.extra-card-figure-info>.extra-info,
+.list-item >.extra-card-figure-info>.extra-info {
+    display: flex;
+    align-items: center;
+}
+
+.list-item>.extra-card-figure-info>.extra-info>:not(:last-child),
+.list-item >.extra-card-figure-info>.extra-info>:not(:last-child) {
+    margin-right: 12px;
+}
+
+@media (min-width: 1024px) {
+    .list-item > .extra-card-figure-info > .extra-info .free-download, 
+    .list-item > .extra-card-figure-info > .extra-info .sponsored-badge, 
+    .list-item > .extra-card-figure-info > .extra-info .tags {
+        display: flex;
+    }
 }

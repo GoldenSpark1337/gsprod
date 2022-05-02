@@ -1,13 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, HostListener, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { IUser } from 'src/app/shared/models/user';
 import { ShopService } from 'src/app/shared/services/shop.service';
 import { AccountService } from 'src/app/shared/services/account.service';
 import { CartService } from 'src/app/shared/services/cart.service';
 import { ICart } from 'src/app/shared/models/cart';
 import { UserService } from 'src/app/shared/services/user.service';
+import { MessageService } from 'src/app/shared/services/message.service';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'gs-top-navbar',
@@ -16,11 +18,18 @@ import { UserService } from 'src/app/shared/services/user.service';
 })
 
 export class TopNavbarComponent implements OnInit {
-  currentUser$: Observable<IUser> = null;
   userCart: any[] = [];
   unreadMessages: number = 0;
   cart$: Observable<ICart>;
-  user$: Observable<IUser>;
+  user$: Observable<IUser> | null= this.accountService.currentUser$.pipe(
+    switchMap(accountUser => {
+      if (accountUser) {
+        this.getUnreadMessages();
+        return this.userService.getUser(accountUser.username);
+      }
+      return of(null);
+    }) 
+  );
 
   isHoverable: boolean = false;
   timer: any;
@@ -29,20 +38,20 @@ export class TopNavbarComponent implements OnInit {
       private productService: ShopService, 
       public accountService: AccountService, 
       private cartService: CartService, 
-      private userService: UserService) { }
+      private userService: UserService,
+      private messageService: MessageService) { }
 
   ngOnInit(): void {
-    this.currentUser$ = this.accountService.currentUser$;
     this.cart$ = this.cartService.cart$;
-    this.getUser();
   }
 
-  getUser() {
-    let username: string;
-    this.currentUser$.subscribe(res => username = res.username);
-    if (username) {
-      this.user$ = this.userService.getUser(username);
-    }
+  getUnreadMessages() {
+    this.messageService.getMessages(1, 20, "Unread").subscribe(messages => {
+      if (messages.length > 20) {
+        this.unreadMessages = 20;
+      }
+      this.unreadMessages = messages.length
+    });
   }
   
   openSnackBar(): void {

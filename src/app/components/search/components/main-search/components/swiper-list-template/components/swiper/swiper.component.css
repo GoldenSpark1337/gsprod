@@ -4,9 +4,27 @@
     touch-action: pan-y;
 }
 
-:host swiper .swiper-container {
+:host ::ng-deep .swiper-container {
     max-height: 100%;
     position: relative;
 }
 
-.swiper-slide { width: 80% }
+::ng-deep .swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+}
+
+::ng-deep .swiper-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+}
+
+::ng-deep .swiper-slide { width: 80% }

@@ -1,17 +1,63 @@
 <div class="component-container">
   <div>
-    <form action="" autocomplete="off" class="component-form">
-      <fieldset>
-        <div class="profile-artwork">
-          <div class="big">
-            <gs-image class="user-image circle">
-              <img src="" alt="User Avatar">
-            </gs-image>
+    <ng-container *ngIf="user">
+      <form #editForm="ngForm" autocomplete="off" class="component-form" (ngSubmit)="updateUser()">
+        <fieldset>
+          <div class="profile-artwork">
+            <div class="big">
+              <gs-image class="user-image circle">
+                <img [src]="user.image" alt="User Avatar">
+              </gs-image>
+            </div>
+            <gs-upload-button [maxFileSize]="maxFileSize" [url]="baseUrl + 'add-image'"></gs-upload-button>
           </div>
-          <gs-upload-button></gs-upload-button>
-        </div>
-      </fieldset>
-
-    </form>
+        </fieldset>
+        <fieldset>
+          <div class="form-group">
+            <gs-text-input>
+              <label for="firstName"> First name </label>
+              <input name="firstName" type="text" autocomplete="on" id="firstName" [(ngModel)]="user.firstName">
+            </gs-text-input>
+          </div>
+          <div class="form-group">
+            <gs-text-input>
+              <label for="lastName"> Last name </label>
+              <input name="lastName" type="text" autocomplete="on" id="lastName" [(ngModel)]="user.lastName">
+            </gs-text-input>
+          </div>
+          <div class="form-group">
+            <gs-text-input>
+              <label for="recordLabel"> Record label name </label>
+              <input name="recordLabel" type="text" autocomplete="on" id="recordLabel" [(ngModel)]="user.recordLabel">
+            </gs-text-input>
+          </div>
+          <div class="form-group">
+            <gs-text-input>
+              <label for="location" class="input-title"> Location </label>
+              <input name="location" type="text" autocomplete="on" id="location" [(ngModel)]="user.location">
+            </gs-text-input>
+          </div>
+          <div class="form-group bio-container">
+            <gs-text-input>
+              <label for="biography"> Biography </label>
+              <textarea class="bs-textarea-input vertical-resize" 
+                name="biography"
+                id="biography" 
+                tabindex="0" 
+                placeholder="" 
+                maxlength="false" 
+                [(ngModel)]="user.biography"></textarea>
+            </gs-text-input>
+          </div>
+          <div class="buttons">
+            <gs-square-button class="vb-system vb-btn-primary-text-m">
+              <button type="submit" tabindex="0" class="action-element primary">
+                <span class="ng-star-inserted">Save changes</span>
+              </button>
+            </gs-square-button>
+          </div>
+        </fieldset>
+      </form>
+    </ng-container>
   </div>
 </div>

@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
       map(user => {
         if (user) return true;
         this._router.navigateByUrl("/account/login");
-        this._snackBarCard.open("You shall not pass!!!")
+        this._snackBarCard.open("You must be authorized")
         return false;
       })
     );

@@ -3,8 +3,11 @@
         <h2 class="title">Vsts</h2>
     </gs-swiper-list-title>
     <gs-swiper>
-        <gs-card-figure-vst *ngFor="let vst of vsts$ | async | slice:0:12" [vst]="vst"
-            class="swiper-slide grid-item swiper-slide-active" swiperSlide>
-        </gs-card-figure-vst>
+        <swiper #swiper [config]="config" class="swiper-container">
+            <ng-template *ngFor="let vst of vsts$ | async | slice:0:12" swiperSlide>
+                <gs-card-figure-vst [vst]="vst" class="swiper-slide grid-item">
+                </gs-card-figure-vst>
+            </ng-template>
+        </swiper>
     </gs-swiper>
 </gs-swiper-list-template>

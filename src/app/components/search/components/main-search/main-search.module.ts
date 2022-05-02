@@ -7,7 +7,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { SquareButtonModule } from 'src/app/shared/modules/square-button/square-button.module';
 import { RouterModule } from '@angular/router';
 import { BuyCardFigureTemplateModule } from 'src/app/shared/modules/btn-buy-from-track/components/buy-card-figure-template/buy-card-figure-template.module';
-import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SwiperListMembersComponent } from './components/members/swiper-list-members/swiper-list-members.component';
 import { CardFigureMemeberComponent } from './components/members/components/card-figure-memeber/card-figure-memeber.component';
 import { CardFigureTemplateCarouselComponent } from './components/members/components/card-figure-template-carousel/card-figure-template-carousel.component';
@@ -23,12 +22,13 @@ import { SwiperListSoundKitsModule } from './components/kits/swiper-list-sound-k
 import { SwiperListVstsModule } from './components/vsts/swiper-list-vsts/swiper-list-vsts.module';
 import { SearchFiltersModule } from './components/container-grid/search-filters/search-filters.module';
 import { ContainerGridModule } from './components/container-grid/container-grid.module';
+import { SearchHeaderModule } from './components/container-grid/search-header/search-header.module';
+import { SwiperModule } from 'swiper/angular';
 
 
 @NgModule({
   declarations: [
     MainSearchComponent,
-    SearchHeaderComponent,
     SwiperListMembersComponent, CardFigureMemeberComponent, CardFigureTemplateCarouselComponent, CardFigcaptionTemplateCarouselComponent
   ],
   imports: [
@@ -36,6 +36,7 @@ import { ContainerGridModule } from './components/container-grid/container-grid.
     MaterialModule,
     MatIconModule,
     ContainerGridModule,
+    SearchHeaderModule,
     SquareButtonModule,
     RouterModule,
     BuyCardFigureTemplateModule,

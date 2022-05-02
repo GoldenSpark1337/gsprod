@@ -1,0 +1,63 @@
+:host {
+    width: 246.4px;
+    margin-right: 17px;
+}
+
+.item {
+    display: flex;
+    cursor: pointer;
+}
+
+a,
+button {
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.item .artwork {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+img {
+    width: 100%;
+}
+
+.item .artwork img {
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+}
+
+.item .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 12px;
+    padding-left: 8px;
+}
+
+.item .content a .title {
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.item .content .caption {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: #707070;
+}
+
+.item .content .caption i {
+    font-size: 12px;
+    margin-right: 4px;
+}

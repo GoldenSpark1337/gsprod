@@ -1,0 +1,13 @@
+<swiper #swiper
+  class="carousel"
+  [config]="config"
+  [virtual]
+  >
+  <ng-template swiperSlide>
+    <gs-stat-card></gs-stat-card>
+  </ng-template>
+</swiper>
+<!-- <button mat-button class="prev"></button> -->
+<button mat-button class="next" (click)="nextSlide()">
+  <i class="icon-arrow material-icons">navigate_next</i>
+</button>

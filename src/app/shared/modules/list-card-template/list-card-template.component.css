@@ -1,0 +1,13 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+:host .list-cards {
+    justify-content: center;
+}
+
+:host .list-cards.list-view {
+    display: flex;
+    flex-direction: column;
+}

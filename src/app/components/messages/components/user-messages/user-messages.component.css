@@ -1,0 +1,120 @@
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 36px;
+    background-color: #363636;
+    border-radius: 3px;
+    margin: 16px;
+}
+
+.search mat-icon {
+    width: 23px;
+    margin: 0 9px;
+}
+
+.search input {
+    width: 100%;
+    font-size: 14px;
+    background-color: transparent;
+    color: #9f9f9f;
+    border: none;
+}
+
+.message {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.message.message-hover-options,
+.message:hover {
+    background-color: hsla(0, 0%, 59%, .1) !important;
+}
+
+.fade-in {
+    opacity: 1;
+    -webkit-animation-name: fadein;
+    animation-name: fadein;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+.no-conversations {
+    line-height: 50px;
+    text-align: center;
+}
+
+.message .user-image {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.message .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding-left: 60px;
+    font-size: 13px;
+}
+
+.name-time {
+    justify-content: space-between;
+}
+
+.name-time,
+.name-time .left {
+    display: flex;
+    align-items: center;
+}
+
+.name-time .left {
+    overflow: hidden;
+}
+
+.name-time .left .not-read {
+    min-width: 6px;
+    height: 6px;
+    margin-right: 6px;
+    border-radius: 50%;
+    background-color: var(--gs-blue);
+}
+
+.name-time .left .username {
+    padding-right: 10px;
+    font-weight: 600;
+    color: #fff;
+    font-size: 15px;
+}
+
+.time-ago {
+    font-size: 13px;
+    color: #707070;
+    white-space: nowrap;
+}
+
+.name-time .left .username,
+.text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.text {
+    padding-right: 20px;
+    color: #707070;
+}

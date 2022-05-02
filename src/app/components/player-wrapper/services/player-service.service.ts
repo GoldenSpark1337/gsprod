@@ -1,6 +1,7 @@
 import { ElementRef, Injectable, OnInit, ViewChild } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { ITrack } from 'src/app/shared/models/track';
+import { TrackService } from 'src/app/shared/services/track.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,57 +9,56 @@ import { ITrack } from 'src/app/shared/models/track';
 export class PlayerService implements OnInit{
   currentProgress$ = new BehaviorSubject(0);
   currentTime$ = new Subject();
+  isLoop$ = new BehaviorSubject(false);
 
-  @ViewChild('player', {static: true}) player!: ElementRef;
+  private isPlaying = new BehaviorSubject(false);
+  isPlaying$ = this.isPlaying.asObservable();
+
+  player!: HTMLAudioElement;
 
   tracks: ITrack[] = [];
-
-  audio = new Audio();
-  isPlaying: boolean = false;
   activeSong: any;
   durationTime?: string;
   constructor() { }
 
   ngOnInit(): void {
-    // this.tracks = getListOfTracks(); 
-
-    this.player.nativeElement.src = this.tracks[0];
-    this.player.nativeElement.load();
-    this.activeSong = this.tracks[0];
-    this.isPlaying = false;
+    this.isPlaying.next(false);
+    this.player.load();
+    this.onTimeUpdate();
   }
 
-  playTrack(track: ITrack): void {
-    console.log(this.player)
+  loadPlayer(player: any) {
+    this.player = player.nativeElement;
+    this.player.addEventListener("loadeddata", function() {
+      });
+  }
+
+  playTrack(): void {
+    //Avoid the Promise Error
+    setTimeout(function () {      
+      this.player.play();
+    }, 150);
+    this.isPlaying.next(true);
+  }
+
+  onPause(): void {
+    if (!this.player.paused) {
+      this.player.pause();
+    }
+    this.isPlaying.next(false);
+  }
+
+  onStop() {
+    this.player.pause();
+    this.player.currentTime = 0;
+    this.isPlaying.next(false);
+    this.currentProgress$.next(0);
+    this.currentTime$.next('0:00');
     this.durationTime = undefined;
-    this.audio.pause();
-
-    this.player.nativeElement.src = track.file;
-    this.player.nativeElement.load();
-    this.player.nativeElement.play();
-    this.activeSong = track;
-    this.isPlaying = true;
   }
 
-  onTimeUpdate() {
-
-    // Set song duration time
-    if (!this.durationTime) {
-      this.setSongDuration();
-    }
-
-    // Emit converted audio currenttime in user friendly ex. 01:15
-    const currentMinutes = this.generateMinutes(this.player.nativeElement.currentTime);
-    const currentSeconds = this.generateSeconds(this.player.nativeElement.currentTime);
-    this.currentTime$.next(this.generateTimeToDisplay(currentMinutes, currentSeconds));
-
-
-    // Emit amount of song played percents
-    const percents = this.generatePercentage(this.player.nativeElement.currentTime, this.player.nativeElement.duration);
-    if (!isNaN(percents)) {
-      this.currentProgress$.next(percents);
-    }
-
+  setVolume(value: number) {
+    this.player.volume = value;
   }
 
   // Play song that comes after active song
@@ -66,9 +66,9 @@ export class PlayerService implements OnInit{
     const nextSongIndex = this.tracks.findIndex((song) => song.id === this.activeSong.id + 1);
 
     if (nextSongIndex === -1) {
-      this.playTrack(this.tracks[0]);
+      this.playTrack();
     } else {
-      this.playTrack(this.tracks[nextSongIndex]);
+      this.playTrack();
     }
   }
 
@@ -76,19 +76,52 @@ export class PlayerService implements OnInit{
   playPreviousSong(): void {
     const prevSongIndex = this.tracks.findIndex((song) => song.id === this.activeSong.id - 1);
     if (prevSongIndex === -1) {
-      this.playTrack(this.tracks[this.tracks.length - 1]);
+      this.playTrack();
     } else {
-      this.playTrack(this.tracks[prevSongIndex]);
+      this.playTrack();
     }
+  }
+
+  repeatTrack(value: boolean) {
+    this.player.loop = value;
+    this.isLoop$.next(value);
+  }
+
+  onTimeUpdate() {
+    // Set song duration time
+    if (!this.durationTime) {
+      console.log("durationFuckingshitjavascriotDie")
+      this.setSongDuration();
+    }
+
+    console.log(this.player.currentTime)
+    console.log(this.player.duration)
+
+    // Emit converted audio currenttime in user friendly ex. 01:15
+    const currentMinutes = this.generateMinutes(this.player.currentTime);
+    const currentSeconds = this.generateSeconds(this.player.currentTime);
+    this.currentTime$.next(this.generateTimeToDisplay(currentMinutes, currentSeconds));
+
+
+    // Emit amount of song played percents
+    const percents = this.generatePercentage(this.player.currentTime, this.player.duration);
+    if (!isNaN(percents)) {
+      this.currentProgress$.next(percents);
+    }
+
   }
 
   // Calculate song duration and set it to user friendly format, ex. 01:15
   setSongDuration(): void {
-    const durationInMinutes = this.generateMinutes(this.player.nativeElement.duration);
-    const durationInSeconds = this.generateSeconds(this.player.nativeElement.duration);
+    this.player.duration;
+    console.log(this.player.duration)
+    console.log(this.player.currentTime)
+    const durationInMinutes = this.generateMinutes(this.player.duration);
+    const durationInSeconds = this.generateSeconds(this.player.duration);
 
-    if (!isNaN(this.player.nativeElement.duration)) {
+    if (!isNaN(this.player.duration)) {
       this.durationTime = this.generateTimeToDisplay(durationInMinutes, durationInSeconds);
+      console.log(this.player.duration)
     }
   }
 
@@ -110,13 +143,6 @@ export class PlayerService implements OnInit{
   // Generate percentage of current song
   generatePercentage(currentTime: number, duration: number): number {
     return Math.round((currentTime / duration) * 100);
-  }
-
-  onPause(): void {
-    this.isPlaying = false;
-    this.currentProgress$.next(0);
-    this.currentTime$.next('0:00');
-    this.durationTime = undefined;
   }
 
   getListOfSongs(): any[] {

@@ -1,0 +1,49 @@
+<div class="padding-container">
+  <div class="max-width-container">
+    <div class="header">
+      <div class="left">
+        <div class="inner-left">
+          <span>СТАТИСТИКА</span>
+        </div>
+        <div class="date-filters">
+          <mat-form-field class="form-select">
+            <mat-select class="thin" panelClass="thin" disableOptionCentering aria-multiselectable="false" [(value)]="period">
+              <mat-option *ngFor="let period of periodsList" [value]="period">
+                {{ period }}
+              </mat-option>
+            </mat-select>
+            <mat-icon class="icon-arrow">expand_more</mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="right">
+        <div class="activity-type-filter">
+          <a href="" class="item">
+            <i class="icon-stats-play material-icons">play_arrow</i>
+            Ойналған
+          </a>
+          <a href="" class="item">
+            <i class="icon-stats-likes material-icons">favorite_border</i>
+            Лайктар
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="graph-area visible">
+      <div class="graph-header">
+        <span class="title">
+          <i class="icon-stats-plays material-icons">play_arrow</i>0
+        </span>
+        <span class="sub-title"> Plays this {{period}}</span>
+      </div>
+      <div class="graph">
+        <ngx-charts-bar-vertical
+          [scheme]="'nightLights'"
+          [results]="data"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis">
+        </ngx-charts-bar-vertical>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,6 +9,7 @@ import { ITrack } from 'src/app/shared/models/track';
 })
 export class CardFigureTrackComponent implements OnInit {
   @Input() track: ITrack;
+  @Input() isList: boolean;
   constructor(private productState: ProductStateService) { }
 
   ngOnInit(): void {

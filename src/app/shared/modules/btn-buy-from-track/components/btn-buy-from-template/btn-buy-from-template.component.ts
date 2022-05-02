@@ -9,13 +9,13 @@ import { CartService } from 'src/app/shared/services/cart.service';
   styleUrls: ['./btn-buy-from-template.component.css']
 })
 export class BtnBuyFromTemplateComponent implements OnInit {
-  @Input() product: any;
-  inCart$: Observable<boolean>; //TODO create service
+  @Input() product?: any;
+  inCart$: Observable<boolean>;
   
   constructor(private cartService: CartService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.cartService.findInCart(this.product.id);
+    this.cartService.findInCart(this.product?.id);
     this.inCart$ =  this.cartService.inCart$;
   }
 

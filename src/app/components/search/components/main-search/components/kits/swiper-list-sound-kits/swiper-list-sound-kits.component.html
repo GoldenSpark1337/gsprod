@@ -3,8 +3,11 @@
         <h2 class="title">Sound Kits</h2>
     </gs-swiper-list-title>
     <gs-swiper>
-        <gs-card-figure-sound-kit *ngFor="let kit of kits$ | async | slice:0:12" [kit]="kit"
-            class="swiper-slide grid-item swiper-slide-active" swiperSlide>
-        </gs-card-figure-sound-kit>
+        <swiper #swiper [config]="config" class="swiper-container">
+            <ng-template *ngFor="let kit of kits$ | async | slice:0:12" swiperSlide>
+                <gs-card-figure-sound-kit [kit]="kit" class="swiper-slide grid-item swiper-slide-active">
+                </gs-card-figure-sound-kit>
+            </ng-template>
+        </swiper>
     </gs-swiper>
 </gs-swiper-list-template>

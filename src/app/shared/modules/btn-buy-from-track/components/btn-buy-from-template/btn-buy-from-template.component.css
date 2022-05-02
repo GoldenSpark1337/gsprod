@@ -59,3 +59,41 @@
     font-size: 16px;
     margin-right: 8px;
 }
+
+.vb-system.vb-btn-primary-text-s a,
+.vb-system.vb-btn-primary-text-s button {
+    background-color: var(--gs-indigo);
+    padding: 7px 12px;
+    border-radius: 5px;
+    border: 0 solid transparent;
+}
+
+.vb-system.vb-btn-primary-text-s a span,
+.vb-system.vb-btn-primary-text-s button span {
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 18px;
+    font-weight: 500;
+    text-transform: none;
+    color: var(--white);
+}
+
+.vb-system.vb-btn-primary-text-s a span,
+.vb-system.vb-btn-primary-text-s button span {
+    white-space: nowrap;
+}
+
+.vb-system.vb-btn-primary-text-s a mat-icon,
+.vb-system.vb-btn-primary-text-s button mat-icon {
+    width: auto;
+    height: auto;
+    color: var(--white);
+    letter-spacing: 0 !important;
+    line-height: 18px;
+}
+
+.vb-system.vb-btn-primary-text-s a mat-icon:not(:last-child),
+.vb-system.vb-btn-primary-text-s button mat-icon:not(:last-child) {
+    font-size: 14px;
+    margin-right: 8px;
+}

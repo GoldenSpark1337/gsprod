@@ -3,9 +3,10 @@ import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import { ILike } from '../models/like';
 import { IPagination } from '../models/pagination';
 import { IProduct } from '../models/product';
-import { ProductParams } from '../models/productParams';
+import { ProductParams } from '../models/params/productParams';
 
 @Injectable({
   providedIn: 'root'
@@ -22,14 +23,15 @@ export class ProductService {
   getProducts(productParams: ProductParams) {
     let params = new HttpParams();
 
-    params.append("Category", productParams.category);
-    params.append("pageIndex", productParams.pageIndex.toString());
-    params.append("pageIndex", productParams.pageSize.toString());
+    params = params.append("Category", productParams.category);
+    params = params.append("pageIndex", productParams.pageIndex.toString());
+    params = params.append("pageIndex", productParams.pageSize.toString());
 
     if (this.products.length > 0) return of(this.products, {observe: 'response', params}); 
-    return this.http.get<IPagination>(this.baseUrl, {observe: 'response', params}).pipe(
+    return this.http.get<IPagination<IProduct>>(this.baseUrl, {observe: 'response', params}).pipe(
       map((products) => {
-        return products.body;
+        this.products = products.body.data;
+        return products.body.data;
       })
     );
   }
@@ -42,8 +44,8 @@ export class ProductService {
 
   getServices() {
     if (this.services.length > 0) return of(this.services); 
-    return this.http.get<IPagination>(this.baseUrl + "services").pipe(
-      map((services: IPagination) => {
+    return this.http.get<IPagination<IProduct>>(this.baseUrl + "services").pipe(
+      map((services: IPagination<IProduct>) => {
         this.services = services.data;
         return services.data;
       })
@@ -62,6 +64,10 @@ export class ProductService {
     );
   }
 
+  createService() {
+    return this.http.post(environment.apiUrl + "services", {})
+  }
+
   updateProduct(product: IProduct) {
     return this.http.put(this.baseUrl, product).pipe(
       map(() => {
@@ -69,5 +75,13 @@ export class ProductService {
         this.products[index] = product;
       })
     );
+  }
+
+  likeProduct(id: number) {
+    return this.http.post(environment.apiUrl + "likes/" + id.toString(), {});
+  }
+
+  getLikes(id: number) {
+    return this.http.get<ILike[]>(environment.apiUrl + "likes?predicate=likedBy&id=" + id.toString())
   }
 }

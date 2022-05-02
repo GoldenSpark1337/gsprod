@@ -7,6 +7,6 @@ export interface IMessage {
     recipientUsername: string;
     recipientImage: string;
     content: string;
-    dateRead: Date;
+    dateRead?: Date;
     createdAt: Date;
 }

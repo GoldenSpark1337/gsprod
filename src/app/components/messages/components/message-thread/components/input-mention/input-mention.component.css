@@ -1,0 +1,52 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.input-text {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    flex: 1;
+    height: 40px;
+    margin-right: 10px;
+    padding: 0;
+    background: transparent;
+    border: unset;
+    display: block;
+    width: 100%;
+}
+
+::ng-deep .send-message-container form .input-text {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: var(--gs-black);
+    border: none;
+    border-radius: 0;
+}
+
+.input-text input {
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    font-family: Poppins, Roboto, Helvetica Neue, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: none;
+    border: none;
+}
+
+.input-text input {
+    height: 100%;
+    padding: 0 12px;
+    color: #9f9f9f;
+}
+
+.send-message-container form input {
+    padding: 0 16px;
+}

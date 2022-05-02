@@ -1,21 +1,33 @@
 <div class="track-list-container">
-  <ul>
-    <li>
+  <ul *ngIf="(tracks$ | async) as tracks">
+    <li *ngFor="let track of tracks; let i = index" 
+        class="track no-released" 
+        (click)="play(track)"
+        [class.playing]="track.id === (selectedTrack$ | async)?.id">
       <div class="col1">
         <div class="col-play">
-          <span class="number"></span>
+          <span class="number">
+            {{i + 1}}
+          </span>
+          <button mat-fab class="btn-play">
+            <span class="material-icons"
+              #playerControl
+              [ngClass]="(isPlaying$ | async) ? 'icon-pause': 'icon-play'"
+              [innerText]="(isPlaying$ | async) ? 'pause_circle_outline': 'play_circle_outline'">
+            </span>
+          </button>
         </div>
-        <img src="" alt="Track image cover" class="track-image">
+        <img [src]="track.image" alt="Track image cover" class="track-image" (error)="track.image='assets/img/track_undefined.jpg'">
         <div class="track-info">
-          <a href="" class="title">
-            <span class="title-content">Code Snipper | FREE *HARD* (SupaFIre)</span>
+          <a routerLink="/tracks/{{track.id}}" class="title">
+            <span class="title-content">{{track.title}}</span>
           </a>
           <div class="musician-container">
             <div class="musician desktop">
               <span class="">by</span>
-              <a href="/" class=""> gomacij </a>
-               &nbsp;•&nbsp;360 BPM
-              •&nbsp;2 plays
+              <a routerLink="/users/{{track.user}}"> {{track.user}} </a>
+               &nbsp;•&nbsp;{{track.bpm}} BPM
+              •&nbsp;{{track.plays}} plays
             </div>
           </div>
         </div>
@@ -33,7 +45,11 @@
         </div>
       </div>
       <div class="col3"></div>
-      <div class="col4"></div>
+      <div class="col4">
+        <div class="btns-container">
+          <gs-btn-buy-from-track [track]="track"></gs-btn-buy-from-track>
+        </div>
+      </div>
     </li>
   </ul>
 </div>

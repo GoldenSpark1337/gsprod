@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ITrack } from 'src/app/shared/models/track';
 
 @Component({
   selector: 'gs-playable-item-info',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./playable-item-info.component.css']
 })
 export class PlayableItemInfoComponent implements OnInit {
-
+  @Input() track: ITrack;
   constructor() { }
 
   ngOnInit(): void {

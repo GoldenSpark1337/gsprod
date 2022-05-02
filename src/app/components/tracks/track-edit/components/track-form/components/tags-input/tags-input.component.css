@@ -1,0 +1,130 @@
+.input-title {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.input-text {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 44px;
+    border-radius: 5px;
+    background-color: #262626;
+    margin: 5px 0;
+    border: 1px solid #262626;
+}
+
+.input-text {
+    display: flex;
+    background-color: unset;
+    border: unset;
+}
+
+.input-text .text {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-radius: 3px;
+    padding: 0 15px;
+    color: #707070;
+    background-color: #262626;
+}
+
+.input-text input {
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: none;
+    border: none;
+}
+
+.input-text .text span,
+.input-text input {
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.input-text input {
+    padding: 0;
+}
+
+.input-text .text span,
+.input-text input {
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.btn-add-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    height: 44px;
+    padding: 0;
+    font-family: Poppins, Roboto, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 100%;
+    max-width: 100px;
+    margin: 0 0 0 8px;
+}
+
+.btn-add-tag[disabled] {
+    background-color: #262626;
+    opacity: .5;
+    color: #fff;
+}
+
+.btn-add-tag:disabled {
+    opacity: .6 !important;
+    color: unset;
+}
+
+.btn-add-tag,
+.btn-add-tag:not([disabled]).mat-focused,
+.btn-add-tag:not([disabled]):hover {
+    background-color: var(--gs-indigo);
+}
+
+::ng-deep mat-chip-list .tag-chip {
+    display: flex;
+    align-items: center;
+    max-width: 135px;
+    font-size: 12px;
+    color: #fff;
+    border: 1px solid hsla(0, 0%, 98%, .25);
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #999;
+    max-width: unset;
+    background-color: transparent !important;
+    margin: 10px 8px 10px 0;
+    padding: 3px 12px !important;
+}
+
+::ng-deep mat-chip-list .tag-chip p {
+    font-size: 12px;
+    font-weight: 500;
+    color: #9f9f9f !important;
+}
+
+::ng-deep mat-chip-list .tag-chip mat-icon {
+    font-size: 10px;
+    margin-left: 8px;
+    color: hsla(0, 0%, 100%, .5);
+    cursor: pointer;
+}

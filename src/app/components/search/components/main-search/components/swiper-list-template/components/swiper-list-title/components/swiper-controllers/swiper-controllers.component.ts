@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SwiperOptionsService } from 'src/app/components/search/components/main-search/services/swiper-options.service';
 
 @Component({
   selector: 'gs-swiper-controllers',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SwiperControllersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private swiperOptions: SwiperOptionsService) { }
 
   ngOnInit(): void {
+    this.swiperOptions.getComponentRef().subscribe(res => console.log());
   }
 
 }

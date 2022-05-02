@@ -19,11 +19,10 @@
     font-size: 16px;
     letter-spacing: 0;
     line-height: 24px;
-    font-family: var(--font-primary);
     font-weight: 500;
     text-transform: none;
     color: var(--white);
-} 
+}
 
 .text-s-silent:host ::ng-deep .name, .text-s-silent :host ::ng-deep .name {
     font-size: 14px;

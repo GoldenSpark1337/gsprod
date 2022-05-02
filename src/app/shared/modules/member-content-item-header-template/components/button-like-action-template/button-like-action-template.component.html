@@ -1,4 +1,6 @@
 <gs-button-item-action-icon-template>
-    <button mat-icon-button class="vb-item-action-button"><mat-icon class="vb-icon-heart-l-regular">favorite_border</mat-icon></button>
-    <span class="total-interactions-available clickable">42</span>
+    <button mat-icon-button class="vb-item-action-button" (click)="addLike()">
+        <mat-icon class="vb-icon-heart-l-regular" [class.activated]="iconActivated">favorite_border</mat-icon>
+    </button>
+    <span class="total-interactions-available clickable">{{productLikes}}</span>
 </gs-button-item-action-icon-template>

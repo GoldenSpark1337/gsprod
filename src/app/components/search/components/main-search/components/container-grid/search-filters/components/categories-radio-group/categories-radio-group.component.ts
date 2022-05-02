@@ -1,8 +1,6 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Directive } from '@angular/core';
 import { Router, RouterLinkActive } from '@angular/router';
-import { take } from 'rxjs/operators';
-import { SearchParamsService } from 'src/app/components/top-navbar/services/searchParams.service';
 
 @Directive({ selector: '[isolate]' })
   export class NameDirective {
@@ -16,7 +14,7 @@ import { SearchParamsService } from 'src/app/components/top-navbar/services/sear
   styleUrls: ['./categories-radio-group.component.css']
 })
 export class CategoriesRadioGroupComponent implements OnInit {
-  categories: string[] = ["Tracls", "Musicians", "Playlists", "Sound Kits", "Services"];
+  categories: string[] = ["Tracks", "Musicians", "Playlists", "Sound Kits", "Services"];
   private _isToggle: boolean = false;
   public get isToggle(): boolean {
     return this._isToggle;
@@ -24,7 +22,7 @@ export class CategoriesRadioGroupComponent implements OnInit {
   public set isToggle(value: boolean) {
     this._isToggle = value;
   }
-  constructor(private renderer: Renderer2, private router: Router, private searchParamsService: SearchParamsService) { }
+  constructor(private renderer: Renderer2, private router: Router) { }
 
   ngOnInit(): void {
   }

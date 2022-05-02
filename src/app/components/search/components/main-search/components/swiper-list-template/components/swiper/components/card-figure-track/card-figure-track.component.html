@@ -1,5 +1,8 @@
 <gs-card-figure-template 
     [product]="track"
-    class="track-template grid-item"
+    class="track-template"
+    [ngClass]="isList ? 'list-item' : 'grid-item'"
+    [isList]="isList"
+    [isPlayable]="true"
     >
 </gs-card-figure-template>

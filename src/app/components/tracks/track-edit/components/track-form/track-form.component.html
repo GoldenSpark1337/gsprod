@@ -1,0 +1,75 @@
+<div class="component-container">
+  <ng-container *ngIf="track">
+    <form #trackEditForm class="component-form" autocomplete="off">
+      <gs-form-error-list></gs-form-error-list>
+      <fieldset class="general-information">
+        <h4>General Information</h4>
+        <mat-card>
+          <div class="track-form">
+            <section class="track-info-section">
+              <div class="track-title">
+                <label class="input-title">TITLE*</label>
+                <div class="input-text">
+                  <input
+                    type="text"
+                    name="title"
+                    placeholder="Title"
+                    maxlength="100"
+                    [(ngModel)]="track.title"
+                    required>
+                  </div>
+                  <span class="input-info">{{track.title.length}} out of 100 Maximum characters allowed</span>
+              </div>
+              <div class="track-tags">
+                <gs-tags-input (tagsChanged)="addTrackTags($event)"></gs-tags-input>
+              </div>
+            </section>
+            <section class="track-files-section">
+              <div class="audio-files">
+                <div class="track-audio-files-download">
+                  <label class="input-title">AUDIO FILES FOR DOWNLOAD</label>
+                  <gs-universal-upload-button>
+                    <div class="drop-container">
+                      <button mat-button class="btn-files" (click)="openDialog()">
+                        <div class="wrapper">
+                          <mat-icon class="button-icon icon-track-music">audiotrack</mat-icon>
+                          <div class="button-text">
+                            <p>Un-Tagged WAV or MP3</p>
+                            <p class="files-info">.WAV (or .MP3)</p>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                  </gs-universal-upload-button>
+                </div>
+              </div>
+              <div class="artwork-file">
+                <gs-content-creation-artwork [productImage]="track.image"></gs-content-creation-artwork>
+              </div>
+            </section>
+          </div>
+        </mat-card>
+      </fieldset>
+      <gs-selling-preferences></gs-selling-preferences>
+      <div class="buttons">
+        <button mat-button type="button"
+          class="mat-focus-indicator btn-cancel mat-button mat-button-base">
+          <span class="mat-button-wrapper">
+            <span class="initial">Save draft</span>
+            <span class="active">Saving draft</span>
+            </span>
+            <span matripple class="mat-ripple mat-button-ripple"></span>
+            <span class="mat-button-focus-overlay"></span>
+          </button>
+        <button mat-button type="button" class="mat-focus-indicator btn-save mat-button mat-button-base">
+          <span class="mat-button-wrapper">
+            <span class="initial">Publish</span>
+            <span class="active">Publishing</span>
+          </span>
+          <span matripple class="mat-ripple mat-button-ripple"></span>
+          <span class="mat-button-focus-overlay"></span>
+        </button>
+      </div>
+    </form>
+  </ng-container>
+</div>

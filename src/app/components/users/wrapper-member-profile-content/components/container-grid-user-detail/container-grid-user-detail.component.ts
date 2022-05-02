@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { IProduct } from 'src/app/shared/models/product';
 import { ITrack } from 'src/app/shared/models/track';
 import { IUser } from 'src/app/shared/models/user';
@@ -30,10 +31,10 @@ export class ContainerGridUserDetailComponent implements OnInit {
     this.userService.getProducts(this.route.snapshot.paramMap.get("username"));
     this.tracks$.subscribe((track)=>{console.log(track)})
     this.userService.getTracks(this.route.snapshot.paramMap.get("username")).subscribe(res => console.log(res));
+    this.user$.subscribe(res => console.log(res))
   }
 
    private loadUser() {
-     console.log("load user")
     this.user$ = this.userService.getUser(this.route.snapshot.paramMap.get("username"));
   }
 

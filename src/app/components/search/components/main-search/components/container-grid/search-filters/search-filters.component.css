@@ -127,3 +127,28 @@
     padding: 0;
     margin-bottom: 24px;
 }
+
+p {
+    font-size: 12px;
+    font-weight: 500;
+    color: #707070;
+}
+
+:host .search-filters-container-inner .search-filters .filters-title {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 0 24px;
+    margin-bottom: 12px;
+}
+
+:host .search-filters-container-inner .search-filters .filters-title .filter-title {
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 28px;
+    font-weight: 500;
+    text-transform: none;
+    color: var(--white);
+}

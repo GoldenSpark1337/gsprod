@@ -15,6 +15,9 @@ import { JwtInterceptor } from "./_interceptors/jwt.interceptor";
 import { ErrorInterceptor } from "./errors/error.interceptor";
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { ErrorModule } from "./errors/error.module";
+import { TimeagoModule } from "ngx-timeago";
+import { NgxSpinnerModule } from "ngx-spinner";
+import { LoadingInterceptor } from "./_interceptors/loading.interceptor";
 
 @NgModule({
   declarations: [AppComponent, TestErrorsComponent],
@@ -30,11 +33,14 @@ import { ErrorModule } from "./errors/error.module";
     TopNavbarModule,
     HomeModule,
     PlayerWrapperModule,
-    DragulaModule.forRoot()
+    NgxSpinnerModule,
+    DragulaModule.forRoot(),
+    TimeagoModule.forRoot()
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
   ],
   bootstrap: [AppComponent],
   

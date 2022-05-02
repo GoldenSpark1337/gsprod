@@ -213,7 +213,7 @@ p {
 }
 .item .info {
     display: inherit;
-    margin-left: 74px;
+    margin-left: 10px;
 }
 
 .item .info .title {
@@ -348,5 +348,34 @@ p {
         position: absolute;
         top: 15px;
         left: 15px;
+    }
+}
+
+.item .actions .btn-review {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    height: 44px;
+    font-family: Poppins, Roboto, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #262626;
+    display: none;
+    width: auto;
+    height: 40px;
+    padding: 0 20px;
+    margin-right: 8px;
+    font-size: 13px;
+}
+
+@media (min-width: 769px) {
+    .item .actions .btn-review {
+        display: block;
     }
 }

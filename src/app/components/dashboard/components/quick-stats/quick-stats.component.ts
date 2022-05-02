@@ -7,7 +7,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class QuickStatsComponent implements OnInit {
   periodsList: string[] = [
-    "Today", "Yesterday", "This Week", "This Month", "Last 7 Days", "Last 14 Days", "Last 30 Days", "Last 60 Days", "Last 90 Days"
+    "Бүгін", "Кеше", "Осы апта", "Соңғы 14 күн", "Соңғы 30 күн", "Соңғы 60 күн", "Соңғы 90 күн"
   ]
   
   period: string = this.periodsList[0];

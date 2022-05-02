@@ -21,6 +21,8 @@ import { PlayerRepeatComponent } from './components/player/components/middle/pla
 import { PlayerVolumeActionComponent } from './components/player/components/right-side/player-volume-action/player-volume-action.component';
 import { PlayerQueueActionComponent } from './components/player/components/right-side/player-queue-action/player-queue-action.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -46,9 +48,11 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
+    MatButtonModule,
     MaterialModule,
     MatIconModule,
     BtnBuyFromTrackModule,
+    RouterModule,
     AddToPlaylistModule
   ],
   exports: [PlayerWrapperComponent]

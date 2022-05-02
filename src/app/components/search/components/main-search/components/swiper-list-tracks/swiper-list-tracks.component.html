@@ -1,10 +1,13 @@
 <gs-swiper-list-template *ngIf="tracks">
-    <gs-swiper-list-title class="vb-system">
+    <gs-swiper-list-title class="vb-system" [productType]="'tracks'">
         <h2 class="title">Tracks</h2>
     </gs-swiper-list-title>
     <gs-swiper>
-        <gs-card-figure-track *ngFor="let track of tracks | slice:0:16" [track]="track"
-            class="swiper-slide grid-item swiper-slide-active" swiperSlide>
-        </gs-card-figure-track>
+        <swiper #swiper [config]="config" class="swiper-container">
+            <ng-template *ngFor="let track of tracks | slice:0:16" swiperSlide>
+                <gs-card-figure-track [track]="track" [isList]="false" class="swiper-slide grid-item">
+                </gs-card-figure-track>
+            </ng-template>
+        </swiper>
     </gs-swiper>
 </gs-swiper-list-template>

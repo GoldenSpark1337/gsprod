@@ -22,7 +22,7 @@
     flex-grow: 1;
     padding: 23px 0 10px;
     text-align: center;
-    background: rgba(70,70,70,.5);
+    background: rgba(0, 110, 165, 0.3);
     border-radius: 5px;
     box-shadow: 0 3px 6px 0 rgb(0 0 0 / 12%);
 }

@@ -2,24 +2,30 @@
     <span class="title">Finish Your Drafts</span>
     <div class="content">
         <div class="wrapper">
-            <p *ngIf="!draftsList.length else draftTemp">You have no drafts pending.</p>
-            <ng-template #draftTemp>
-                <p>You have some drafts pending that require changes to become active.</p>
-                <div class="draft-list">
-                    <div class="row" *ngFor="let draft of draftsList">
-                        <div class="left">
-                            <img [src]="draft.img" alt="img">
-                            <div class="center-content">
-                                <span class="title" [innerText]="draft.title"></span>
-                                <div class="last-change" [innerText]="draft.lastChange"></div>
+            <ng-container *ngIf="(drafts$ | async) as drafts">
+                <p *ngIf="!drafts.length else draftTemp">You have no drafts pending.</p>
+                <ng-template #draftTemp>
+                    <p>You have some drafts pending that require changes to become active.</p>
+                    <div class="draft-list">
+                        <div class="row" *ngFor="let draft of drafts">
+                            <div class="left">
+                                <img 
+                                [src]="draft.image || 'assets/img/track_undefined.jpg'" 
+                                alt="img"
+                                (error)="draft.image='assets/img/track_undefined.jpg'"
+                                >
+                                <div class="center-content">
+                                    <span class="title" [innerText]="draft.title"></span>
+                                    <div class="last-change" [innerText]="draft.releaseDate | date : 'medium'"></div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <button mat-icon-button routerLink="/{{draft.productType | lowercase}}/edit/{{draft.id}}"><i class="material-icons edit">edit</i></button>
                             </div>
                         </div>
-                        <div class="right">
-                            <button mat-icon-button><i class="material-icons edit">edit</i></button>
-                        </div>
                     </div>
-                </div>
-            </ng-template>       
+                </ng-template>
+            </ng-container> 
         </div>
     </div>
 </gs-dashboard-panel>

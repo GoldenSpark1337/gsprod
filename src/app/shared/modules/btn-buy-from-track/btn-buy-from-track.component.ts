@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'gs-btn-buy-from-track',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./btn-buy-from-track.component.css']
 })
 export class BtnBuyFromTrackComponent implements OnInit {
-
+  @Input() track: any;
   constructor() { }
 
   ngOnInit(): void {

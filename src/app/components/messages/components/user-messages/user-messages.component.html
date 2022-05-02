@@ -1,0 +1,50 @@
+<div class="search">
+  <mat-icon class="icon-search">search</mat-icon>
+  <input type="text" placeholder="Search by user">
+</div>
+<div class="messages-container">
+  <ng-container *ngIf="(messages$ | async) as messages">
+    <ng-container *ngIf="messages.length">
+      <ul>
+        <ng-container *ngFor="let group of groupedMessages | keyvalue">
+          <ng-container *ngIf="$any(group).value as message">
+            <li class="message fade-in" 
+            (click)="message.recipientUsername == currentUsername ? 
+            loadUsername(message.senderUsername) : 
+            loadUsername(message.recipientUsername)">
+              <div class="user-image" [ngStyle]="{'background-image': message.senderUsername ?
+              'url(' + message.recipientImage + ')':
+              'url(' + message.senderImage + ')'}"
+              (error)="message.senderImage = '/assets/img/user_undefined.jpg'">
+              </div>
+              <div class="info">
+                <div class="name-time">
+                  <div class="left">
+                    <div class="not-read" *ngIf="message.dateRead === null"></div>
+                    <ng-container *ngIf="message.recipientUsername === currentUsername else senderUsername">
+                        <span class="username">
+                          {{message.senderUsername}}
+                        </span>
+                    </ng-container>
+                      <ng-template #senderUsername>
+                        <span class="username">
+                          {{message.recipientUsername}}
+                        </span>
+                      </ng-template>
+                  </div>
+                  <span class="time-ago">{{message.createdAt | timeago}}</span>
+                </div>
+                <div class="text">{{message.content}}</div>
+              </div>
+            </li>
+          </ng-container>
+        </ng-container>
+      </ul>
+    </ng-container>
+    <ul *ngIf="!messages.length">
+      <li class="no-conversations fade-in">
+        <span>You have no conversations yet</span>
+      </li>
+    </ul>
+  </ng-container>
+</div>

@@ -1,16 +1,16 @@
-<div id="player-container" class="player-container" [class.opened]="false">
+<div id="player-container" class="player-container" [class.opened]="track">
     <gs-player-progress-bar></gs-player-progress-bar>
     <div class="player-content">
         <div class="left-side">
             <div class="playable-information">
-                <gs-playable-item-info></gs-playable-item-info>
+                <gs-playable-item-info [track]="track"></gs-playable-item-info>
             </div>
             <div class="player-actions-start">
                 <div class="add-playlist-content inline-flex">
                     <gs-player-add-playlist></gs-player-add-playlist>
                 </div>
                 <div class="add-to-cart inline-flex">
-                    <gs-btn-buy-from-track></gs-btn-buy-from-track>
+                    <gs-btn-buy-from-track [track]="track"></gs-btn-buy-from-track>
                 </div>
             </div>
         </div>
@@ -27,4 +27,11 @@
         </div>
     </div>
 </div>
-<audio #player hidden controls src="/assets/audio.mp3" id="player"></audio>
+<audio #player
+    crossorigin="anonymous"
+    preload="metadata"
+    hidden
+    controls
+    [attr.src]="track?.file"
+    id="player">
+</audio>

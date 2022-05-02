@@ -1,3 +1,4 @@
+import { NoopScrollStrategy } from '@angular/cdk/overlay';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddToPlaylistComponent } from 'src/app/shared/modules/add-to-playlist/add-to-playlist.component';
@@ -15,6 +16,8 @@ export class PlayerAddPlaylistComponent implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(AddToPlaylistComponent);
+    const dialogRef = this.dialog.open(AddToPlaylistComponent, {
+      scrollStrategy: new NoopScrollStrategy() // avoid backdrop white screen when opening in scrolled state
+    });
   }
 }

@@ -1,0 +1,110 @@
+.page-container {
+    position: absolute;
+    top: 0;
+    display: flex;
+    padding-top: 110px;
+    justify-content: center;
+    align-items: center;
+    height: calc(var(--vh-size));
+    width: 100vw;
+}
+
+.padding-container {
+    position: relative;
+    width: 100%;
+    padding: 0 15px 15px;
+    overflow: hidden;
+}
+
+@media (min-width: 1348px) {
+    .padding-container {
+        padding: 0 0 30px;
+    }
+}
+
+.max-width-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+}
+
+:host .text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+:host .text span {
+    color: #fff;
+    padding: 6px 0;
+    font-weight: 600;
+}
+
+:host .text span.title {
+    font-size: 150px;
+    line-height: 110px;
+    letter-spacing: -4.6px;
+}
+
+:host .text span {
+    color: #fff;
+    padding: 6px 0;
+    font-weight: 600;
+}
+
+:host .text span.subtitle {
+    font-size: 21px;
+    letter-spacing: -.5px;
+}
+
+:host .actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+@media (min-width: 769px) {
+    :host .actions {
+        flex-direction: row;
+    }
+}
+
+:host .actions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    height: 44px;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--gs-indigo);
+    width: 200px;
+    padding: 0 16px;
+    margin: 6px 0;
+}
+
+@media (min-width: 769px) {
+    :host .actions button {
+        width: auto;
+    }
+}
+
+@media (min-width: 769px) {
+    :host .actions button:not(:last-child) {
+        margin: 0 12px 0 0;
+    }
+}
+
+:host .actions button .mat-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: .3px;
+}

@@ -1,0 +1,62 @@
+<gs-form-error-list></gs-form-error-list>
+<ng-container *ngIf="service">
+  <form #trackEditForm autocomplete="off" class="component-form">
+    <div class="general-information">
+      <h4>General information</h4>
+      <mat-card>
+        <mat-card-content>
+          <div class="form-group">
+            <label class="input-title">SERVICE TITLE</label>
+            <div class="input-text">
+              <input type="text" #titleInput placeholder="Type your Service title" maxlength="60" name="title"
+                [(ngModel)]="service.title" required>
+              <span>{{titleInput.value.length}}/60</span>
+            </div>
+          </div>
+          <div class="pricing-container">
+            <div class="form-group">
+              <label class="input-title">PRICE</label>
+              <div class="input-text">
+                <input name="pricing" type="number" step="0.01" min="1" [(ngModel)]="service.price" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <gs-tags-input (tagsChanged)="addServiceTags($event)"></gs-tags-input>
+          </div>
+          <div class="form-group">
+            <label class="input-title">DESCRIPTION</label>
+            <textarea placeholder="Enter Description" name="description" maxlength="120" [(ngModel)]="service.description"
+              required class="textarea-input-text input-text"></textarea>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <fieldset class="service-artwork">
+      <h4>Service artwork</h4>
+      <mat-card>
+        <mat-card-content>
+          <gs-content-creation-artwork></gs-content-creation-artwork>
+        </mat-card-content>
+      </mat-card>
+    </fieldset>
+    <div class="buttons">
+      <button mat-button type="button" class="mat-focus-indicator btn-cancel mat-button mat-button-base">
+        <span class="mat-button-wrapper">
+          <span class="initial">Save draft</span>
+          <span class="active">Saving draft</span>
+        </span>
+        <span matripple class="mat-ripple mat-button-ripple"></span>
+        <span class="mat-button-focus-overlay"></span>
+      </button>
+      <button mat-button type="button" class="mat-focus-indicator btn-save mat-button mat-button-base">
+        <span class="mat-button-wrapper">
+          <span class="initial">Publish</span>
+          <span class="active">Publishing</span>
+        </span>
+        <span matripple class="mat-ripple mat-button-ripple"></span>
+        <span class="mat-button-focus-overlay"></span>
+      </button>
+    </div>
+  </form>
+</ng-container>

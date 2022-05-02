@@ -9,6 +9,7 @@ import { TagListComponent } from './components/tag-list/tag-list.component';
 import { SquareButtonModule } from '../square-button/square-button.module';
 import { HorizontalSeparatorModule } from '../horizontal-separator/horizontal-separator.module';
 import { ProfileStatsInfoModule } from './components/profile-stats-info/profile-stats-info.module';
+import { TagListModule } from './components/tag-list/tag-list.module';
 
 
 
@@ -16,15 +17,15 @@ import { ProfileStatsInfoModule } from './components/profile-stats-info/profile-
   declarations: [
     MemberContentItemDetailsTemplateComponent,
     OpenClosePanelTemplateComponent,
-    ProfileInfoSectionsComponent,
-    TagListComponent
+    ProfileInfoSectionsComponent
   ],
   imports: [
     CommonModule,
     CaptionFigureTemplateModule,
     SquareButtonModule,
     HorizontalSeparatorModule,
-    ProfileStatsInfoModule
+    ProfileStatsInfoModule,
+    TagListModule
   ],
   exports: [MemberContentItemDetailsTemplateComponent]
 })

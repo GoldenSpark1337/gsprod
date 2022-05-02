@@ -542,6 +542,14 @@ ul {
     width: 52px;
 }
 
+::ng-deep .notifications-menu.mat-menu-panel .notifications-messages .unread-messages {
+    background-color: var(--gs-purple);
+}
+
+::ng-deep .notifications-messages .unread-messages .icon-chat {
+    color: var(--gs-pink);
+}
+
 ::ng-deep .notifications-menu.mat-menu-panel .notifications-messages .info {
     color: #fff;
     display: flex;

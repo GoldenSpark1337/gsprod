@@ -1,0 +1,263 @@
+gs-form-error-list {
+    width: 100%;
+}
+
+form.component-form {
+    max-width: 1300px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 1280px) {
+    form {
+        flex-direction: row;
+    }
+}
+
+.general-information {
+    width: 100%;
+    max-width: 640px;
+    margin-top: 0;
+}
+
+@media (min-width: 1280px) {
+    .general-information {
+        flex-basis: 50%;
+        padding-right: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    h4 {
+        font-size: 20px;
+        padding: 10px 0;
+    }   
+}
+
+.general-information h4,
+.service-artwork h4 {
+    font-weight: 600;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group,
+.form-group textarea {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+::ng-deep .mat-card {
+    color: #fff;
+    background-color: var(--gs-black);
+    border-radius: 3px !important;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .12) !important;
+}
+
+.mat-card>:first-child,
+.mat-card-content>:first-child {
+    margin-top: 0;
+}
+
+.category-container,
+.pricing-container {
+    display: flex;
+    margin-top: 20px;
+}
+
+.category-container .form-group,
+.pricing-container .form-group {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    margin-top: 0;
+    width: 50%;
+}
+
+@media (min-width: 480px) {
+    .category-container .form-group, .pricing-container .form-group {
+        flex-basis: 50%;
+    }
+}
+
+.category-container .form-group:nth-child(2),
+.pricing-container .form-group:nth-child(2) {
+    margin-left: 10px;
+}
+
+.input-title {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.input-text {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 44px;
+    border-radius: 5px;
+    background-color: #262626;
+    margin: 5px 0;
+    border: 1px solid #262626;
+}
+
+.input-text {
+    padding: 0 12px;
+}
+
+.input-text input {
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: none;
+    border: none;
+}
+
+.form-group:not(:first-child) {
+    margin-top: 15px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px 15px !important;
+    margin: 5px 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #262626;
+    border: 1px solid #262626;
+    border-radius: 3px;
+}
+
+.form-group textarea {
+    height: 138px !important;
+    max-width: 600px !important;
+}
+
+fieldset {
+    border: none;
+}
+
+.service-artwork {
+    width: 100%;
+}
+
+@media (min-width: 1280px) {
+    .service-artwork {
+        flex-basis: 50%;
+        margin-top: 0;
+        padding-left: 10px;
+    }
+}
+
+.buttons {
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    padding: 10px;
+    border-top-left-radius: 3px;
+    background-color: var(--gs-black);
+    z-index: 100;
+}
+
+@media (min-width: 769px) {
+    .buttons {
+        width: auto;
+        padding: 15px;
+    }
+}
+
+.buttons .btn-cancel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    height: 44px;
+    padding: 0;
+    font-family: Poppins, Roboto, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 38px;
+}
+
+.buttons .btn-cancel,
+.buttons .btn-cancel:not([disabled]).mat-focused,
+.buttons .btn-cancel:not([disabled]):hover {
+    background-color: #262626;
+}
+
+@media (min-width: 769px) {
+    .buttons .btn-cancel {
+        width: auto;
+        padding: 0 20px;
+        margin-bottom: 0;
+    }
+}
+
+.buttons .btn-save {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    height: 44px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 38px;
+}
+
+.buttons .btn-save,
+.buttons .btn-save:not([disabled]).mat-focused,
+.buttons .btn-save:not([disabled]):hover {
+    background-color: var(--gs-indigo);
+}
+
+@media (min-width: 769px) {
+    .buttons .btn-save {
+        width: 150px;
+    }
+}
+
+.buttons button:not(:first-child) {
+    margin-left: 10px;
+}
+
+@media (min-width: 480px) {
+    ::ng-deep .player-opened .buttons {
+        bottom: 58px;
+    }
+}
+
+@media (min-width: 1280px) {
+    ::ng-deep .player-opened .buttons {
+        bottom: 70px;
+    }
+}

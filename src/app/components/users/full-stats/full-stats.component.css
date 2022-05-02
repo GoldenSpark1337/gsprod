@@ -1,0 +1,19 @@
+.wrapper {
+    min-height: calc(var(--vh-size) - 569px);
+}
+
+hr {
+    border: none;
+    height: 8px;
+    box-shadow: inset 0 -1px 3px 0 rgb(0 0 0 / 60%);
+    background-color: rgba(0, 0, 0, .3);
+}
+
+hr+gs-top-info-container {
+    padding-top: 35px;
+}
+
+hr+gs-top-info-container .title {
+    font-size: 20px;
+    font-weight: 500;
+}

@@ -11,6 +11,8 @@ import { CartGroupComponent } from './components/cart/components/cart-group/cart
 import { RoundButtonModule } from 'src/app/shared/modules/round-button/round-button.module';
 import { MatIconModule } from '@angular/material/icon';
 import { ButtonPlayItemModule } from 'src/app/shared/modules/button-play-item/button-play-item.module';
+import { ReviewDialogComponent } from './components/cart/components/review-dialog/review-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const routes: Routes = [
   {
@@ -25,12 +27,14 @@ const routes: Routes = [
     ComponentContainerComponent, 
     CartComponent, 
     CartGroupComponent,
+    ReviewDialogComponent
     ],
   imports: [
     CommonModule,
     MaterialModule,
     RouterModule.forChild(routes),
     MatIconModule,
+    MatDialogModule,
     RoundButtonModule,
     ButtonPlayItemModule
   ],

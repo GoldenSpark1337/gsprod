@@ -5,6 +5,8 @@ import { CartService } from 'src/app/shared/services/cart.service';
 import { UserService } from 'src/app/shared/services/user.service';
 import { ProductService } from 'src/app/shared/services/product.service';
 import { IUser } from 'src/app/shared/models/user';
+import { MatDialog } from '@angular/material/dialog';
+import { ReviewDialogComponent } from '../review-dialog/review-dialog.component';
 
 @Component({
   selector: 'gs-cart-group',
@@ -18,7 +20,7 @@ export class CartGroupComponent implements OnInit {
   cart: ICart;
   user: IUser;
 
-  constructor(private cartService: CartService, private userService: UserService) { }
+  constructor(private cartService: CartService, private userService: UserService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.cart$ = this.cartService.cart$;
@@ -30,7 +32,17 @@ export class CartGroupComponent implements OnInit {
     this.userService.getUser(this.group.key).subscribe(user => this.user = user);
   }
 
-  removeItemFromCart() {
-    this.cartService.removeItemFromCart(this.item);
+  removeItemFromCart(item: ICartItem) {
+    this.cartService.removeItemFromCart(item);
   }
-}
+
+  opewReview() {
+    this.dialog.open(ReviewDialogComponent, {
+      data: {
+        user: this.user,
+        item: this.item,
+      },
+    });
+  }
+  }
+

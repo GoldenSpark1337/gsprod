@@ -8,4 +8,5 @@ export interface IProduct {
     description: string;
     productType?: any;
     user: string;
+    likes: number;
 }
