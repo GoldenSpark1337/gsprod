@@ -1,0 +1,51 @@
+<div class="track-list-container">
+  <ng-container *ngIf="(tracks$ | async) as tracks">
+    <ul>
+      <li *ngFor="let track of tracks; let i = index" 
+        class="track" 
+        (click)="play(track)"
+        [class.playing]="track.id === (selectedTrack$ | async)?.id">
+        <div class="col1">
+          <div>
+            <span class="number"> {{ i + 1 }} </span>
+            <button mat-fab class="btn-play">
+              <span class="material-icons" #playerControl [ngClass]="(isPlaying$ | async) ? 'icon-pause': 'icon-play'"
+                [innerText]="(isPlaying$ | async) ? 'pause_circle_outline': 'play_circle_outline'">
+            </span>
+            </button>
+          </div>
+          <img [src]="track.image" alt="Track artwork" (error)="track.image='assets/img/track_undefined.jpg'">
+          <div class="track-info">
+            <p class="title">{{track.title}}</p>
+          </div>
+        </div>
+        <div class="col2">
+          <div class="track-files">
+            <div class="file-wav" [class.available]="track.mp3File">
+              <span>WAV</span>
+            </div>
+            <div class="file-mp3" [class.available]="track.file">
+              <span>MP3</span>
+            </div>
+            <div class="file-zip" [class.available]="track.wavFile">
+              <span>STEMS</span>
+            </div>
+          </div>
+        </div>
+        <div class="col3">
+          <div class="release-date">
+            <span>{{track.releaseDate | date}}</span>
+          </div>
+        </div>
+        <div class="col4">
+          <div class="btns">
+            <gs-button-add-to-tracklist *ngIf="!isDraft"></gs-button-add-to-tracklist>
+            <gs-button-download *ngIf="!isDraft"></gs-button-download>
+            <gs-button-edit></gs-button-edit>
+          </div>
+          <gs-menu-more-options></gs-menu-more-options>
+        </div>
+      </li>
+    </ul>
+  </ng-container>
+</div>

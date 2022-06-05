@@ -17,3 +17,53 @@ hr+gs-top-info-container .title {
     font-size: 20px;
     font-weight: 500;
 }
+
+.no-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 110px;
+}
+
+@media (min-width: 480px) {
+    .no-container {
+        margin-top: 130px;
+    }
+}
+
+.no-container .icon-stats-no-fill {
+    font-size: 130px;
+}
+
+.no-container p {
+    max-width: 400px;
+    margin-top: 28px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+    color: #9f9f9f;
+}
+
+.no-container .btn-upgrade {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    height: 44px;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+    margin-top: 24px;
+    padding: 0 20px;
+}
+
+.no-container .btn-upgrade,
+.no-container .btn-upgrade:not([disabled]).mat-focused,
+.no-container .btn-upgrade:not([disabled]):hover {
+    background-color: var(--gs-indigo);
+}

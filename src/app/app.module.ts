@@ -18,6 +18,7 @@ import { ErrorModule } from "./errors/error.module";
 import { TimeagoModule } from "ngx-timeago";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { LoadingInterceptor } from "./_interceptors/loading.interceptor";
+import { MyTrackListModule } from "./components/tracks/ng-component/components/my-track-list/my-track-list.module";
 
 @NgModule({
   declarations: [AppComponent, TestErrorsComponent],
@@ -32,6 +33,7 @@ import { LoadingInterceptor } from "./_interceptors/loading.interceptor";
     AuthModule,
     TopNavbarModule,
     HomeModule,
+    MyTrackListModule,
     PlayerWrapperModule,
     NgxSpinnerModule,
     DragulaModule.forRoot(),

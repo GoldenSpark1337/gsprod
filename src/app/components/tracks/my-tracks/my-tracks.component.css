@@ -1,0 +1,5 @@
+@media (min-width: 769px) {
+    ::ng-deep .not-paginating {
+        margin-bottom: 0;
+    }
+}

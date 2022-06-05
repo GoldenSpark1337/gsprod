@@ -17,14 +17,12 @@
             <span class="value">{{product.plays}}</span>
         </p>
     </ng-container>
-    <ng-container *ngIf="user">
-        <p class="social-interaction-line">
-            <span class="label">Followers</span>
-            <span class="value">19</span>
-        </p>
-        <p class="social-interaction-line">
-            <span class="label">Plays</span>
-            <span class="value">220</span>
-        </p>
-    </ng-container>
+    <p class="social-interaction-line">
+        <span class="label">Followers</span>
+        <span class="value">19</span>
+    </p>
+    <p class="social-interaction-line">
+        <span class="label">Plays</span>
+        <span class="value">{{userPlays}}</span>
+    </p>
 </div>

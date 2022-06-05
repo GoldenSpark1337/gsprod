@@ -1,5 +1,15 @@
-<div class="wrapper">
+<div class="wrapper" *ngIf="proPage else upgradeAccount">
   <gs-component-container></gs-component-container>
   <hr>
   <gs-top-info-container></gs-top-info-container>
 </div>
+<ng-template #upgradeAccount>
+  <div class="no-container">
+    <i class="icon-stats-no-fill material-icons-outlined">analytics</i>
+    <p>Stats are only available on PRO Accounts</p>
+    <button mat-button disableRipple class="btn-upgrade">
+      Upgrade Account
+    </button>
+  </div>
+</ng-template>
+<ngx-spinner type="ball-clip-rotate" [fullScreen]="false"></ngx-spinner>

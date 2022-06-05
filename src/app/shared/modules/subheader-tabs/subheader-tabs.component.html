@@ -1,0 +1,15 @@
+<div class="subheader-tabs sticky">
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link
+    *ngFor="let link of links"
+    disableRipple
+    routerLinkActive
+    [routerLink]="link.path"
+    (click)="activeLink = link"
+    [active]="activeLink == link">
+    <span>{{link.label | uppercase }}</span>
+    <div class="red-bar"></div>
+  </a>
+  </nav>
+  <div class="border"></div>
+</div>

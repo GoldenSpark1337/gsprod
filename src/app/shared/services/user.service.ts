@@ -30,7 +30,7 @@ export class UserService {
     );
   }
 
-  public getUser(username: string) {
+  public getUser(username: string): Observable<IUser> {
     const product = this.users.find(x => x.username === username);
     if (product !== undefined) return of(product);
     return this.http.get<IUser>(this.baseUrl + `${username}`);
@@ -52,7 +52,9 @@ export class UserService {
     );
   }
 
-
+  public getPlays(username: string) {
+    return this.http.get<number>(this.baseUrl + username + "/plays");
+  }
 
   public getProducts(username: string, isDraft: boolean = false) {
     let params = new HttpParams();

@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TrackFormComponent } from './track-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormErrorListModule } from '../form-error-list/form-error-list.module';
 import { MatCardModule } from '@angular/material/card';
-import { TagsInputComponent } from './components/tags-input/tags-input.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { UploadButtonModule } from 'src/app/components/users/wrapper-member-profile-content/components/account-settings/components/edit-profile-info/components/upload-button/upload-button.module';
@@ -14,11 +13,14 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatChipsModule } from '@angular/material/chips';
 import { SellingPreferencesModule } from './components/selling-preferences/selling-preferences.module';
 import { TagsInputModule } from './components/tags-input/tags-input.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     FormErrorListModule,
     MatCardModule,
     MatButtonModule,
@@ -29,7 +31,9 @@ import { TagsInputModule } from './components/tags-input/tags-input.module';
     ContentCreationArtworkModule,
     MatChipsModule,
     SellingPreferencesModule,
-    TagsInputModule
+    TagsInputModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   declarations: [
     TrackFormComponent

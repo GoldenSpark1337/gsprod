@@ -19,7 +19,7 @@ export class QuickLinksPanelComponent implements OnInit {
   constructor(
     private dashboardUserComponent: DashboardUserComponent, 
     private trackService: TrackService, 
-    private soundServiceService: ProductService,
+    private productService: ProductService,
     private router: Router) 
   {
   }
@@ -37,10 +37,19 @@ export class QuickLinksPanelComponent implements OnInit {
   }
 
   newService() {
-    this.soundServiceService.createService().subscribe((id: number) => {
+    this.productService.createService().subscribe((id: number) => {
       if (id) {
         this.newTrackId = id;
         this.router.navigateByUrl(`/services/edit/${id}`);
+      }
+    });
+  }
+
+  newKit() {
+    this.productService.createKit().subscribe((id: number) => {
+      if (id) {
+        this.newTrackId = id;
+        this.router.navigateByUrl(`/kits/edit/${id}`);
       }
     });
   }

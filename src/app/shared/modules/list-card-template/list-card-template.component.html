@@ -1,3 +1,5 @@
 <div class="list-cards list-view">
-  <gs-card-figure-track class="list-item" *ngFor="let track of (tracks$ | async)" [isList]="true" [track]="track"></gs-card-figure-track>
+  <gs-track-list [tracks$]="tracks$"></gs-track-list>
+  <!-- <gs-card-figure-track class="list-item" *ngFor="let track of (tracks$ | async)" [isList]="true" [track]="track"></gs-card-figure-track> -->
 </div>
+<ngx-spinner type="ball-clip-rotate" [fullScreen]="false"></ngx-spinner>

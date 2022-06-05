@@ -1,0 +1,91 @@
+fieldset {
+    min-width: unset;
+}
+
+fieldset:first-child {
+    margin-top: 0;
+}
+
+@media (min-width: 1280px) {
+    .mat-card {
+        flex-direction: row;
+    }
+}
+
+.mat-card>section {
+    max-width: 100%;
+}
+
+@media (min-width: 1280px) {
+    .mat-card > section {
+        flex-basis: 50%;
+    }
+}
+
+@media (min-width: 1280px) {
+    .mat-card > section:first-child {
+        padding-right: 15px;
+    }
+}
+
+.licenses,
+.price-song {
+    margin-bottom: 20px;
+}
+
+p {
+     font-size: 12px;
+     font-weight: 500;
+     color: #707070;
+}
+
+.m-b-10 {
+    margin-bottom: 10px;
+}
+
+.track-pricing-container p {
+    font-size: 13px;
+}
+
+.track-pricing-container p a {
+    color: var(--gs-light-blue);
+    cursor: pointer;
+}
+
+.track-free-download mat-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 9px;
+}
+
+.track-free-download mat-radio-group mat-radio-button:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+::ng-deep .mat-radio-checked .mat-radio-outer-circle {
+    border-color: var(--gs-indigo) !important;
+}
+
+::ng-deep .mat-radio-container,
+::ng-deep .mat-radio-outer-circle {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+::ng-deep .mat-radio-inner-circle {
+    width: 16px !important;
+    height: 16px !important;
+    background-color: var(--gs-indigo) !important;
+}
+
+::ng-deep .mat-radio-checked .mat-radio-label {
+    color: #fff;
+}
+
+::ng-deep .mat-radio-label {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #9f9f9f;
+}

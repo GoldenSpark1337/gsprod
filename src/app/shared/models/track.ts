@@ -11,6 +11,7 @@ export interface ITrack {
     bpm: string;
     collaborator: string;
     user: string;
+    tags: string[];
     genre: string;
     subgenre: string;
     key: string;

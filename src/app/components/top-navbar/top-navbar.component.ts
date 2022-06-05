@@ -74,6 +74,10 @@ export class TopNavbarComponent implements OnInit {
     this.timer = setTimeout(() => {this.timeout(false)}, 500);
   }
 
+  changeHoverableState(value: boolean) {
+    this.isHoverable = value;
+  }
+
   logout(){
     this.accountService.logout();
   }

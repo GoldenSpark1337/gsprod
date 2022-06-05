@@ -43,3 +43,7 @@
     line-height: 50px;
     color: #fff;
 }
+
+.btn-files.available {
+    background-color: var(--gs-pink);
+}

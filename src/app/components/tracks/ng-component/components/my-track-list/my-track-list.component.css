@@ -1,0 +1,146 @@
+:host {
+    display: flex;
+    justify-content: center;
+}
+
+:host {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media (min-width: 769px) {
+    .col1 > div {
+        min-width: 50px;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+.track img {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 3px;
+}
+
+@media (min-width: 480px) {
+    .track img {
+        display: block;
+    }
+}
+
+.track .title {
+    width: auto;
+    font-size: 14px;
+    color: #fff;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@media (min-width: 1280px) {
+    .col2 {
+        flex-basis: 15%;
+        width: 15%;
+    }
+}
+
+.track .col1,
+.track .col2,
+.track .col3,
+.track .col4 {
+    display: flex;
+    align-items: center;
+}
+
+.track .track-files {
+    display: none;
+    color: #c2c5c7;
+}
+
+@media (min-width: 1024px) {
+    .track .track-files {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.track .track-files>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 32px;
+    padding: 2px 10px 0;
+    font-size: 13px;
+    color: hsla(0, 0%, 100%, .5);
+    border: 1px solid hsla(0, 0%, 100%, .15);
+    border-radius: 3px;
+}
+
+.track .track-files>div:not(:last-child) {
+    margin-right: 10px;
+}
+
+.track .track-files>div.available {
+    color: #fff;
+    border: 1px solid var(--gs-indigo);
+}
+
+@media (min-width: 1280px) {
+    .col3 {
+        display: flex!important;
+        flex-basis: 15%;
+        width: 15%;
+        padding-left: 45px;
+    }
+}
+
+.track .release-date {
+    display: flex;
+    align-items: center;
+    height: 24px;
+    margin-right: 10px;
+    font-size: 13px;
+    color: #fff;
+}
+
+@media (min-width: 1280px) {
+    .col4 {
+        flex-basis: 25%;
+        width: 25%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .track .col4 .btns {
+        display: flex;
+    }
+}
+
+.track .col4 .btns>* {
+    margin-right: 8px;
+}
+
+::ng-deep gs-round-button {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px;
+    line-height: calc(28px - 2px);
+    border-radius: 50%;
+    border: 1px solid hsla(0, 0%, 100%, .3);
+    background-color: unset;
+    cursor: pointer;
+}
+
+::ng-deep gs-round-button i {
+    font-size: 11px;
+    color: #fff;
+}
+
+.track .col4 .menu-more-options,
+.track .col4 .menu-more-options.drafts {
+    display: flex;
+}

@@ -20,6 +20,16 @@ a {
     text-decoration: none;
 }
 
+ul {
+    list-style: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 :root {
     --white: #fff;
     --gs-black: #08000D;
@@ -43,4 +53,12 @@ a {
     --player-component-height: 0px;
     --top-nav-component-height: 114px;
     --download-apps-banner-height: 0px;
+}
+
+.ngx-spinner-overlay {
+    background-color: var(--gs-purple) !important;
+}
+
+.ngx-spinner-overlay>div:not(.loading-text) {
+    top: 30% !important;
 }

@@ -163,7 +163,7 @@
             <!-- <a href="" class="link-no-menu">Publishing</a> -->
             <a routerLink="/dashboard" class="link-no-menu" (mouseover)="showHoverable()" (mouseout)="hideHoverable()" *ngIf="user$ | async">My Media</a>
         </nav>
-        <gs-top-nav-menu *ngIf="isHoverable" (onChanged)="timeout($event)"></gs-top-nav-menu>
+        <gs-top-nav-menu *ngIf="isHoverable" (mouseenter)="timeout(true)" (mouseleave)="timeout(false)" (onChanged)="changeHoverableState($event)"></gs-top-nav-menu>
     </div>
 
 </header>

@@ -6,6 +6,7 @@ import { SearchResultsModule } from './components/search-results/search-results.
 import { SearchHeaderModule } from '../../search/components/main-search/components/container-grid/search-header/search-header.module';
 import { RouterModule, Routes } from '@angular/router';
 import { SearchFiltersModule } from '../../search/components/main-search/components/container-grid/search-filters/search-filters.module';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 const routes: Routes = [{
   path: '', component: ChartsComponent
@@ -18,6 +19,7 @@ const routes: Routes = [{
     SearchHeaderModule,
     SearchFiltersModule,
     SearchResultsModule,
+    NgxSpinnerModule,
     RouterModule.forChild(routes)
   ],
   declarations: [ChartsComponent]

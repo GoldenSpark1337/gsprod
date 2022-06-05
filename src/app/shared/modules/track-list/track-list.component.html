@@ -35,12 +35,11 @@
       <div class="col2">
         <div class="col2">
           <span class="tags-container">
-            <a class="tag" href="/">
-              <p>#drake</p>
-            </a>
-            <a class="tag" href="/">
-              <p>#educational</p>
-            </a>
+            <ng-container *ngIf="track.tags">
+              <a class="tag" href="/" *ngFor="let tag of track.tags">
+                <p>{{tag}}</p>
+              </a>
+            </ng-container>
           </span>
         </div>
       </div>
@@ -53,3 +52,4 @@
     </li>
   </ul>
 </div>
+<ngx-spinner type="ball-clip-rotate" [fullScreen]="false"></ngx-spinner>

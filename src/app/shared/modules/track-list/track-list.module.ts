@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { BtnBuyFromTrackModule } from '../btn-buy-from-track/btn-buy-from-track.module';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatIconModule,
     BtnBuyFromTrackModule,
+    NgxSpinnerModule,
     RouterModule
   ],
   declarations: [TrackListComponent],

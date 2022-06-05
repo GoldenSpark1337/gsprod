@@ -1,0 +1,86 @@
+<gs-main-header>
+  <h1>Sound Kit өзгерту</h1>
+</gs-main-header>
+<div class="component-container" *ngIf="kit">
+  <form #kitsForm class="component-form">
+    <gs-form-error-list></gs-form-error-list>
+    <div class="fieldset">
+      <mat-card class="form-content">
+        <section class="item-form">
+          <div class="form-group cols-2">
+            <div>
+              <label class="input-title">SOUND KIT TITLE</label>
+              <div class="input-text">
+                <input type="text" 
+                  name="title"
+                  placeholder="Title" 
+                  maxlength="60"
+                  [(ngModel)]="kit.title" 
+                  required>
+              </div>
+              <span class="input-info"> Note: Maximum 60 characters. </span>
+            </div>
+            <div>
+              <label class="input-title">RELEASE DATE</label>
+              <div class="input-text form-release-date">
+                <input type="text" 
+                name="release_date" 
+                placeholder="Title" 
+                maxlength="60" required 
+                readonly 
+                [value]="kit.releaseDate | date: 'dd/MM/yyyy'">
+              </div>
+            </div>
+          </div>
+          <div class="form-group cols-2">
+            <div>
+              <gs-tags-input (tagsChanged)="addKitTags($event)"></gs-tags-input>
+            </div>
+            <div>
+              <label class="input-title">PRICE</label>
+              <div class="input-text">
+                <input type="number" 
+                  name="price"
+                  placeholder="Price" 
+                  min="0"
+                  [(ngModel)]="kit.price" 
+                  required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group columnized">
+            <label class="input-title">DESCRIPTION</label>
+            <textarea placeholder="Enter Description" name="description" maxlength="120"
+              required class="textarea" [(ngModel)]="kit.description"></textarea>
+          </div>
+        </section>
+        <section class="side-columns">
+          <div class="item-form">
+            <gs-content-creation-artwork [productImage]="kit.image"></gs-content-creation-artwork>
+          </div>
+          <div class="item-form">
+            <gs-upload-button></gs-upload-button>
+          </div>
+        </section>
+      </mat-card>
+    </div>
+    <div class="buttons">
+      <button mat-button type="button" class="mat-focus-indicator btn-cancel mat-button mat-button-base">
+        <span class="mat-button-wrapper">
+          <span class="initial">Save draft</span>
+          <span class="active">Saving draft</span>
+        </span>
+        <span matripple class="mat-ripple mat-button-ripple"></span>
+        <span class="mat-button-focus-overlay"></span>
+      </button>
+      <button mat-button type="button" class="mat-focus-indicator btn-save mat-button mat-button-base">
+        <span class="mat-button-wrapper">
+          <span class="initial">Publish</span>
+          <span class="active">Publishing</span>
+        </span>
+        <span matripple class="mat-ripple mat-button-ripple"></span>
+        <span class="mat-button-focus-overlay"></span>
+      </button>
+    </div>
+  </form>
+</div>

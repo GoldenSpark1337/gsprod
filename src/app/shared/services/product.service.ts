@@ -68,6 +68,10 @@ export class ProductService {
     return this.http.post(environment.apiUrl + "services", {})
   }
 
+  createKit() {
+    return this.http.post(environment.apiUrl + "kits", {})
+  }
+
   updateProduct(product: IProduct) {
     return this.http.put(this.baseUrl, product).pipe(
       map(() => {

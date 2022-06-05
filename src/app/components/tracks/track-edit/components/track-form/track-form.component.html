@@ -1,6 +1,6 @@
 <div class="component-container">
   <ng-container *ngIf="track">
-    <form #trackEditForm class="component-form" autocomplete="off">
+    <form [formGroup]="trackUpdateForm" class="component-form" autocomplete="off">
       <gs-form-error-list></gs-form-error-list>
       <fieldset class="general-information">
         <h4>General Information</h4>
@@ -12,7 +12,7 @@
                 <div class="input-text">
                   <input
                     type="text"
-                    name="title"
+                    formControlName="title"
                     placeholder="Title"
                     maxlength="100"
                     [(ngModel)]="track.title"
@@ -30,7 +30,7 @@
                   <label class="input-title">AUDIO FILES FOR DOWNLOAD</label>
                   <gs-universal-upload-button>
                     <div class="drop-container">
-                      <button mat-button class="btn-files" (click)="openDialog()">
+                      <button mat-button class="btn-files" (click)="openDialog()" [class.available]="track.file">
                         <div class="wrapper">
                           <mat-icon class="button-icon icon-track-music">audiotrack</mat-icon>
                           <div class="button-text">
@@ -50,7 +50,63 @@
           </div>
         </mat-card>
       </fieldset>
-      <gs-selling-preferences></gs-selling-preferences>
+      <gs-selling-preferences [track]="track"></gs-selling-preferences>
+      <fieldset class="track-details">
+        <h4>Track Details</h4>
+        <mat-card>
+          <div class="track-details-info">
+            <section>
+              <div class="track-primary-genre">
+                <label class="input-title">PRIMARY GENRE*</label>
+                <mat-form-field class="form-select">
+                  <mat-select [(ngModel)]="track.genre" formControlName="genre">
+                    <mat-option *ngFor="let genre of genres" [value]="genre.id">{{genre.name}}</mat-option>
+                  </mat-select>
+                  <mat-icon class="icon-arrow material-icons">expand_more</mat-icon>
+                </mat-form-field>
+              </div>
+              <div class="track-description">
+                <label class="input-title">DESCRIPTION</label>
+                <textarea #trackDescription placeholder="Enter Description" formControlName="description" maxlength="120"
+                  class="textarea-input-text input-text"></textarea>
+              </div>
+              <span class="input-info">{{trackDescription.value.length}} out of 120 Maximum characters allowed</span>
+            </section>
+            <section>
+              <div class="track-subgenre">
+                <label class="input-title">SUBGENRE</label>
+                <mat-form-field class="form-select">
+                  <mat-select [(ngModel)]="track.subgenre" formControlName="subgenre">
+                    <mat-option *ngFor="let subgenre of subgenres" [value]="subgenre.id">{{subgenre.name}}
+                    </mat-option>
+                  </mat-select>
+                  <mat-icon class="icon-arrow material-icons">expand_more</mat-icon>
+                </mat-form-field>
+              </div>
+              <div class="track-bpm">
+                <label class="input-title">BPM</label>
+                <span class="input-title-info">(Beats per minute)</span>
+                <div class="input-text">
+                  <input type="number" formControlName="bpm" placeholder="0" min="0" max="300" step="0.01">
+                </div>
+              </div>
+              <div class="track-key-note">
+                <label class="input-title">KEY</label>
+                <mat-form-field class="form-select">
+                  <mat-select [(ngModel)]="track.key" formControlName="key">
+                    <mat-option *ngFor="let key of keys" [value]="key.id">{{key.track_Key}}</mat-option>
+                  </mat-select>
+                  <mat-icon class="icon-arrow material-icons">expand_more</mat-icon>
+                </mat-form-field>
+              </div>
+              <div>
+                <p>{{trackUpdateForm.value | json}}</p>
+                <p>{{trackUpdateForm.status | json}}</p>
+              </div>
+            </section>
+          </div>
+        </mat-card>
+      </fieldset>
       <div class="buttons">
         <button mat-button type="button"
           class="mat-focus-indicator btn-cancel mat-button mat-button-base">

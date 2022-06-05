@@ -3,9 +3,65 @@
   <mat-card>
     <section>
       <div class="track-pricing-container">
-        <div class="licenses"></div>
+        <div class="licenses">
+          <div class="track-price">
+            <label class="input-title">
+              <b>Basic License (MP3)</b>PRICE
+            </label>
+            <div class="input-text">
+              <input formControlName="price" type="number" placeholder="Price" min="0" required>
+            </div>
+          </div>
+        </div>
+        <div class="licenses">
+          <div class="track-price">
+            <label class="input-title">
+              <b>Premium License (MP3 and WAV)</b> PRICE
+            </label>
+            <div class="input-text">
+              <input type="number" placeholder="Price" min="0" required>
+            </div>
+          </div>
+        </div>
+        <div class="licenses">
+          <div class="track-price">
+            <label class="input-title">
+              <b>Premium Plus License (MP3, WAV and TRACK STEMS)</b> PRICE
+            </label>
+            <div class="input-text">
+              <input type="number" placeholder="Price" min="0" required>
+            </div>
+          </div>
+        </div>
+        <div class="licenses">
+          <div class="track-price">
+            <label class="input-title">
+              <b>Exclusive License (MP3 and WAV)</b> PRICE
+            </label>
+            <div class="input-text">
+              <input type="number" placeholder="Price" min="0" required>
+            </div>
+          </div>
+        </div>
+        <p class="m-b-10"> Note: You may customize your Licenses through here: 
+          <a routerlink="/licenses" target="_blank" href="/licenses">Licenses &amp; Contracts</a>
+        </p>
       </div>
     </section>
-    <section></section>
+    <section>
+      <div class="track-free-download">
+        <label class="input-title">FREE DOWNLOAD OPTIONS</label>
+        <div>
+          <mat-radio-group name="allowComplimentaryDownloads" [(ngModel)]="freeDownload">
+            <mat-radio-button value="false" [checked]="true">
+              No
+            </mat-radio-button>
+            <mat-radio-button value="true">
+              Yes (MP3 Version)
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+    </section>
   </mat-card>
 </fieldset>

@@ -30,8 +30,14 @@ const routes: Routes = [
                 .then(m => m.MessagesModule), canActivate: [AuthGuard]},
             {path: 'tracks/edit/:id', loadChildren: () => import("./components/tracks/track-edit/track-edit.module")
             .then(m => m.TrackEditModule), canActivate: [AuthGuard]},
+            {path: 'tracks', loadChildren: () => import('./components/tracks/ng-component/ng-component.module')
+            .then(m => m.NgComponentModule), canActivate: [AuthGuard]},
+            {path: 'tracks/my-tracks', loadChildren: () => import('./components/tracks/my-tracks/my-tracks.module')
+            .then(m => m.MyTracksModule), canActivate: [AuthGuard]},
             {path: 'services/edit/:id', loadChildren: () => import("./components/sound-services/service-edit/service-edit.module")
             .then(m => m.ServiceEditModule), canActivate: [AuthGuard]},
+            {path: 'kits/edit/:id', loadChildren: () => import("./components/sound-kits/kits-edit/kits-edit.module")
+            .then(m => m.KitsEditModule), canActivate: [AuthGuard]},
             {path: 'favorites', loadChildren: () => import("./components/users/favourites/favourites.module")
             .then(m => m.FavouritesModule), canActivate: [AuthGuard]},
             {path: 'stats', loadChildren: () => import("./components/users/full-stats/full-stats.module")
@@ -48,7 +54,7 @@ const routes: Routes = [
         loadChildren: () => import("./components/search/component.module").then(m => m.ComponentModule)
     },
     {
-        path: 'tracks',
+        path: 'charts',
         loadChildren: () => import("./components/tracks/charts/charts.module").then(m => m.ChartsModule)
     },
     {

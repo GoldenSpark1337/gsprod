@@ -1,11 +1,75 @@
-<nav id="topNavMenu" (mouseover)="change(true)" (mouseout)="change(false)">
+<nav id="topNavMenu">
     <section>
         <span class="title">Overview</span>
-        <ul>
+        <ul (click)="change(false)">
+            <li>
+                <a routerLink="/dashboard" href>
+                    <i class="icon-dashboard material-icons-round">grid_view</i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/stats" href>
+                    <i class="icon-stats material-icons">bar_chart</i>
+                    <span>Stats</span>
+                </a>
+            </li>
+            <li>
+                <a href="/sales">
+                    <i class="icon-sales material-icons">paid</i>
+                    <span>Sales</span>
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href>
+                    <i class="icon-promote material-icons">trending_up</i>
+                    <span>Promote</span>
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href>
+                    <i class="vb-icon-wallet-m-regular material-icons">account_balance_wallet</i>
+                    <span>Wallet</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <span class="title">Your Content</span>
+        <ul (click)="change(false)">
+            <li>
+                <a routerLink="/tracks" href="">
+                    <i class="icon-tracks material-icons">music_note</i>
+                    <span>Tracks</span>
+                </a>
+            </li>
             <li>
                 <a href="">
-                    <i class="icon-dashboard"></i>
-                    <span></span>
+                    <i class="icon-albums material-icons">album</i>
+                    <span>Albums</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-sound-kits material-icons">folder</i>
+                    <span>Sound Kits</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-services material-icons">account_balance_wallet</i>
+                    <span>Services</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <span class="title">Services</span>
+        <ul (click)="change(false)">
+            <li>
+                <a href="">
+                    <i class="icon-licenses material-icons">history_edu</i>
+                    <span>Licenses &amp; Contracts</span>
                 </a>
             </li>
         </ul>

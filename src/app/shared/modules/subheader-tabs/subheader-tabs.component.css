@@ -1,0 +1,106 @@
+.subheader-tabs {
+    position: relative;
+    padding: 0 15px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 1024px) {
+    .subheader-tabs {
+        overflow-y: hidden;
+    }
+}
+
+@media (min-width: 1348px) {
+    .subheader-tabs {
+        padding: 0;
+    }
+}
+
+nav {
+    display: flex;
+    max-width: 1300px;
+    margin: auto;
+    overflow: visible;
+    color: #fff;
+    white-space: nowrap;
+    border-bottom: none;
+}
+
+nav ::ng-deep .mat-tab-link-container {
+    overflow: visible;
+}
+
+nav ::ng-deep .mat-tab-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: #b8b8b8;
+    letter-spacing: 1px;
+    border-bottom: 2px solid transparent;
+}
+
+nav ::ng-deep .mat-tab-link:first-child {
+    margin-left: 0;
+}
+
+nav ::ng-deep .mat-tab-label-active,
+nav ::ng-deep .mat-tab-link.red-bar {
+    color: #fff !important;
+}
+
+nav ::ng-deep .mat-tab-label-active,
+nav ::ng-deep .mat-tab-link.red-bar:first-child {
+    opacity: 1;
+}
+
+.subheader-tabs.sticky ::ng-deep .mat-tab-link {
+    margin-bottom: -1px;
+}
+
+.mat-tab-link {
+    min-width: 0 !important;
+    padding: 0 !important;
+    margin: 0 20px;
+}
+
+nav .mat-tab-link span {
+    letter-spacing: .8px;
+}
+
+nav .mat-tab-label-active .red-bar,
+nav .mat-tab-link.red-bar:first-child .red-bar {
+    position: absolute;
+    bottom: 0;
+    width: 22px;
+    height: 2px;
+    background-color: var(--gs-indigo);
+}
+
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar,
+::ng-deep .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: var(--gs-indigo) !important;
+}
+
+:host ::ng-deep .mat-tab-label {
+    height: 3rem !important;
+    min-width: 8rem !important;
+}
+
+:host ::ng-deep .mat-tab-label.mat-tab-label-active {
+    border: 1px solid #2F80ED;
+    box-sizing: border-box;
+    border-radius: 0.8rem;
+}
+
+:host ::ng-deep .mat-ink-bar {
+    display: none !important;
+}
+
+.border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: hsla(0, 0%, 100%, .15);
+}

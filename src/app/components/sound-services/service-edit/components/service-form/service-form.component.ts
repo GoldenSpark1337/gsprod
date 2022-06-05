@@ -26,7 +26,9 @@ export class ServiceFormComponent implements OnInit {
   }
 
   addServiceTags(tag: string) {
-    this.serviceTags.push(tag);
+    if (!this.serviceTags.includes(tag)) {
+      this.serviceTags.push(tag);
+    }
   }
 
   getService() {

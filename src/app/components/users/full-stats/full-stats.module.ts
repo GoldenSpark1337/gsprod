@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { TopInfoContainerModule } from './components/top-info-container/top-info-container.module';
+import { MatButtonModule } from '@angular/material/button';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 const routes: Routes = [
   {path:'', component: FullStatsComponent}
@@ -21,7 +23,9 @@ const routes: Routes = [
     MatFormFieldModule,
     MatSelectModule,
     MatIconModule,
+    MatButtonModule,
     NgxChartsModule,
+    NgxSpinnerModule,
     TopInfoContainerModule,
     RouterModule.forChild(routes)
   ],
